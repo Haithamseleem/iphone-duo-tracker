@@ -1,0 +1,336 @@
+{
+    "intervalMinutes":  1,
+    "parallelChecks":  32,
+    "watchTickSeconds":  5,
+    "watchMinutes":  60,
+    "alertAfterFailedChecks":  5,
+    "availableNowWithinDays":  7,
+    "applePrice":  9349,
+    "priorityStores":  [
+                           "Apple UAE",
+                           "Apple Store pickup",
+                           "Sharaf DG",
+                           "iStyle",
+                           "Noon",
+                           "Noon Minutes",
+                           "Amazon.ae",
+                           "Emax"
+                       ],
+    "autoOpenStorePage":  true,
+    "notTracked":  [
+                       {
+                           "name":  "Eros Digital Home",
+                           "reason":  "blocks automatic checks from this PC",
+                           "url":  "https://www.erosdigitalhome.ae/"
+                       },
+                       {
+                           "name":  "Ourshopee",
+                           "reason":  "its search only works in a browser",
+                           "url":  "https://www.ourshopee.com/"
+                       },
+                       {
+                           "name":  "Virgin Mobile",
+                           "reason":  "sells the Duo only through its phone app",
+                           "url":  "https://www.virginmobile.ae/iphone-duo"
+                       },
+                       {
+                           "name":  "Dubizzle",
+                           "reason":  "resale listings; blocks automatic checks (beware of scams)",
+                           "url":  "https://uae.dubizzle.com/search/?keyword=iphone%20duo%20512gb"
+                       },
+                       {
+                           "name":  "Desertcart",
+                           "reason":  "imported stock; its search can\u0027t be read automatically",
+                           "url":  "https://www.desertcart.ae/search?query=iphone%20duo%20512gb"
+                       },
+                       {
+                           "name":  "Small phone shops",
+                           "reason":  "independent shops don\u0027t publish stock online"
+                       }
+                   ],
+    "targets":  [
+                    {
+                        "store":  "Apple UAE",
+                        "category":  "Official Apple store (online)",
+                        "type":  "apple",
+                        "everyMinutes":  2,
+                        "deliverBefore":  "2027-01-22",
+                        "variant":  "512GB Star White",
+                        "part":  "MK264AH/A",
+                        "price":  9349,
+                        "url":  "https://www.apple.com/ae/shop/buy-iphone/iphone-duo/7.6-inch-display-512gb-star-white"
+                    },
+                    {
+                        "store":  "Apple UAE",
+                        "category":  "Official Apple store (online)",
+                        "type":  "apple",
+                        "everyMinutes":  2,
+                        "deliverBefore":  "2027-01-22",
+                        "variant":  "512GB Night Sky",
+                        "part":  "MK274AH/A",
+                        "price":  9349,
+                        "url":  "https://www.apple.com/ae/shop/buy-iphone/iphone-duo/7.6-inch-display-512gb-night-sky"
+                    },
+                    {
+                        "store":  "Apple Store pickup",
+                        "category":  "Apple Stores: Dubai Mall, MoE, Yas, Al Jimi, Al Maryah",
+                        "type":  "applepickup",
+                        "everyMinutes":  5,
+                        "everySeconds":  20,
+                        "variant":  "512GB Star White",
+                        "part":  "MK264AH/A",
+                        "location":  "Dubai",
+                        "price":  9349,
+                        "url":  "https://www.apple.com/ae/shop/buy-iphone/iphone-duo/7.6-inch-display-512gb-star-white"
+                    },
+                    {
+                        "store":  "Apple Store pickup",
+                        "category":  "Apple Stores: Dubai Mall, MoE, Yas, Al Jimi, Al Maryah",
+                        "type":  "applepickup",
+                        "everyMinutes":  5,
+                        "everySeconds":  20,
+                        "variant":  "512GB Night Sky",
+                        "part":  "MK274AH/A",
+                        "location":  "Dubai",
+                        "price":  9349,
+                        "url":  "https://www.apple.com/ae/shop/buy-iphone/iphone-duo/7.6-inch-display-512gb-night-sky"
+                    },
+                    {
+                        "store":  "Sharaf DG",
+                        "category":  "Electronics retailer (online + branches)",
+                        "type":  "sharafdg-stock",
+                        "everySeconds":  15,
+                        "variant":  "512GB Star White",
+                        "model":  "MK264AH/A",
+                        "query":  "apple iphone duo 512gb",
+                        "price":  9349,
+                        "url":  "https://uae.sharafdg.com/product/apple-iphone-duo-512gb-star-white-middle-east-version-pre-order/"
+                    },
+                    {
+                        "store":  "Sharaf DG",
+                        "category":  "Electronics retailer (online + branches)",
+                        "type":  "sharafdg-stock",
+                        "everySeconds":  15,
+                        "variant":  "512GB Night Sky",
+                        "model":  "MK274AH/A",
+                        "query":  "apple iphone duo 512gb",
+                        "price":  9349,
+                        "url":  "https://uae.sharafdg.com/product/apple-iphone-duo-512gb-night-sky-middle-east-version-pre-order/"
+                    },
+                    {
+                        "store":  "Jumbo",
+                        "category":  "Electronics retailer",
+                        "type":  "jumbo-search",
+                        "everySeconds":  15,
+                        "variant":  "512GB Star White",
+                        "colour":  "Star White",
+                        "query":  "apple iphone duo 512",
+                        "price":  9349,
+                        "url":  "https://www.jumbo.ae/apple-iphone-duo-smartphone-star-white-512-gb.html"
+                    },
+                    {
+                        "store":  "Jumbo",
+                        "category":  "Electronics retailer",
+                        "type":  "jumbo-search",
+                        "everySeconds":  15,
+                        "variant":  "512GB Night Sky",
+                        "colour":  "Night Sky",
+                        "query":  "apple iphone duo 512",
+                        "price":  9349,
+                        "url":  "https://www.jumbo.ae/apple-iphone-duo-smartphone-night-sky-512-gb.html"
+                    },
+                    {
+                        "store":  "iStyle",
+                        "category":  "Apple Premium Reseller",
+                        "type":  "istyle",
+                        "everySeconds":  15,
+                        "variant":  "512GB Star White",
+                        "handles":  [
+                                        "iphone-duo-mk264ah-a"
+                                    ],
+                        "url":  "https://istyle.ae/products/iphone-duo-mk264ah-a"
+                    },
+                    {
+                        "store":  "iStyle",
+                        "category":  "Apple Premium Reseller",
+                        "type":  "istyle",
+                        "everySeconds":  15,
+                        "variant":  "512GB Night Sky",
+                        "handles":  [
+                                        "iphone-duo-mk274ah-a"
+                                    ],
+                        "url":  "https://istyle.ae/products/iphone-duo-mk274ah-a"
+                    },
+                    {
+                        "store":  "Emax",
+                        "category":  "Electronics retailer",
+                        "type":  "emax",
+                        "everySeconds":  15,
+                        "variant":  "512GB Star White",
+                        "sku":  "100000471458",
+                        "price":  9349,
+                        "url":  "https://uae.emaxme.com/buy-apple-iphone-duo-512gb-star-white-uae-version-p-01M28DZJ6TX2NX1VTJEXD70WPT-Star%20White-512%20GB.html"
+                    },
+                    {
+                        "store":  "Emax",
+                        "category":  "Electronics retailer",
+                        "type":  "emax",
+                        "everySeconds":  15,
+                        "variant":  "512GB Night Sky",
+                        "sku":  "100000471459",
+                        "price":  9349,
+                        "url":  "https://uae.emaxme.com/buy-apple-iphone-duo-512gb-night-sky-uae-version-p-01M28DZJ6TX2NX1VTJEXD70WPT-Night%20Sky-512%20GB.html"
+                    },
+                    {
+                        "store":  "Virgin Megastore",
+                        "category":  "Electronics retailer",
+                        "type":  "virgin",
+                        "everySeconds":  15,
+                        "variant":  "512GB (any colour)",
+                        "query":  "iphone duo 512gb",
+                        "url":  "https://www.virginmegastore.ae/en/electronics-accessories/apple/iphone/iphone-duo/c/n01080713"
+                    },
+                    {
+                        "store":  "Grand Stores",
+                        "category":  "Electronics retailer",
+                        "type":  "grandstores",
+                        "variant":  "512GB Star White",
+                        "unverified":  true,
+                        "url":  "https://shop.grandstores.ae/en/apple-iphone-duo-512gb-star-white.html"
+                    },
+                    {
+                        "store":  "Grand Stores",
+                        "category":  "Electronics retailer",
+                        "type":  "grandstores",
+                        "variant":  "512GB Night Sky",
+                        "unverified":  true,
+                        "url":  "https://shop.grandstores.ae/en/apple-iphone-duo-512gb-night-sky.html"
+                    },
+                    {
+                        "store":  "Carrefour",
+                        "category":  "Hypermarket",
+                        "type":  "carrefour",
+                        "variant":  "512GB (any colour)",
+                        "query":  "apple iphone duo 512gb",
+                        "url":  "https://www.carrefouruae.com/mafuae/en/search?keyword=apple%20iphone%20duo%20512gb"
+                    },
+                    {
+                        "store":  "Lulu",
+                        "category":  "Hypermarket",
+                        "type":  "lulu",
+                        "variant":  "512GB (any colour)",
+                        "query":  "iphone duo 512gb",
+                        "url":  "https://www.luluhypermarket.com/en-ae/list/?search_text=iphone%20duo%20512gb"
+                    },
+                    {
+                        "store":  "e\u0026",
+                        "category":  "Telecom operator",
+                        "type":  "eand",
+                        "everySeconds":  15,
+                        "variant":  "512GB Star White",
+                        "sku":  "bgskuTrans3820241230",
+                        "url":  "https://www.eand.ae/eshop/devices/configuration/key-prod1t1791798293318?productId=prod1T1791798293318\u0026skuId=bgskuTrans3820241230\u0026lang=en"
+                    },
+                    {
+                        "store":  "e\u0026",
+                        "category":  "Telecom operator",
+                        "type":  "eand",
+                        "everySeconds":  15,
+                        "variant":  "512GB Night Sky",
+                        "sku":  "bgskuTrans3820241235",
+                        "url":  "https://www.eand.ae/eshop/devices/configuration/key-prod1t1791798293318?productId=prod1T1791798293318\u0026skuId=bgskuTrans3820241235\u0026lang=en"
+                    },
+                    {
+                        "store":  "du",
+                        "category":  "Telecom operator",
+                        "type":  "du",
+                        "everySeconds":  15,
+                        "variant":  "512GB Star White",
+                        "code":  "COM-HS-APP-1014",
+                        "url":  "https://shop.du.ae/en/personal/Mobile-phones/iphone-duo-p-COM-HS-APP-1014"
+                    },
+                    {
+                        "store":  "du",
+                        "category":  "Telecom operator",
+                        "type":  "du",
+                        "everySeconds":  15,
+                        "variant":  "512GB Night Sky",
+                        "code":  "COM-HS-APP-1015",
+                        "url":  "https://shop.du.ae/en/personal/Mobile-phones/iphone-duo-p-COM-HS-APP-1015"
+                    },
+                    {
+                        "store":  "Amazon.ae",
+                        "category":  "Online marketplace",
+                        "type":  "amazon",
+                        "variant":  "512GB (any colour)",
+                        "unverified":  true,
+                        "everyMinutes":  5,
+                        "url":  "https://www.amazon.ae/s?k=apple+iphone+duo+512gb"
+                    },
+                    {
+                        "store":  "Amazon.ae",
+                        "category":  "Online marketplace",
+                        "type":  "amazon",
+                        "variant":  "512GB same-day delivery",
+                        "unverified":  true,
+                        "everyMinutes":  5,
+                        "url":  "https://www.amazon.ae/s?k=apple+iphone+duo+512gb\u0026i=samedaystore"
+                    },
+                    {
+                        "store":  "Noon",
+                        "category":  "Online marketplace",
+                        "type":  "noon",
+                        "variant":  "512GB (any colour)",
+                        "query":  "apple iphone duo 512gb",
+                        "url":  "https://www.noon.com/uae-en/search/?q=apple%20iphone%20duo%20512gb"
+                    },
+                    {
+                        "store":  "Noon Minutes",
+                        "category":  "Quick delivery (15 min)",
+                        "type":  "noonminutes",
+                        "variant":  "512GB (any colour)",
+                        "query":  "iphone duo",
+                        "url":  "https://minutes.noon.com/uae-en/search/?q=iphone%20duo"
+                    },
+                    {
+                        "store":  "Microless",
+                        "category":  "Online retailer (international versions)",
+                        "type":  "microless",
+                        "variant":  "512GB (any colour)",
+                        "url":  "https://uae.microless.com/search/?query=iphone+duo+512gb"
+                    },
+                    {
+                        "store":  "Dubai Duty Free",
+                        "category":  "Airport duty free",
+                        "type":  "dubaidutyfree",
+                        "variant":  "512GB (any colour)",
+                        "query":  "iphone duo",
+                        "url":  "https://www.dubaidutyfree.com/searchresults?Ntt=iphone%20duo"
+                    },
+                    {
+                        "store":  "iPoint",
+                        "category":  "Independent reseller (likely imported)",
+                        "type":  "ipoint",
+                        "variant":  "512GB (colour not listed)",
+                        "handle":  "iphone-duo",
+                        "unverified":  true,
+                        "url":  "https://ipoint.ae/products/iphone-duo"
+                    },
+                    {
+                        "store":  "Cartlow",
+                        "category":  "Online marketplace (new units only)",
+                        "type":  "cartlow",
+                        "variant":  "512GB (any colour)",
+                        "query":  "iphone duo 512gb",
+                        "url":  "https://cartlow.com/uae/en/search?query=iphone+duo+512gb"
+                    },
+                    {
+                        "store":  "Revibe",
+                        "category":  "Online marketplace (new units only)",
+                        "type":  "revibe",
+                        "variant":  "512GB (any colour)",
+                        "query":  "iphone duo",
+                        "url":  "https://revibe.me/search?q=iphone+duo"
+                    }
+                ]
+}

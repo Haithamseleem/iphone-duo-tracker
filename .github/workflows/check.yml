@@ -1,0 +1,74 @@
+# Every 5 minutes (GitHub often starts scheduled runs late): checks every UAE store once, sends Telegram/WhatsApp/phone
+# alerts (TRACKER_SECRETS secret, made by publish.ps1 -CopySecret), keeps state on the "data" branch and publishes the
+# dashboard to GitHub Pages.
+name: Stock check
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: stock-check
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  check:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore saved state
+        shell: bash
+        run: |
+          if git fetch -q --depth 1 origin data 2>/dev/null; then git checkout FETCH_HEAD -- . && git reset -q; fi
+
+      # Times in alerts, the log and delivery dates are UAE time.
+      - name: Use UAE time
+        shell: powershell
+        run: tzutil /s "Arabian Standard Time"
+
+      - name: Check the stores
+        id: check
+        shell: powershell
+        env:
+          TRACKER_SECRETS: ${{ secrets.TRACKER_SECRETS }}
+        run: ./tracker.ps1 -Quiet
+
+      # One orphan commit, force-pushed, so the data branch never grows.
+      - name: Save state
+        if: ${{ !cancelled() }}
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          export GIT_INDEX_FILE="$RUNNER_TEMP/state-index"
+          for f in state.json history.json health.json tracker.log; do [ -f "$f" ] && git add -f "$f"; done
+          commit=$(git commit-tree "$(git write-tree)" -m 'Tracker state')
+          git push -q -f origin "$commit:refs/heads/data"
+
+      - name: Prepare the page
+        if: steps.check.outcome == 'success'
+        shell: bash
+        run: |
+          mkdir -p _site
+          cp dashboard.html _site/index.html
+          if [ -d logos ]; then cp -r logos _site/; fi
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.check.outcome == 'success'
+        with:
+          path: _site
+
+      - id: deploy
+        if: steps.check.outcome == 'success'
+        uses: actions/deploy-pages@v4

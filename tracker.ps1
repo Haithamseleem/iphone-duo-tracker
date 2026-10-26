@@ -1275,6 +1275,7 @@ if ($writePage -and (Test-Path $template)) {
         folder          = $Root
         cloud           = $Cloud
         runUrl          = $RunUrl
+        repo            = $(if ($Cloud) { $env:GITHUB_REPOSITORY } else { '' })
         notTracked      = @($Config.notTracked)
         applePrice      = $Config.applePrice
         priority        = @($Config.priorityStores)

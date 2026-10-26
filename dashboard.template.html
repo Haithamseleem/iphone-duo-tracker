@@ -76,6 +76,11 @@
   .banner.ok { background: var(--ok-soft); }
   .banner.warn { background: var(--warn-soft); }
   .banner.danger { background: var(--bad-soft); color: var(--bad); }
+  .banner.setup { flex-direction: column; align-items: stretch; gap: 8px; background: var(--warn-soft); }
+  .setup-steps { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+  .key-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .key-row input { flex: 1 1 220px; min-width: 0; padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px;
+                   font: inherit; background: var(--surface); color: var(--text); }
 
   /* Hero */
   .hero { border-radius: 24px; padding: 32px; display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 28px; color: #fff;
@@ -681,19 +686,13 @@ function render() {
 function runState(checkedMs, storeCount) {
   const banner = $('runBanner'), run = $('run'), label = $('runLabel'), ic = $('runIcon');  const requested = Number(localStorage.getItem(RUN_KEY) || 0);
   const show = (cls, msg) => { banner.className = 'banner ' + cls; banner.textContent = msg; banner.hidden = false; };
-  // On GitHub Pages the button opens the workflow page, where "Run workflow" starts a check.
-  if (DATA.cloud) {
-    if (DATA.runUrl) Object.assign(run, { href: DATA.runUrl, target: '_blank', rel: 'noopener noreferrer',
-      title: 'Opens GitHub: click Run workflow, then the green Run workflow button.' });
-    run.addEventListener('click', () => show('', 'On GitHub, click Run workflow. Fresh results show here in about 5 minutes; this page updates by itself.'));
-    setTimeout(() => location.reload(), 60000);
-    return;
-  }
-  const checking = () => {
+  const checking = (msg) => {
     run.setAttribute('aria-disabled', 'true'); label.textContent = `Checking ${storeCount} stores…`;
     if (ic) ic.classList.add('spin');
-    show('', 'Checking every store now — fresh results in about 30 seconds. Keep this page open; it updates by itself.');
+    show('', msg || 'Checking every store now — fresh results in about 30 seconds. Keep this page open; it updates by itself.');
   };
+  const idle = () => { run.removeAttribute('aria-disabled'); label.textContent = 'Run check now'; if (ic) ic.classList.remove('spin'); };
+  if (DATA.cloud) { cloudRun(checkedMs, show, checking, idle); return; }
   if (requested) {
     if (checkedMs >= requested - 5000) {
       localStorage.removeItem(RUN_KEY);
@@ -714,6 +713,113 @@ function runState(checkedMs, storeCount) {
     setTimeout(() => location.reload(), 12000);
   });
   setTimeout(() => location.reload(), 30000);
+}
+
+// GitHub Pages: the button asks GitHub to start a check in the background, using a key saved only in this browser
+// (a fine-grained token that can only run this repository's workflow), follows that run, then reloads once GitHub has
+// published the fresh page.
+const KEY_KEY = 'iphoneDuoGitHubKey', CLOUD_RUN_KEY = 'iphoneDuoCloudRun';
+function cloudRun(checkedMs, show, checking, idle) {
+  const run = $('run'), banner = $('runBanner');
+  const api = `https://api.github.com/repos/${DATA.repo}/actions/workflows/check.yml`;
+  const call = (path, body) => fetch(api + path, {
+    method: body ? 'POST' : 'GET', body: body ? JSON.stringify(body) : undefined,
+    headers: { Accept: 'application/vnd.github+json', Authorization: 'Bearer ' + localStorage.getItem(KEY_KEY) }
+  });
+  // Pages are cached for up to 10 minutes; a new query string fetches the latest one.
+  const reload = () => location.replace(location.pathname + '?t=' + Date.now());
+  const wait = 'Checking every store in the cloud — fresh results in about 3 minutes. Keep this page open; it updates by itself.';
+  let pending = null, typing = false;
+  try { pending = JSON.parse(localStorage.getItem(CLOUD_RUN_KEY)); } catch { }
+  const done = () => { pending = null; localStorage.removeItem(CLOUD_RUN_KEY); idle(); };
+
+  async function follow() {
+    if (Date.now() - pending.at > 10 * 60000) {
+      done(); show('warn', "The check didn't finish within 10 minutes. GitHub may be busy; this page still updates on its own.");
+      return;
+    }
+    checking(wait);
+    try {
+      const r = await call('/runs?event=workflow_dispatch&per_page=5');
+      if (r.ok) {
+        // Allow for this device's clock being a little off from GitHub's.
+        const mine = ((await r.json()).workflow_runs || []).find(x => new Date(x.created_at).getTime() >= pending.at - 120000);
+        if (mine && mine.status === 'completed') {
+          if (mine.conclusion !== 'success') { done(); show('warn', 'The check failed on GitHub. The next automatic check runs within 10 minutes.'); return; }
+          setTimeout(reload, 10000);
+          return;
+        }
+      }
+    } catch { }
+    setTimeout(follow, 10000);
+  }
+
+  async function start() {
+    checking(wait);
+    let r = null;
+    try { r = await call('/dispatches', { ref: 'main', inputs: { test: false } }); } catch { }
+    if (r && r.status === 204) {
+      pending = { at: Date.now(), base: checkedMs };
+      localStorage.setItem(CLOUD_RUN_KEY, JSON.stringify(pending));
+      setTimeout(follow, 15000);
+      return;
+    }
+    idle();
+    if (r && [401, 403, 404].includes(r.status)) {
+      localStorage.removeItem(KEY_KEY);
+      setup('GitHub did not accept the saved key (expired, or missing the Actions permission). Make a new one:');
+      return;
+    }
+    show('warn', "Couldn't reach GitHub. Check your connection and try again.");
+  }
+
+  function setup(note) {
+    typing = true;
+    banner.className = 'banner setup'; banner.replaceChildren(); banner.hidden = false;
+    const link = Object.assign(el('a', null, "GitHub's new token page"),
+      { href: 'https://github.com/settings/personal-access-tokens/new', target: '_blank', rel: 'noopener noreferrer' });
+    const first = el('li', null, 'Open '); first.append(link, document.createTextNode(' (signed in to GitHub).'));
+    const steps = el('ol', 'setup-steps');
+    steps.append(first,
+      el('li', null, `Token name: Dashboard refresh. Under Repository access choose Only select repositories, then ${DATA.repo.split('/')[1]}.`),
+      el('li', null, 'Under Permissions, add Actions and set it to Read and write. Click Generate token and copy it.'),
+      el('li', null, 'Paste it here and click Save.'));
+    const input = Object.assign(el('input'), { type: 'password', placeholder: 'github_pat_…', autocomplete: 'off', spellcheck: false });
+    input.setAttribute('aria-label', 'GitHub token');
+    const save = Object.assign(el('button', 'btn primary small', 'Save and run check'), { type: 'button' });
+    const cancel = Object.assign(el('button', 'btn ghost small', 'Cancel'), { type: 'button' });
+    const err = el('span', 'small');
+    save.addEventListener('click', () => {
+      const v = input.value.trim();
+      if (!/^(github_pat_|ghp_)\w+$/.test(v)) { err.textContent = 'That does not look like a GitHub token. It starts with github_pat_.'; input.focus(); return; }
+      localStorage.setItem(KEY_KEY, v);
+      typing = false; banner.replaceChildren();
+      start();
+    });
+    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') save.click(); });
+    cancel.addEventListener('click', () => { typing = false; banner.hidden = true; });
+    const row = el('div', 'key-row'); row.append(input, save, cancel);
+    banner.append(el('b', null, note || 'One-time setup so this button can start a check by itself:'), steps, row, err,
+      el('span', 'small muted', 'Saved only in this browser, and it can only start checks for this tracker. Set it up once on each phone or computer.'));
+    input.focus();
+  }
+
+  // Without scripts the link still opens GitHub's Run workflow page.
+  if (DATA.runUrl) run.href = DATA.runUrl;
+  run.title = 'Starts a check on GitHub in the background.';
+  run.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (pending || typing) return;
+    if (localStorage.getItem(KEY_KEY)) start(); else setup();
+  });
+  if (pending) {
+    if (checkedMs > pending.base) {
+      done(); show('ok', 'Updated just now with fresh results.');
+      setTimeout(() => { banner.hidden = true; }, 15000);
+    } else follow();
+  }
+  // Automatic checks publish a new page every 5-10 minutes.
+  setInterval(() => { if (!pending && !typing) reload(); }, 120000);
 }
 
 render();

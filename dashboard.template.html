@@ -767,10 +767,11 @@ function cloudRun(checkedMs, show, checking, idle) {
     idle();
     if (r && [401, 403, 404].includes(r.status)) {
       localStorage.removeItem(KEY_KEY);
-      setup('GitHub did not accept the saved key (expired, or missing the Actions permission). Make a new one:');
+      setup(r.status === 401 ? 'GitHub says this key is wrong or expired. Make a new one:'
+        : `This key can't start checks (error ${r.status}): it needs access to ${DATA.repo.split('/')[1]} with Actions set to Read and write. Make a new one:`);
       return;
     }
-    show('warn', "Couldn't reach GitHub. Check your connection and try again.");
+    show('warn', r ? `GitHub refused the request (error ${r.status}). Try again in a minute.` : "Couldn't reach GitHub. Check your connection and try again.");
   }
 
   function setup(note) {

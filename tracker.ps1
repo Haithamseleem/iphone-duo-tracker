@@ -1181,17 +1181,20 @@ foreach ($r in $results) {
     if ($r.Skipped) { $state[$r.Key] = $old; continue }
     if ($r.State -eq 'Error') {
         # Keep the last good result; the attempt still counts, so the store waits its full interval (longer while it keeps failing).
-        if ($old) { $state[$r.Key] = @{ State = $old.State; Detail = $old.Detail; Checked = $checkedAt; Ms = $old.Ms; Fails = [int]$old.Fails + 1 } }
+        # A store that has never been checked successfully is saved as Error, so it too waits its interval instead of
+        # being retried every run (the cloud's blocked stores).
+        $state[$r.Key] = if ($old) { @{ State = $old.State; Detail = $old.Detail; Checked = $checkedAt; Ms = $old.Ms; Fails = [int]$old.Fails + 1 } }
+                         else { @{ State = 'Error'; Detail = $r.Detail; Checked = $checkedAt; Ms = $checkMs[$r.Key]; Fails = 1 } }
         continue
     }
     $state[$r.Key] = @{ State = $r.State; Detail = $r.Detail; Checked = $checkedAt; Ms = $checkMs[$r.Key] }
-    # Saved states from before pre-orders were folded into out of stock.
-    $oldState = if ($old -and $old.State -eq 'PreOrder') { 'OutOfStock' } elseif ($old) { $old.State } else { $null }
+    # Saved states from before pre-orders were folded into out of stock; a saved Error means no earlier result.
+    $oldState = if ($old -and $old.State -eq 'PreOrder') { 'OutOfStock' } elseif ($old -and $old.State -ne 'Error') { $old.State } else { $null }
     if ($r.State -eq 'InStock' -and $oldState -ne 'InStock') {
         [void]$events.Add(@{ Kind = 'Available'; Row = $r; From = $oldState }); Add-History $r $oldState
-    } elseif ($old -and $oldState -ne $r.State) {
+    } elseif ($oldState -and $oldState -ne $r.State) {
         [void]$events.Add(@{ Kind = 'Change'; Row = $r; From = $oldState }); Add-History $r $oldState
-    } elseif ($old -and $r.State -eq 'InStock') {
+    } elseif ($oldState -and $r.State -eq 'InStock') {
         # Same status: only a moved delivery date is worth an alert, not wording or price-format changes.
         $oldEta = Get-EtaDate $old.Detail; $newEta = Get-EtaDate $r.Detail
         if ($oldEta -and $newEta -and $oldEta -ne $newEta) {

@@ -868,6 +868,8 @@ if ($Cloud) {
         $sec, $key = $f.Split('.'); $v = "$($Config.$sec.$key)"
         if ($v.Length -ge 4) { $v }
     })
+    # GitHub hides only the secret as a whole in the public run logs; this hides each token and number in it too.
+    foreach ($v in $PrivateValues) { Write-Host "::add-mask::$v" }
 }
 # Finds your chat ID from the message you sent the bot, saves it, and sends a test message.
 if ($SetupTelegram) {

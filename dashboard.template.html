@@ -777,13 +777,16 @@ function cloudRun(checkedMs, show, checking, idle) {
   function setup(note) {
     typing = true;
     banner.className = 'banner setup'; banner.replaceChildren(); banner.hidden = false;
-    const link = Object.assign(el('a', null, "GitHub's new token page"),
-      { href: 'https://github.com/settings/personal-access-tokens/new', target: '_blank', rel: 'noopener noreferrer' });
-    const first = el('li', null, 'Open '); first.append(link, document.createTextNode(' (signed in to GitHub).'));
+    // GitHub's template link fills in the name, a one-year expiry and Actions: Read and write; only the repository is left.
+    const owner = DATA.repo.split('/')[0], repoName = DATA.repo.split('/')[1];
+    const link = Object.assign(el('a', null, "GitHub's new token page"), { target: '_blank', rel: 'noopener noreferrer',
+      href: 'https://github.com/settings/personal-access-tokens/new?' + new URLSearchParams({ name: 'Dashboard refresh',
+        description: `Run check now button on the ${repoName} dashboard`, target_name: owner, expires_in: '366', actions: 'write' }) });
+    const first = el('li', null, 'Open '); first.append(link, document.createTextNode(' (signed in to GitHub). The name and permission are filled in.'));
     const steps = el('ol', 'setup-steps');
     steps.append(first,
-      el('li', null, `Token name: Dashboard refresh. Under Repository access choose Only select repositories, then ${DATA.repo.split('/')[1]}.`),
-      el('li', null, 'Under Permissions, add Actions and set it to Read and write. Click Generate token and copy it.'),
+      el('li', null, `Under Repository access, choose Only select repositories, then pick ${repoName}.`),
+      el('li', null, 'Check that Permissions shows Actions: Read and write. Click Generate token and copy it.'),
       el('li', null, 'Paste it here and click Save.'));
     const input = Object.assign(el('input'), { type: 'password', placeholder: 'github_pat_…', autocomplete: 'off', spellcheck: false });
     input.setAttribute('aria-label', 'GitHub token');

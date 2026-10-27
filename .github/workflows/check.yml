@@ -1,6 +1,7 @@
-# Every 5 minutes (GitHub often starts scheduled runs late): checks every UAE store once, sends Telegram/WhatsApp/phone
-# alerts (TRACKER_SECRETS secret, made by publish.ps1 -CopySecret), keeps state on the "data" branch and publishes the
-# dashboard to GitHub Pages.
+# Checks the UAE stores, sends Telegram/WhatsApp/phone alerts (TRACKER_SECRETS secret, made by publish.ps1 -CopySecret),
+# keeps state on the "data" branch and publishes the dashboard to GitHub Pages. Each check starts the next one about
+# 2 minutes after it began; the 5-minute schedule (which GitHub runs only every 30-60 minutes) restarts that chain if
+# it ever stops.
 name: Stock check
 
 on:
@@ -9,26 +10,53 @@ on:
   workflow_dispatch:
     inputs:
       test:
-        description: Send a sample Telegram alert instead of checking
+        description: Send test alerts instead of checking
         type: boolean
         default: false
+      channels:
+        description: Test which alerts (a phone call uses Twilio credit)
+        type: choice
+        options: [telegram, telegram+whatsapp, telegram+whatsapp+call]
+        default: telegram
+      count:
+        description: How many tests (1-10)
+        type: number
+        default: 1
+      gap:
+        description: Minutes between tests
+        type: number
+        default: 2
 
 permissions:
   contents: write
   pages: write
   id-token: write
+  actions: write
 
 jobs:
   test:
     if: inputs.test
     runs-on: windows-latest
-    timeout-minutes: 5
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - shell: powershell
+      - name: Send test alerts
+        shell: powershell
         env:
           TRACKER_SECRETS: ${{ secrets.TRACKER_SECRETS }}
-        run: ./tracker.ps1 -TestTelegram
+          TEST_CHANNELS: ${{ inputs.channels }}
+          TEST_COUNT: ${{ inputs.count }}
+          TEST_GAP: ${{ inputs.gap }}
+        run: |
+          $n = [Math]::Max(1, [Math]::Min(10, [int]$env:TEST_COUNT))
+          $gap = [Math]::Max(1, [Math]::Min(10, [int]$env:TEST_GAP))
+          for ($i = 1; $i -le $n; $i++) {
+            $env:TRACKER_TEST_LABEL = $(if ($n -gt 1) { "test $i of $n" } else { '' })
+            ./tracker.ps1 -TestTelegram
+            if ($env:TEST_CHANNELS -match 'whatsapp') { ./tracker.ps1 -TestWhatsApp }
+            if ($env:TEST_CHANNELS -match 'call') { ./tracker.ps1 -TestCall }
+            if ($i -lt $n) { Start-Sleep -Seconds (60 * $gap) }
+          }
 
   check:
     if: ${{ !inputs.test }}
@@ -42,6 +70,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
+      - name: Note the start time
+        id: start
+        shell: bash
+        run: echo "at=$(date +%s)" >> "$GITHUB_OUTPUT"
+
       - uses: actions/checkout@v4
 
       - name: Restore saved state
@@ -89,3 +122,16 @@ jobs:
       - id: deploy
         if: steps.check.outcome == 'success'
         uses: actions/deploy-pages@v4
+
+      # The concurrency group keeps at most one check waiting, so extra starts (the schedule, Run check now) can't
+      # pile up into parallel chains.
+      - name: Start the next check
+        if: ${{ !cancelled() }}
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STARTED: ${{ steps.start.outputs.at }}
+        run: |
+          wait=$(( 115 - ($(date +%s) - STARTED) ))
+          if [ "$wait" -gt 0 ]; then sleep "$wait"; fi
+          gh workflow run check.yml --repo "$GITHUB_REPOSITORY" --ref main -f test=false

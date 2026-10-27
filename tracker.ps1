@@ -893,21 +893,25 @@ if ($TestTelegram) {
     $sample = [pscustomobject]@{ Store = 'Sharaf DG'; Variant = '512GB Star White'; State = 'InStock'; Price = 9349
         Vs = "Apple's price (AED 9,349)"; Detail = 'TEST ONLY - in store at City Centre Mirdif, Dubai Mall (call ahead)'
         Url = 'https://uae.sharafdg.com/product/apple-iphone-duo-512gb-star-white-middle-east-version-pre-order/' }
-    try { if (Send-Telegram 'TEST - iPhone Duo 512GB AVAILABLE: Sharaf DG' '' $sample.Url $sample) { Write-Host 'Sample Telegram alert sent.' } else { Write-Host 'Telegram is not set up: run tracker.ps1 -SetupTelegram.' } }
+    # TRACKER_TEST_LABEL (e.g. "test 2 of 5", set by the cloud test job) numbers repeated tests.
+    $label = if ($env:TRACKER_TEST_LABEL) { " ($env:TRACKER_TEST_LABEL)" } else { '' }
+    try { if (Send-Telegram "TEST$label - iPhone Duo 512GB AVAILABLE: Sharaf DG" '' $sample.Url $sample) { Write-Host "Sample Telegram alert sent$label." } else { Write-Host 'Telegram is not set up: run tracker.ps1 -SetupTelegram.' } }
     catch { Write-Host "Telegram test failed: $(Get-ErrorText $_)" }
     return
 }
 
 if ($TestWhatsApp) {
+    $label = if ($env:TRACKER_TEST_LABEL) { " ($env:TRACKER_TEST_LABEL)" } else { '' }
     try {
-        if (Send-WhatsApp '*iPhone Duo tracker*: test message. WhatsApp alerts are working.') { Write-Host "Test WhatsApp sent to $($Config.whatsapp.phone)." }
+        # The cloud run log is public, so it never shows the phone number.
+        if (Send-WhatsApp "*iPhone Duo tracker*: test message$label. WhatsApp alerts are working.") { Write-Host "Test WhatsApp sent$label$(if (-not $Cloud) { " to $($Config.whatsapp.phone)" })." }
         else { Write-Host 'WhatsApp is not set up: fill in whatsapp.phone and whatsapp.twilioFrom in config.json.' }
     } catch { Write-Host "WhatsApp test failed: $(Get-ErrorText $_)" }
     return
 }
 
 if ($TestCall) {
-    if (Send-PhoneCall 'This is a test call from your iPhone Duo stock tracker. Phone alerts are working.') { Write-Host "Test call placed to $($Config.phoneCall.to)." }
+    if (Send-PhoneCall 'This is a test call from your iPhone Duo stock tracker. Phone alerts are working.') { Write-Host "Test call placed$(if (-not $Cloud) { " to $($Config.phoneCall.to)" })." }
     else { Write-Host 'Phone call is not set up: fill in phoneCall in config.json (Twilio account SID, auth token and your Twilio number).' }
     return
 }

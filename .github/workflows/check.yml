@@ -1,8 +1,10 @@
 # Checks the UAE stores, sends Telegram/WhatsApp/phone alerts (TRACKER_SECRETS secret, made by publish.ps1 -CopySecret),
 # keeps state on the "data" branch and publishes the dashboard to GitHub Pages. Each check starts the next one about
 # 2 minutes after it began; the 5-minute schedule (which GitHub runs only every 30-60 minutes) restarts that chain if
-# it ever stops.
+# it ever stops. The "gate" job keeps checks one at a time and cancels a check that hangs, instead of a concurrency
+# group (on 27 Oct a check waiting in that group never started, which stopped the chain).
 name: Stock check
+run-name: ${{ inputs.test && 'Test alerts' || 'Stock check' }}
 
 on:
   schedule:
@@ -58,12 +60,38 @@ jobs:
             if ($i -lt $n) { Start-Sleep -Seconds (60 * $gap) }
           }
 
-  check:
+  # One check at a time: a newer check waits here until older ones finish, and an older one still not finished
+  # 12 minutes after it was created (a normal one takes about 3; GitHub sometimes leaves a run waiting forever) is
+  # cancelled. Test alerts ("Test alerts" runs) never wait or count.
+  gate:
     if: ${{ !inputs.test }}
-    # One check at a time; a test message never waits behind or cancels one.
-    concurrency:
-      group: stock-check
-      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      go: ${{ steps.wait.outputs.go }}
+    steps:
+      - id: wait
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 96); do
+            older=$(gh run list -R "$GITHUB_REPOSITORY" -w check.yml -L 30 --json databaseId,status,displayTitle,createdAt \
+              --jq "[.[] | select(.displayTitle == \"Stock check\" and .status != \"completed\" and .databaseId < $GITHUB_RUN_ID)]")
+            if [ "$(echo "$older" | jq length)" = "0" ]; then echo "go=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+            cut=$(date -u -d '-12 min' +%Y-%m-%dT%H:%M:%SZ); hung=$(date -u -d '-20 min' +%Y-%m-%dT%H:%M:%SZ)
+            for id in $(echo "$older" | jq -r --arg cut "$cut" '.[] | select(.createdAt < $cut) | .databaseId'); do
+              echo "Run $id is still not finished after 12 minutes: cancelling it."; gh run cancel "$id" -R "$GITHUB_REPOSITORY" || true
+            done
+            for id in $(echo "$older" | jq -r --arg cut "$hung" '.[] | select(.createdAt < $cut) | .databaseId'); do
+              gh api -X POST "repos/$GITHUB_REPOSITORY/actions/runs/$id/force-cancel" >/dev/null 2>&1 || true
+            done
+            sleep 10
+          done
+          echo "Older checks are still running after 16 minutes; this one stops."; echo "go=false" >> "$GITHUB_OUTPUT"
+
+  check:
+    needs: gate
+    if: ${{ !inputs.test && needs.gate.outputs.go == 'true' }}
     runs-on: windows-latest
     timeout-minutes: 10
     environment:
@@ -123,8 +151,8 @@ jobs:
         if: steps.check.outcome == 'success'
         uses: actions/deploy-pages@v4
 
-      # The concurrency group keeps at most one check waiting, so extra starts (the schedule, Run check now) can't
-      # pile up into parallel chains.
+      # A check already queued after this one (Run check now, the schedule) carries the chain on instead, so extra
+      # starts never make a second chain.
       - name: Start the next check
         if: ${{ !cancelled() }}
         shell: bash
@@ -134,4 +162,7 @@ jobs:
         run: |
           wait=$(( 115 - ($(date +%s) - STARTED) ))
           if [ "$wait" -gt 0 ]; then sleep "$wait"; fi
-          gh workflow run check.yml --repo "$GITHUB_REPOSITORY" --ref main -f test=false
+          newer=$(gh run list -R "$GITHUB_REPOSITORY" -w check.yml -L 30 --json databaseId,status,displayTitle \
+            --jq "[.[] | select(.displayTitle == \"Stock check\" and .status != \"completed\" and .databaseId > $GITHUB_RUN_ID)] | length")
+          if [ "$newer" = "0" ]; then gh workflow run check.yml --repo "$GITHUB_REPOSITORY" --ref main -f test=false
+          else echo "A newer check is already queued; it carries the chain on."; fi

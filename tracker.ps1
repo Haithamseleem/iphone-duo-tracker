@@ -18,7 +18,7 @@ $SecretFields = @(('phoneCall', 'twilioAuthToken'), ('telegram', 'botToken'), ('
 $UA         = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
 $ToastAppId = '{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe'
 $Months     = 'jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'
-$StateLabel = @{ InStock = 'AVAILABLE NOW'; Unverified = 'Unconfirmed (call store)'; PreOrder = 'Pre-order / backorder'; OutOfStock = 'Out of stock'; Error = 'Check failed' }
+$StateLabel = @{ InStock = 'AVAILABLE NOW'; Unverified = 'Unconfirmed (call store)'; PreOrder = 'Pre-order / backorder'; OutOfStock = 'Out of stock'; Error = 'Check failed'; Cloud = "Can't check from the cloud" }
 
 # Cloud mode (GitHub Actions, .github/workflows/check.yml): alert settings come from the TRACKER_SECRETS secret, there is
 # no desktop for Windows alerts or opening store pages, and the saved log, health file and page are public, so tokens
@@ -781,6 +781,8 @@ function Update-StoreHealth($Results) {
     $seen = @{}
     foreach ($r in $Results) {
         $seen[$r.Key] = $true
+        # A store that blocks GitHub's servers is not a failure: no streak, no "can't check" message.
+        if ($r.Blocked) { $health.stores.Remove($r.Key); continue }
         if ($r.Skipped) { continue }   # not checked this run: its failure streak stands as it was
         $s = $health.stores[$r.Key]
         if ($r.State -eq 'Error') {
@@ -1089,6 +1091,11 @@ $jobs = foreach ($t in $ordered) {
     $old = $previous[$key]
     $j = $inflight[$key]
     if ($j) { $j.Pending = $false; $j.Skipped = $false; $j.Old = $old; $j; continue }
+    # "cloudBlocked": the store refuses GitHub's servers, so the cloud doesn't ask it at all.
+    if ($Cloud -and $t.cloudBlocked) {
+        [pscustomobject]@{ Target = $t; Skipped = $true; Blocked = $true; Old = $old; Pending = $false }
+        continue
+    }
     if (-not $forceAll -and -not (Test-Due $t $old)) {
         [pscustomobject]@{ Target = $t; Skipped = $true; Old = $old; Pending = $false }
         continue
@@ -1113,7 +1120,15 @@ foreach ($j in @($jobs | Where-Object { -not $_.Skipped })) {
 $results = foreach ($j in $jobs) {
     $t = $j.Target
     $row = [ordered]@{ Key = "$($t.store) | $($t.variant)"; Store = $t.store; Category = $t.category; Variant = $t.variant; Url = $t.url
-                       State = 'Error'; Detail = ''; Price = $null; Vs = ''; Skipped = [bool]$j.Skipped; Throttled = ([int]$t.everyMinutes -gt 1) }
+                       State = 'Error'; Detail = ''; Price = $null; Vs = ''; Skipped = [bool]$j.Skipped; Blocked = [bool]$j.Blocked
+                       Throttled = ([int]$t.everyMinutes -gt 1) }
+    if ($j.Blocked) {
+        $row.State = 'Cloud'
+        $row.Detail = "Can't be checked from the cloud: $($t.store) blocks GitHub's servers. Open the store page to check it yourself."
+        if ($t.price) { $row.Price = [double]$t.price; $row.Vs = Format-OverApple $row.Price }
+        [pscustomobject]$row
+        continue
+    }
     if ($j.Skipped) {
         # Not due this run: show the last result as it was.
         $row.State = if ($j.Old.State -eq 'PreOrder') { 'OutOfStock' } else { $j.Old.State }
@@ -1264,7 +1279,7 @@ Save-Health
 # Watch mode rewrites the status file and dashboard when something changed, otherwise every 30 seconds.
 $writePage = -not $Watch -or $events.Count -or -not $lastPage -or ((Get-Date) - $lastPage).TotalSeconds -ge 30
 if ($writePage) { $lastPage = Get-Date }
-$order  = @{ InStock = 0; Unverified = 1; PreOrder = 2; OutOfStock = 3; Error = 4 }
+$order  = @{ InStock = 0; Unverified = 1; PreOrder = 2; OutOfStock = 3; Error = 4; Cloud = 5 }
 $sorted = $results | Sort-Object { $order[$_.State] }, Store, Variant
 $now    = @($results | Where-Object State -eq 'InStock')
 $vsApple = @{ n = 'vs Apple'; e = { if ($_.Price -and $Config.applePrice) { '{0:+#,0;-#,0;0}' -f ($_.Price - $Config.applePrice) } } }

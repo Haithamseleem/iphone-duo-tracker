@@ -173,7 +173,8 @@
                         "variant":  "512GB Star White",
                         "sku":  "100000471458",
                         "price":  9349,
-                        "url":  "https://uae.emaxme.com/buy-apple-iphone-duo-512gb-star-white-uae-version-p-01M28DZJ6TX2NX1VTJEXD70WPT-Star%20White-512%20GB.html"
+                        "url":  "https://uae.emaxme.com/buy-apple-iphone-duo-512gb-star-white-uae-version-p-01M28DZJ6TX2NX1VTJEXD70WPT-Star%20White-512%20GB.html",
+                        "cloudBlocked":  true
                     },
                     {
                         "store":  "Emax",
@@ -183,7 +184,8 @@
                         "variant":  "512GB Night Sky",
                         "sku":  "100000471459",
                         "price":  9349,
-                        "url":  "https://uae.emaxme.com/buy-apple-iphone-duo-512gb-night-sky-uae-version-p-01M28DZJ6TX2NX1VTJEXD70WPT-Night%20Sky-512%20GB.html"
+                        "url":  "https://uae.emaxme.com/buy-apple-iphone-duo-512gb-night-sky-uae-version-p-01M28DZJ6TX2NX1VTJEXD70WPT-Night%20Sky-512%20GB.html",
+                        "cloudBlocked":  true
                     },
                     {
                         "store":  "Virgin Megastore",
@@ -269,7 +271,8 @@
                         "variant":  "512GB (any colour)",
                         "unverified":  true,
                         "everyMinutes":  5,
-                        "url":  "https://www.amazon.ae/s?k=apple+iphone+duo+512gb"
+                        "url":  "https://www.amazon.ae/s?k=apple+iphone+duo+512gb",
+                        "cloudBlocked":  true
                     },
                     {
                         "store":  "Amazon.ae",
@@ -278,7 +281,8 @@
                         "variant":  "512GB same-day delivery",
                         "unverified":  true,
                         "everyMinutes":  5,
-                        "url":  "https://www.amazon.ae/s?k=apple+iphone+duo+512gb\u0026i=samedaystore"
+                        "url":  "https://www.amazon.ae/s?k=apple+iphone+duo+512gb\u0026i=samedaystore",
+                        "cloudBlocked":  true
                     },
                     {
                         "store":  "Noon",

@@ -75,8 +75,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           for i in $(seq 1 96); do
+            # A run older than 30 minutes is abandoned (a real check takes about 3), even when GitHub can't cancel it.
+            recent=$(date -u -d '-30 min' +%Y-%m-%dT%H:%M:%SZ)
             older=$(gh run list -R "$GITHUB_REPOSITORY" -w check.yml -L 30 --json databaseId,status,displayTitle,createdAt \
-              --jq "[.[] | select(.displayTitle == \"Stock check\" and .status != \"completed\" and .databaseId < $GITHUB_RUN_ID)]")
+              --jq "[.[] | select(.displayTitle == \"Stock check\" and .status != \"completed\" and .databaseId < $GITHUB_RUN_ID and .createdAt > \"$recent\")]")
             if [ "$(echo "$older" | jq length)" = "0" ]; then echo "go=true" >> "$GITHUB_OUTPUT"; exit 0; fi
             cut=$(date -u -d '-12 min' +%Y-%m-%dT%H:%M:%SZ); hung=$(date -u -d '-20 min' +%Y-%m-%dT%H:%M:%SZ)
             for id in $(echo "$older" | jq -r --arg cut "$cut" '.[] | select(.createdAt < $cut) | .databaseId'); do

@@ -79,9 +79,10 @@ jobs:
       - uses: actions/checkout@v4
 
       # One check at a time: this one waits while an older one is still running, and stops if a newer one already
-      # has its machine. A scheduled start stops at once while a check is running (the chain is alive). An older
-      # check still running 35 minutes after it was created (a normal one ends within about 30) is cancelled and
-      # ignored. Checks still waiting for a machine don't count.
+      # has its machine. A scheduled start stops at once while a check is running (the chain is alive), so it never
+      # counts as a newer one here, in the rounds or in the last step (on 28 Oct 21:57 a running check handed over
+      # to one and both stopped). An older check still running 35 minutes after it was created (a normal one ends
+      # within about 30) is cancelled and ignored. Checks still waiting for a machine don't count.
       - name: Wait for the previous check
         id: wait
         shell: bash
@@ -89,7 +90,7 @@ jobs:
           runs="repos/$GITHUB_REPOSITORY/actions/workflows/check.yml/runs?per_page=30"
           for i in $(seq 1 150); do
             old=$(date -u -d '-35 min' +%Y-%m-%dT%H:%M:%SZ)
-            out=$(gh api "$runs" --jq "[.workflow_runs[] | select(.display_title == \"Stock check\" and .status == \"in_progress\" and .id != $GITHUB_RUN_ID)] | \"\([.[] | select(.id > $GITHUB_RUN_ID)] | length) \([.[] | select(.id < $GITHUB_RUN_ID and .created_at > \"$old\")] | length) \([.[] | select(.id < $GITHUB_RUN_ID and .created_at <= \"$old\") | .id | tostring] | join(\",\"))\"") || { sleep 10; continue; }
+            out=$(gh api "$runs" --jq "[.workflow_runs[] | select(.display_title == \"Stock check\" and .status == \"in_progress\" and .id != $GITHUB_RUN_ID)] | \"\([.[] | select(.id > $GITHUB_RUN_ID and .event != \"schedule\")] | length)\([.[] | select(.id < $GITHUB_RUN_ID and .created_at > \"$old\")] | length) \([.[] | select(.id < $GITHUB_RUN_ID and .created_at <= \"$old\") | .id | tostring] | join(\",\"))\"") || { sleep 10; continue; }
             read -r newer older stale <<< "$out"
             for id in ${stale//,/ }; do
               echo "Run $id is still running after 35 minutes: cancelling it."
@@ -139,6 +140,6 @@ jobs:
         shell: bash
         run: |
           recent=$(date -u -d '-10 min' +%Y-%m-%dT%H:%M:%SZ)
-          next=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/check.yml/runs?per_page=30" --jq "[.workflow_runs[] | select(.display_title == \"Stock check\" and .id > $GITHUB_RUN_ID and (.status == \"in_progress\" or (.status != \"completed\" and .created_at > \"$recent\")))] | length") || next=0
+          next=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/check.yml/runs?per_page=30" --jq "[.workflow_runs[] | select(.display_title == \"Stock check\" and .event != \"schedule\" and .id > $GITHUB_RUN_ID and (.status == \"in_progress\" or (.status != \"completed\" and .created_at > \"$recent\")))] | length") || next=0
           if [ "$next" = "0" ]; then gh workflow run check.yml --repo "$GITHUB_REPOSITORY" --ref main -f test=false
           else echo "The next check is on its way."; fi

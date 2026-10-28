@@ -668,6 +668,217 @@ function Send-Alert([string]$Title, [string]$Body, [string]$Url, [switch]$Urgent
     }
 }
 
+# Telegram bot commands: each run reads new messages (getUpdates) and answers them from its own results, so a reply
+# takes up to about a minute. Only messages from the configured chat are answered; others are only marked as read.
+# Replies are plain text (no parse mode), so store text needs no escaping. bot.json (saved on the data branch) keeps
+# the update offset, the mute time and which command menu was registered.
+$BotPath = Join-Path $Root 'bot.json'
+$BotCommands = [ordered]@{
+    status = 'What is available now'
+    store  = 'One store, e.g. /store sharaf'
+    branch = 'One branch, e.g. /branch dubai mall'
+    where  = 'Every branch with stock now'
+    mute   = 'Quiet alerts for a while: /mute 1h, /mute off'
+    help   = 'This list'
+}
+$BotMenu = ($BotCommands.Keys | ForEach-Object { "$_=$($BotCommands[$_])" }) -join ';'
+$BranchStores = 'Apple Store pickup', 'Sharaf DG'
+
+function Read-Bot {
+    $b = [ordered]@{ offset = 0; muteUntil = $null; menu = '' }
+    if (Test-Path $BotPath) {
+        try { (Get-Content $BotPath -Raw -Encoding UTF8 | ConvertFrom-Json).PSObject.Properties | ForEach-Object { $b[$_.Name] = $_.Value } }
+        catch { Write-Log "bot.json unreadable, starting fresh: $($_.Exception.Message)" }
+    }
+    $b
+}
+function Save-Bot { $bot | ConvertTo-Json | Set-Content -Path $BotPath -Encoding UTF8 }
+
+# The end of a /mute that is still running, else $null.
+function Get-MuteUntil {
+    if (-not $bot -or -not $bot.muteUntil) { return $null }
+    $u = [datetime]$bot.muteUntil
+    if ($u -gt (Get-Date)) { $u } else { $null }
+}
+
+function Format-BotTime([datetime]$At) {
+    if ($At.Date -eq (Get-Date).Date) { $At.ToString('HH:mm') } else { $At.ToString('ddd d MMM, HH:mm') }
+}
+
+function Find-Text([string]$Text, [string]$Part) { $Text.IndexOf($Part, [StringComparison]::OrdinalIgnoreCase) -ge 0 }
+
+function Format-BotRow($r) {
+    $line = "$($r.Store) - $($r.Variant): $($StateLabel[$r.State])"
+    if ($r.Price -and $r.State -in 'InStock', 'Unverified') { $line += (' - AED {0:N0}' -f [double]$r.Price) }
+    $d = "$($r.Detail)"
+    if ($d.Length -gt 300) { $d = $d.Substring(0, 300) + '...' }
+    if ($d) { $line += "`n  $d" }
+    $line
+}
+
+# Branch-level stock, where the checks report it: Apple Store pickup ("Available today: Yas Mall | Currently
+# unavailable: Dubai Mall, ...") and Sharaf DG ("In store at A, B (call ahead) | ..."; it names only branches with stock).
+function Get-Branches($Rows) {
+    foreach ($r in $Rows) {
+        if ($r.State -in 'Error', 'Cloud') { continue }
+        if ($r.Store -eq 'Apple Store pickup') {
+            foreach ($g in ("$($r.Detail)" -split '\s\|\s')) {
+                if ($g -notmatch '^(.+?):\s*(.+)$') { continue }
+                $quote = $Matches[1].Trim(); $names = $Matches[2]
+                $has = $r.State -eq 'InStock' -and $quote -notmatch 'unavailable|not available|no longer'
+                foreach ($n in ($names -split ',\s*')) { [pscustomobject]@{ Store = 'Apple'; Branch = $n.Trim(); Variant = $r.Variant; Stock = $has; Note = $quote } }
+            }
+        } elseif ($r.Store -eq 'Sharaf DG' -and "$($r.Detail)" -match 'In store at (.+?) \(call ahead\)') {
+            foreach ($n in ($Matches[1] -split ',\s*')) { [pscustomobject]@{ Store = 'Sharaf DG'; Branch = $n.Trim(); Variant = $r.Variant; Stock = $true; Note = 'in stock, call ahead' } }
+        }
+    }
+}
+
+# One line per branch: "Apple Yas Mall: 512GB Star White (Available today); 512GB Night Sky (Currently unavailable)".
+function Format-Branches($List) {
+    foreach ($g in @($List | Group-Object Store, Branch)) {
+        $first = $g.Group[0]
+        "$($first.Store) $($first.Branch): " + (($g.Group | ForEach-Object { "$($_.Variant) ($($_.Note))" }) -join '; ')
+    }
+}
+
+function Get-BotHelp([string]$Intro) {
+    $lines = @()
+    if ($Intro) { $lines += $Intro }
+    $lines += 'iPhone Duo tracker commands:'
+    foreach ($k in $BotCommands.Keys) { $lines += "/$k - $($BotCommands[$k])" }
+    $lines += 'Answers come within about a minute.'
+    $lines -join "`n"
+}
+
+function Get-BotReply([string]$Text) {
+    if ("$Text".Trim() -notmatch '^/(\w+)(@\w+)?\s*(.*)$') { return Get-BotHelp "Send one of these commands:" }
+    $cmd = $Matches[1].ToLowerInvariant(); $arg = $Matches[3].Trim()
+    $checked = "Checked $(Get-Date -Format 'HH:mm') UAE time (Apple every minute, other stores about every 5 minutes)."
+    $storeNames = @($results | ForEach-Object { $_.Store } | Select-Object -Unique)
+    switch ($cmd) {
+        { $_ -in 'help', 'start' } { return Get-BotHelp }
+        'status' {
+            $lines = @("iPhone Duo 512GB. $checked")
+            $mute = Get-MuteUntil
+            if ($mute) { $lines += "Loud alerts are muted until $(Format-BotTime $mute) (/mute off to undo)." }
+            $avail = @($results | Where-Object State -eq 'InStock')
+            $unconf = @($results | Where-Object State -eq 'Unverified')
+            $lines += if ($avail) { "AVAILABLE NOW:`n" + (($avail | ForEach-Object { '- ' + (Format-BotRow $_) }) -join "`n") } else { 'Available now: nowhere yet.' }
+            if ($unconf) { $lines += "Unconfirmed (call the store):`n" + (($unconf | ForEach-Object { '- ' + (Format-BotRow $_) }) -join "`n") }
+            $n = { param($s) @($results | Where-Object State -eq $s).Count }
+            $lines += "Out of stock: $(& $n 'OutOfStock') - couldn't check: $(& $n 'Error') - can't check from the cloud: $(& $n 'Cloud')"
+            $lines += "Dashboard: $DashboardUrl"
+            return $lines -join "`n"
+        }
+        'store' {
+            if (-not $arg) { return "Which store? For example /store sharaf.`nStores: $($storeNames -join ', ')" }
+            $rows = @($results | Where-Object { Find-Text $_.Store $arg } | Select-Object -First 12)
+            if (-not $rows) { return "No store matching `"$arg`".`nStores: $($storeNames -join ', ')" }
+            $lines = @($checked)
+            foreach ($r in $rows) {
+                $s = $state[$r.Key]
+                if ($r.State -eq 'Error') {
+                    $line = "$($r.Store) - $($r.Variant): couldn't check this time ($($r.Detail))"
+                    if ($s -and $s.State -and $s.State -ne 'Error') { $line += "`n  Last known: $($StateLabel[$s.State]) - $($s.Detail)" }
+                    $lines += $line
+                } else {
+                    $line = Format-BotRow $r
+                    if ($s -and $s.Checked) { $line += "`n  (checked $(Format-BotTime ([datetime]$s.Checked)))" }
+                    $lines += $line
+                }
+            }
+            return $lines -join "`n"
+        }
+        'branch' {
+            $branches = @(Get-Branches $results)
+            $apple = @($branches | Where-Object Store -eq 'Apple' | ForEach-Object { $_.Branch } | Select-Object -Unique)
+            $known = "Branch data comes from Apple Store pickup ($($apple -join ', ')) and Sharaf DG, which names only branches that have stock."
+            if (-not $arg) { return "Which branch? For example /branch dubai mall.`n$known" }
+            $hits = @($branches | Where-Object { Find-Text $_.Branch $arg })
+            if (-not $hits -and (Find-Text $arg 'apple')) { $hits = @($branches | Where-Object Store -eq 'Apple') }
+            if (-not $hits -and (Find-Text $arg 'sharaf')) {
+                $hits = @($branches | Where-Object Store -eq 'Sharaf DG')
+                if (-not $hits) { return "Sharaf DG: no branch has it now. $checked" }
+            }
+            if ($hits) {
+                $lines = @(Format-Branches $hits)
+                if (-not ($hits | Where-Object Store -eq 'Sharaf DG')) { $lines += "Sharaf DG: no stock at a branch matching `"$arg`"." }
+                return (@($lines) + $checked) -join "`n"
+            }
+            $other = @($storeNames | Where-Object { (Find-Text $_ $arg) -and $_ -notin $BranchStores })
+            if ($other) { return "$($other -join ', '): online only here, the tracker has no branch data for it. Try /store $arg." }
+            return "No branch matching `"$arg`".`n$known"
+        }
+        'where' {
+            $lines = @()
+            $in = @(Get-Branches $results | Where-Object Stock)
+            $lines += if ($in) { "Branches with stock now:`n" + ((Format-Branches $in | ForEach-Object { "- $_" }) -join "`n") } else { 'No branch has it in stock right now.' }
+            $online = @($results | Where-Object { $_.State -eq 'InStock' -and $_.Store -notin $BranchStores })
+            if ($online) { $lines += "Available online: " + (($online | ForEach-Object { "$($_.Store) ($($_.Variant))" }) -join ', ') }
+            $failed = @($results | Where-Object { $_.Store -in $BranchStores -and $_.State -eq 'Error' } | ForEach-Object { $_.Store } | Select-Object -Unique)
+            if ($failed) { $lines += "Couldn't check this time: $($failed -join ', ')." }
+            $lines += $checked
+            return $lines -join "`n"
+        }
+        'mute' {
+            if ($arg -match '^(off|stop|0)$') { $bot.muteUntil = $null; return 'Alerts are loud again.' }
+            if (-not $arg) { $arg = '1h' }
+            if ($arg -notmatch '^(\d+)\s*(m|min|mins|minutes?|h|hr|hrs|hours?)?$') { return 'Use /mute 1h, /mute 30m or /mute off.' }
+            $minutes = [int]$Matches[1] * $(if ($Matches[2] -and $Matches[2].StartsWith('m')) { 1 } else { 60 })
+            $minutes = [Math]::Max(1, [Math]::Min(1440, $minutes))
+            $until = (Get-Date).AddMinutes($minutes)
+            $bot.muteUntil = $until.ToString('o')
+            return "Loud alerts muted until $(Format-BotTime $until). Stock alerts still come here, without sound; no WhatsApp or phone call until then. /mute off to undo."
+        }
+        default { return Get-BotHelp "Unknown command /$cmd." }
+    }
+}
+
+function Invoke-BotCommands {
+    $tg = $Config.telegram
+    if (-not $tg.botToken -or -not $tg.chatId) { return }
+    $api = "https://api.telegram.org/bot$($tg.botToken)"
+    $post = { param($Method, $Body)
+        Invoke-RestMethod -Method Post -Uri "$api/$Method" -TimeoutSec 20 -ContentType 'application/json; charset=utf-8' `
+            -Body ([Text.Encoding]::UTF8.GetBytes(($Body | ConvertTo-Json -Depth 5 -Compress))) }
+    # The menu Telegram shows for "/", registered again whenever the command list changes.
+    if ($bot.menu -ne $BotMenu) {
+        & $post 'setMyCommands' @{ commands = @(foreach ($k in $BotCommands.Keys) { @{ command = $k; description = $BotCommands[$k] } }) } | Out-Null
+        $bot.menu = $BotMenu; Save-Bot
+        Write-Log 'Telegram: bot command menu registered.'
+    }
+    try { $res = Invoke-RestMethod -Uri "$api/getUpdates?offset=$([long]$bot.offset)&timeout=0&allowed_updates=%5B%22message%22%5D" -TimeoutSec 20 }
+    catch {
+        # 409: a webhook is set for this bot, and Telegram then refuses getUpdates. It is not removed automatically.
+        if ($_.Exception.Response -and [int]$_.Exception.Response.StatusCode -eq 409) { Write-Log 'Telegram: a webhook is set for this bot, so commands are not read (remove it with deleteWebhook).'; return }
+        throw
+    }
+    $updates = @($res.result | Where-Object { $_ })
+    if (-not $updates.Count) { return }
+    # Saved before replying, so each message is answered at most once, even if a reply fails.
+    $bot.offset = [long](($updates | Measure-Object -Property update_id -Maximum).Maximum) + 1
+    Save-Bot
+    $cutoff = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds() - 7200
+    $ignored = 0
+    foreach ($u in $updates) {
+        $m = $u.message
+        if (-not $m -or "$($m.chat.id)" -ne "$($tg.chatId)") { $ignored++; continue }
+        # Older than 2 hours (sent before the bot could answer): marked as read without a reply.
+        if ([long]$m.date -lt $cutoff) { continue }
+        $cmd = if ("$($m.text)" -match '^/(\w+)') { "/$($Matches[1].ToLowerInvariant())" } else { 'a message' }
+        try {
+            $reply = Get-BotReply "$($m.text)"
+            if ($reply.Length -gt 4000) { $reply = $reply.Substring(0, 4000) + "`n..." }
+            & $post 'sendMessage' @{ chat_id = $tg.chatId; text = $reply; disable_web_page_preview = $true
+                                     reply_to_message_id = $m.message_id; allow_sending_without_reply = $true } | Out-Null
+            Write-Log "Telegram: answered $cmd"
+        } catch { Write-Log "Telegram: answering $cmd failed: $(Get-ErrorText $_)" }
+    }
+    if ($ignored) { Write-Log "Telegram: ignored $ignored update(s) not from your chat." }
+    Save-Bot
+}
+
 # Phone call through Twilio's REST API; does nothing until the Twilio details are filled in config.json.
 function Send-PhoneCall([string]$Message) {
     $pc = $Config.phoneCall
@@ -1222,6 +1433,9 @@ foreach ($r in $results) {
     }
 }
 
+# /mute from the Telegram bot: until then alerts come without sound, with no WhatsApp and no phone call.
+$bot = Read-Bot
+$muted = [bool](Get-MuteUntil)
 # One alert per store and kind of change, so both colours changing together is one message, toast, WhatsApp and call.
 foreach ($g in @($events | Group-Object { "$($_.Kind)|$($_.Row.Store)|$($_.From)|$($_.Row.State)|$($_.To)" })) {
     $ev = @($g.Group); $first = $ev[0].Row
@@ -1236,7 +1450,8 @@ foreach ($g in @($events | Group-Object { "$($_.Kind)|$($_.Row.Store)|$($_.From)
     $coolKey = "$($row.Store)|$($ev[0].Kind)|$($row.State)"
     $lastLoud = $health.lastAlerts[$coolKey]
     $quiet = [bool]($lastLoud -and ((Get-Date) - [datetime]$lastLoud).TotalMinutes -lt 10)
-    if (-not $quiet) { $health.lastAlerts[$coolKey] = (Get-Date).ToString('o') }
+    if (-not $quiet -and -not $muted) { $health.lastAlerts[$coolKey] = (Get-Date).ToString('o') }
+    if ($muted) { $quiet = $true; Write-Log "Muted (/mute): $($row.Store) alert sent without sound." }
     switch ($ev[0].Kind) {
         'Available' {
             if ($quiet) { Send-Alert "iPhone Duo 512GB AVAILABLE: $($row.Store)" "$($row.Variant) - $($row.Detail).$priceNote" $row.Url -Row $row -Silent }
@@ -1250,7 +1465,7 @@ foreach ($g in @($events | Group-Object { "$($_.Kind)|$($_.Row.Store)|$($_.From)
             Send-Alert "iPhone Duo stock change: $($row.Store) ($from -> $to)" "$($row.Variant): $from -> $to. $($row.Detail)$priceNote" $row.Url -Row $row -Silent:($row.State -eq 'OutOfStock' -or $quiet)
         }
         'Eta' {
-            Send-Alert "iPhone Duo delivery date changed: $($row.Store) ($($ev[0].From) -> $($ev[0].To))" "$($row.Variant): $($ev[0].From) -> $($ev[0].To). $($row.Detail)" $row.Url -Row $row
+            Send-Alert "iPhone Duo delivery date changed: $($row.Store) ($($ev[0].From) -> $($ev[0].To))" "$($row.Variant): $($ev[0].From) -> $($ev[0].To). $($row.Detail)" $row.Url -Row $row -Silent:$muted
         }
     }
 }
@@ -1275,6 +1490,9 @@ if (-not $Watch -or -not $lastSelfCheck -or ((Get-Date) - $lastSelfCheck).TotalS
 $health.lastRunAt = (Get-Date).ToString('o')
 $health.crashes = 0
 Save-Health
+
+# Answers Telegram commands from this run's results (after the alerts, so they go out first).
+try { Invoke-BotCommands } catch { Write-Log "Telegram commands failed: $(Get-ErrorText $_)" }
 
 # Watch mode rewrites the status file and dashboard when something changed, otherwise every 30 seconds.
 $writePage = -not $Watch -or $events.Count -or -not $lastPage -or ((Get-Date) - $lastPage).TotalSeconds -ge 30

@@ -55,7 +55,7 @@ runs:
         git config user.name 'github-actions[bot]'
         git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
         export GIT_INDEX_FILE="$RUNNER_TEMP/state-index"
-        for f in state.json history.json health.json tracker.log; do [ -f "$f" ] && git add -f "$f"; done
+        for f in state.json history.json health.json bot.json tracker.log; do [ -f "$f" ] && git add -f "$f"; done
         commit=$(git commit-tree "$(git write-tree)" -m 'Tracker state')
         git push -q -f origin "$commit:refs/heads/data"
 

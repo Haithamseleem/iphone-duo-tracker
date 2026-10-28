@@ -730,28 +730,23 @@ function cloudRun(checkedMs, show, checking, idle) {
   });
   // Pages are cached for up to 10 minutes; a new query string fetches the latest one.
   const reload = () => location.replace(location.pathname + '?t=' + Date.now());
-  const wait = 'Checking every store in the cloud — fresh results in about 3 minutes. Keep this page open; it updates by itself.';
+  const wait = 'Checking every store in the cloud — fresh results in about 2 minutes. Keep this page open; it updates by itself.';
   let pending = null, typing = false;
   try { pending = JSON.parse(localStorage.getItem(CLOUD_RUN_KEY)); } catch { }
   const done = () => { pending = null; localStorage.removeItem(CLOUD_RUN_KEY); idle(); };
 
+  // A check publishes a new page about every minute, and the started run may just take over from the one already
+  // running, so watch the published page itself and reload once it has newer results than this one.
   async function follow() {
     if (Date.now() - pending.at > 10 * 60000) {
-      done(); show('warn', "The check didn't finish within 10 minutes. GitHub may be busy; this page still updates on its own.");
+      done(); show('warn', "No fresh results within 10 minutes. GitHub may be busy; this page still updates on its own.");
       return;
     }
     checking(wait);
     try {
-      const r = await call('/runs?event=workflow_dispatch&per_page=5');
-      if (r.ok) {
-        // Allow for this device's clock being a little off from GitHub's.
-        const mine = ((await r.json()).workflow_runs || []).find(x => new Date(x.created_at).getTime() >= pending.at - 120000);
-        if (mine && mine.status === 'completed') {
-          if (mine.conclusion !== 'success') { done(); show('warn', 'The check failed on GitHub. The next automatic check runs within 10 minutes.'); return; }
-          setTimeout(reload, 10000);
-          return;
-        }
-      }
+      const r = await fetch(location.pathname + '?t=' + Date.now(), { cache: 'no-store' });
+      const m = r.ok && (await r.text()).match(/"checkedAt"\s*:\s*"([^"]+)"/);
+      if (m && new Date(m[1]).getTime() > pending.base) { reload(); return; }
     } catch { }
     setTimeout(follow, 10000);
   }
@@ -824,8 +819,8 @@ function cloudRun(checkedMs, show, checking, idle) {
       setTimeout(() => { banner.hidden = true; }, 15000);
     } else follow();
   }
-  // Automatic checks publish a new page every 5-10 minutes.
-  setInterval(() => { if (!pending && !typing) reload(); }, 120000);
+  // Automatic checks publish a new page about every minute.
+  setInterval(() => { if (!pending && !typing) reload(); }, 60000);
 }
 
 render();

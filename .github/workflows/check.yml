@@ -1,8 +1,8 @@
 # Checks the UAE stores, sends Telegram/WhatsApp/phone alerts (TRACKER_SECRETS secret, made by publish.ps1 -CopySecret),
-# keeps state on the "data" branch and publishes the dashboard to GitHub Pages. Each check starts the next one about
-# 2 minutes after it began; the 5-minute schedule (which GitHub runs only every 30-60 minutes) restarts that chain if
-# it ever stops. The "gate" job keeps checks one at a time and cancels a check that hangs, instead of a concurrency
-# group (on 27 Oct a check waiting in that group never started, which stopped the chain).
+# keeps state on the "data" branch and publishes the dashboard to GitHub Pages. One machine checks in rounds, about one
+# a minute, and starts the next check partway through, so GitHub's occasional 2-8 minute wait for a Windows machine
+# no longer leaves a gap (see the check job). The 5-minute schedule (which GitHub runs only every 30-60 minutes)
+# restarts that chain if it ever stops. No concurrency group: on 27 Oct a check waiting in one never started.
 name: Stock check
 run-name: ${{ inputs.test && 'Test alerts' || 'Stock check' }}
 
@@ -60,111 +60,85 @@ jobs:
             if ($i -lt $n) { Start-Sleep -Seconds (60 * $gap) }
           }
 
-  # One check at a time: a newer check waits here until older ones finish, and an older one still not finished
-  # 12 minutes after it was created (a normal one takes about 3; GitHub sometimes leaves a run waiting forever) is
-  # cancelled. Test alerts ("Test alerts" runs) never wait or count.
-  gate:
-    if: ${{ !inputs.test }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    outputs:
-      go: ${{ steps.wait.outputs.go }}
-    steps:
-      - id: wait
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          for i in $(seq 1 96); do
-            # A run older than 30 minutes is abandoned (a real check takes about 3), even when GitHub can't cancel it.
-            recent=$(date -u -d '-30 min' +%Y-%m-%dT%H:%M:%SZ)
-            older=$(gh run list -R "$GITHUB_REPOSITORY" -w check.yml -L 30 --json databaseId,status,displayTitle,createdAt \
-              --jq "[.[] | select(.displayTitle == \"Stock check\" and .status != \"completed\" and .databaseId < $GITHUB_RUN_ID and .createdAt > \"$recent\")]")
-            if [ "$(echo "$older" | jq length)" = "0" ]; then echo "go=true" >> "$GITHUB_OUTPUT"; exit 0; fi
-            cut=$(date -u -d '-12 min' +%Y-%m-%dT%H:%M:%SZ); hung=$(date -u -d '-20 min' +%Y-%m-%dT%H:%M:%SZ)
-            for id in $(echo "$older" | jq -r --arg cut "$cut" '.[] | select(.createdAt < $cut) | .databaseId'); do
-              echo "Run $id is still not finished after 12 minutes: cancelling it."; gh run cancel "$id" -R "$GITHUB_REPOSITORY" || true
-            done
-            for id in $(echo "$older" | jq -r --arg cut "$hung" '.[] | select(.createdAt < $cut) | .databaseId'); do
-              gh api -X POST "repos/$GITHUB_REPOSITORY/actions/runs/$id/force-cancel" >/dev/null 2>&1 || true
-            done
-            sleep 10
-          done
-          echo "Older checks are still running after 16 minutes; this one stops."; echo "go=false" >> "$GITHUB_OUTPUT"
-
+  # One machine checks in rounds (.github/actions/round): one starts every ROUND_SECONDS at most, up to 16. At round
+  # START_NEXT_AT it starts the next check, which gets its own machine while this one keeps going; once that one is
+  # ready, this one stops after its current round and the new one carries on from the saved state. Test alerts
+  # ("Test alerts" runs) never wait or count.
   check:
-    needs: gate
-    if: ${{ !inputs.test && needs.gate.outputs.go == 'true' }}
+    if: ${{ !inputs.test }}
     runs-on: windows-latest
-    timeout-minutes: 10
+    timeout-minutes: 60
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: https://haithamseleem.github.io/iphone-duo-tracker/
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ROUND_SECONDS: 60
+      START_NEXT_AT: 6
     steps:
-      - name: Note the start time
-        id: start
-        shell: bash
-        run: echo "at=$(date +%s)" >> "$GITHUB_OUTPUT"
-
       - uses: actions/checkout@v4
 
+      # One check at a time: this one waits while an older one is still running, and stops if a newer one already
+      # has its machine. A scheduled start stops at once while a check is running (the chain is alive). An older
+      # check still running 35 minutes after it was created (a normal one ends within about 30) is cancelled and
+      # ignored. Checks still waiting for a machine don't count.
+      - name: Wait for the previous check
+        id: wait
+        shell: bash
+        run: |
+          runs="repos/$GITHUB_REPOSITORY/actions/workflows/check.yml/runs?per_page=30"
+          for i in $(seq 1 150); do
+            old=$(date -u -d '-35 min' +%Y-%m-%dT%H:%M:%SZ)
+            out=$(gh api "$runs" --jq "[.workflow_runs[] | select(.display_title == \"Stock check\" and .status == \"in_progress\" and .id != $GITHUB_RUN_ID)] | \"\([.[] | select(.id > $GITHUB_RUN_ID)] | length) \([.[] | select(.id < $GITHUB_RUN_ID and .created_at > \"$old\")] | length) \([.[] | select(.id < $GITHUB_RUN_ID and .created_at <= \"$old\") | .id | tostring] | join(\",\"))\"") || { sleep 10; continue; }
+            read -r newer older stale <<< "$out"
+            for id in ${stale//,/ }; do
+              echo "Run $id is still running after 35 minutes: cancelling it."
+              gh run cancel "$id" -R "$GITHUB_REPOSITORY" || gh api -X POST "repos/$GITHUB_REPOSITORY/actions/runs/$id/force-cancel" > /dev/null || true
+            done
+            if [ "$newer" != "0" ]; then echo "A newer check is already running; it carries on."; echo "go=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+            if [ "$older" = "0" ]; then echo "go=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+            if [ "$GITHUB_EVENT_NAME" = "schedule" ]; then echo "A check is running, so the chain is alive."; echo "go=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+            sleep 10
+          done
+          echo "The previous check is still running after about 25 minutes; this one stops."; echo "go=false" >> "$GITHUB_OUTPUT"
+
       - name: Restore saved state
+        if: steps.wait.outputs.go == 'true'
         shell: bash
         run: |
           if git fetch -q --depth 1 origin data 2>/dev/null; then git checkout FETCH_HEAD -- . && git reset -q; fi
 
       # Times in alerts, the log and delivery dates are UAE time.
       - name: Use UAE time
+        if: steps.wait.outputs.go == 'true'
         shell: powershell
         run: tzutil /s "Arabian Standard Time"
 
-      - name: Check the stores
-        id: check
-        shell: powershell
-        env:
-          TRACKER_SECRETS: ${{ secrets.TRACKER_SECRETS }}
-        run: ./tracker.ps1 -Quiet
+      # A round that fails doesn't stop the next one. After a handover (handed-over.flag) the rest are skipped.
+      - { name: Round 1, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 1, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 2, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 2, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 3, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 3, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 4, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 4, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 5, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 5, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 6, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 6, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 7, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 7, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 8, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 8, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 9, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 9, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 10, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 10, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 11, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 11, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 12, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 12, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 13, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 13, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 14, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 14, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 15, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 15, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
+      - { name: Round 16, if: "steps.wait.outputs.go == 'true' && hashFiles('handed-over.flag') == ''", continue-on-error: true, uses: ./.github/actions/round, with: { n: 16, secrets: "${{ secrets.TRACKER_SECRETS }}" } }
 
-      # One orphan commit, force-pushed, so the data branch never grows.
-      - name: Save state
-        if: ${{ !cancelled() }}
+      # After round 16 without a handover, make sure a next check is coming: one already running, or one started
+      # within the last 10 minutes that is still waiting for a machine. Otherwise start one.
+      - name: Make sure the next check is coming
+        if: ${{ steps.wait.outputs.go == 'true' && !cancelled() && hashFiles('handed-over.flag') == '' }}
         shell: bash
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          export GIT_INDEX_FILE="$RUNNER_TEMP/state-index"
-          for f in state.json history.json health.json tracker.log; do [ -f "$f" ] && git add -f "$f"; done
-          commit=$(git commit-tree "$(git write-tree)" -m 'Tracker state')
-          git push -q -f origin "$commit:refs/heads/data"
-
-      - name: Prepare the page
-        if: steps.check.outcome == 'success'
-        shell: bash
-        run: |
-          mkdir -p _site
-          cp dashboard.html _site/index.html
-          if [ -d logos ]; then cp -r logos _site/; fi
-
-      - uses: actions/upload-pages-artifact@v3
-        if: steps.check.outcome == 'success'
-        with:
-          path: _site
-
-      - id: deploy
-        if: steps.check.outcome == 'success'
-        uses: actions/deploy-pages@v4
-
-      # A check already queued after this one (Run check now, the schedule) carries the chain on instead, so extra
-      # starts never make a second chain.
-      - name: Start the next check
-        if: ${{ !cancelled() }}
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-          STARTED: ${{ steps.start.outputs.at }}
-        run: |
-          wait=$(( 115 - ($(date +%s) - STARTED) ))
-          if [ "$wait" -gt 0 ]; then sleep "$wait"; fi
-          newer=$(gh run list -R "$GITHUB_REPOSITORY" -w check.yml -L 30 --json databaseId,status,displayTitle \
-            --jq "[.[] | select(.displayTitle == \"Stock check\" and .status != \"completed\" and .databaseId > $GITHUB_RUN_ID)] | length")
-          if [ "$newer" = "0" ]; then gh workflow run check.yml --repo "$GITHUB_REPOSITORY" --ref main -f test=false
-          else echo "A newer check is already queued; it carries the chain on."; fi
+          recent=$(date -u -d '-10 min' +%Y-%m-%dT%H:%M:%SZ)
+          next=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/check.yml/runs?per_page=30" --jq "[.workflow_runs[] | select(.display_title == \"Stock check\" and .id > $GITHUB_RUN_ID and (.status == \"in_progress\" or (.status != \"completed\" and .created_at > \"$recent\")))] | length") || next=0
+          if [ "$next" = "0" ]; then gh workflow run check.yml --repo "$GITHUB_REPOSITORY" --ref main -f test=false
+          else echo "The next check is on its way."; fi

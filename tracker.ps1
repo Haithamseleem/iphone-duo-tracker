@@ -1042,8 +1042,8 @@ function Test-Due($t, $old) {
     $age = ((Get-Date) - [datetime]$old.Checked).TotalSeconds
     if ($Watch -and [int]$t.everySeconds -gt 0) { return $age -ge [Math]::Min(300, [int]$t.everySeconds * [Math]::Pow(2, [Math]::Min(5, [int]$old.Fails))) }
     $minutes = [Math]::Max(1, [int]$t.everyMinutes)
-    # In the cloud a run starts every 2 minutes (outside timer): targets with "cloudEveryMinutes": 1 (Apple) are checked
-    # every run, the rest every 5 minutes on average (every 2nd or 3rd run, as run start times drift a little).
+    # In the cloud a round runs about every minute (check.yml): targets with "cloudEveryMinutes": 1 (Apple) are checked
+    # every round, the rest about every 5 minutes (due from 4 minutes, so round start times drifting a little don't matter).
     if ($Cloud) { $minutes = if ($t.cloudEveryMinutes) { [Math]::Max(1, [int]$t.cloudEveryMinutes) } else { [Math]::Max(5, $minutes) } }
     if (-not $Watch -and $minutes -eq 1) { return $true }
     $age -ge ($minutes * 60 - $(if ($Watch) { $tick } elseif ($Cloud) { 60 } else { 20 }))

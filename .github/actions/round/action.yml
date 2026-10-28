@@ -24,6 +24,8 @@ runs:
           # A newer check that already has its machine is waiting for this one: stop, and it carries on. Scheduled
           # starts don't count: they stop by themselves while a check is running (28 Oct 21:57 both stopped).
           ready=$(gh api "$runs" --jq "[.workflow_runs[] | select(.display_title == \"Stock check\" and .status == \"in_progress\" and .event != \"schedule\" and .id > $GITHUB_RUN_ID)] | length") || ready=0
+          # Only a plain number counts; anything else (an error text) means "don't know", so keep checking.
+          case "$ready" in ''|*[!0-9]*) ready=0 ;; esac
           if [ "$ready" != "0" ]; then
             echo "A newer check is ready; it carries on from here."; touch handed-over.flag
             echo "go=false" >> "$GITHUB_OUTPUT"; exit 0
@@ -34,6 +36,7 @@ runs:
         # Start the next check now, so it gets its machine while this one keeps checking.
         if [ "$N" = "$START_NEXT_AT" ]; then
           queued=$(gh api "$runs" --jq "[.workflow_runs[] | select(.display_title == \"Stock check\" and .status != \"completed\" and .event != \"schedule\" and .id > $GITHUB_RUN_ID)] | length") || queued=1
+          case "$queued" in ''|*[!0-9]*) queued=1 ;; esac
           if [ "$queued" = "0" ]; then gh workflow run check.yml --repo "$GITHUB_REPOSITORY" --ref main -f test=false || true
           else echo "A newer check is already on its way."; fi
         fi

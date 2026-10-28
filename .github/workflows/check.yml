@@ -90,9 +90,21 @@ jobs:
           runs="repos/$GITHUB_REPOSITORY/actions/workflows/check.yml/runs?per_page=30"
           for i in $(seq 1 150); do
             old=$(date -u -d '-35 min' +%Y-%m-%dT%H:%M:%SZ)
-            out=$(gh api "$runs" --jq "[.workflow_runs[] | select(.display_title == \"Stock check\" and .status == \"in_progress\" and .id != $GITHUB_RUN_ID)] | \"\([.[] | select(.id > $GITHUB_RUN_ID and .event != \"schedule\")] | length)\([.[] | select(.id < $GITHUB_RUN_ID and .created_at > \"$old\")] | length) \([.[] | select(.id < $GITHUB_RUN_ID and .created_at <= \"$old\") | .id | tostring] | join(\",\"))\"") || { sleep 10; continue; }
-            read -r newer older stale <<< "$out"
-            for id in ${stale//,/ }; do
+            # One line per other running check: "id event created_at"; the counting is done here. An answer not in
+            # that form counts as a failed request (try again), never as "a newer check is running".
+            out=$(gh api "$runs" --jq ".workflow_runs[] | select(.display_title == \"Stock check\" and .status == \"in_progress\" and .id != $GITHUB_RUN_ID) | [.id, .event, .created_at] | map(tostring) | join(\" \")") || { sleep 10; continue; }
+            newer=0; older=0; stale=''; bad=0
+            while read -r id ev at; do
+              if [ -z "$id" ]; then continue; fi
+              case "$id" in *[!0-9]*) bad=1; continue ;; esac
+              if [ "$id" -gt "$GITHUB_RUN_ID" ]; then
+                if [ "$ev" != "schedule" ]; then newer=$((newer + 1)); fi
+              elif [[ "$at" > "$old" ]]; then older=$((older + 1))
+              else stale="$stale $id"; fi
+            done <<< "$out"
+            if [ "$bad" = "1" ]; then echo "Unexpected answer from GitHub: $out"; sleep 10; continue; fi
+            if [ "$i" = "1" ]; then echo "Other running checks: newer $newer, older $older, stale:${stale:- none}"; fi
+            for id in $stale; do
               echo "Run $id is still running after 35 minutes: cancelling it."
               gh run cancel "$id" -R "$GITHUB_REPOSITORY" || gh api -X POST "repos/$GITHUB_REPOSITORY/actions/runs/$id/force-cancel" > /dev/null || true
             done
@@ -141,5 +153,6 @@ jobs:
         run: |
           recent=$(date -u -d '-10 min' +%Y-%m-%dT%H:%M:%SZ)
           next=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/check.yml/runs?per_page=30" --jq "[.workflow_runs[] | select(.display_title == \"Stock check\" and .event != \"schedule\" and .id > $GITHUB_RUN_ID and (.status == \"in_progress\" or (.status != \"completed\" and .created_at > \"$recent\")))] | length") || next=0
+          case "$next" in ''|*[!0-9]*) next=0 ;; esac
           if [ "$next" = "0" ]; then gh workflow run check.yml --repo "$GITHUB_REPOSITORY" --ref main -f test=false
           else echo "The next check is on its way."; fi

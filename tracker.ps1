@@ -128,8 +128,20 @@ function Test-SharafDGStock($Target) {
     $appId = '9KHJLG93J1'
     $key   = if ($Target.algoliaKey) { $Target.algoliaKey } else { 'e81d5b30a712bb28f0f1d2a52fc92dd0' }
     $body  = @{ params = 'hitsPerPage=50&query=' + [uri]::EscapeDataString($Target.query) } | ConvertTo-Json -Compress
-    $res   = Invoke-RestMethod -Method Post -Uri "https://$appId-dsn.algolia.net/1/indexes/products_index/query" -TimeoutSec 30 `
+    # Errors name the call and show what answered (an Algolia key error, or a site firewall), so a block is easy to spot.
+    $explain = { param($Step, $Err)
+        $r = $Err.Exception.Response
+        if (-not $r) { return "${Step}: $($Err.Exception.Message)" }
+        $text = if ($Err.ErrorDetails -and $Err.ErrorDetails.Message) { $Err.ErrorDetails.Message } else { '' }
+        $text = (($text -replace '<[^>]+>', ' ') -replace '\s+', ' ').Trim()
+        if ($text.Length -gt 160) { $text = $text.Substring(0, 160) }
+        $via = @($r.Headers['Server'], $(if ($r.Headers['cf-ray']) { 'Cloudflare' }), $(if ($r.Headers['x-akamai-transformed'] -or "$($r.Headers['Server'])" -match 'Akamai') { 'Akamai' })) | Where-Object { $_ }
+        "${Step}: HTTP $([int]$r.StatusCode) from $(if ($via) { $via -join '/' } else { 'unknown server' }): $text"
+    }
+    try {
+        $res = Invoke-RestMethod -Method Post -Uri "https://$appId-dsn.algolia.net/1/indexes/products_index/query" -TimeoutSec 30 `
                 -Headers @{ 'X-Algolia-Application-Id' = $appId; 'X-Algolia-API-Key' = $key } -ContentType 'application/json' -Body $body
+    } catch { throw (& $explain 'Sharaf DG search (Algolia)' $_) }
     if ($null -eq $res.hits) { throw 'Sharaf DG search returned no results (search key changed?)' }
 
     $hits = @($res.hits | Where-Object { $_.model_number -eq $Target.model -and $_.post_status -eq 'publish' })
@@ -144,7 +156,8 @@ function Test-SharafDGStock($Target) {
     # Only active, priced, non-pre-order listings count: an archived listing (website shows "Out of Stock", no price)
     # still reports branch units, but they are held for pre-orders and can't be bought in store.
     foreach ($sku in @($buyNow | ForEach-Object { $_.main_sku } | Where-Object { $_ } | Select-Object -Unique)) {
-        $stores = Invoke-RestMethod -Uri "https://uae.sharafdg.com/wp-json/sdg/v1/store?sku=$sku" -UserAgent $UA -TimeoutSec 30
+        try { $stores = Invoke-RestMethod -Uri "https://uae.sharafdg.com/wp-json/sdg/v1/store?sku=$sku" -UserAgent $UA -TimeoutSec 30 }
+        catch { throw (& $explain "Sharaf DG branch stock (a buy-now listing, sku $sku)" $_) }
         foreach ($s in @($stores)) {
             $atp = 0.0
             if ($s -and "$($s.active)" -eq '1' -and [double]::TryParse("$($s.atp)", [ref]$atp) -and $atp -gt 0) {

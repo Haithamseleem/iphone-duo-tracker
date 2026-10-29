@@ -252,6 +252,13 @@
     <div class="hero-stats" id="stats"></div>
   </section>
 
+  <section class="card" id="availCard" hidden>
+    <div class="section-head">
+      <div><h2 id="availTitle">Available now</h2><p id="availNote"></p></div>
+    </div>
+    <div class="rows" id="availRows"></div>
+  </section>
+
   <section class="card">
     <div class="section-head">
       <div><h2>Priority stores</h2><p id="prioNote">When any of these gets confirmed stock you get an urgent alert.</p></div>
@@ -469,6 +476,16 @@ function render() {
     s.append(el('div', 'n', String(n)), lab);
     $('stats').append(s);
   });
+
+  // Anything available comes first, right under the summary: confirmed stock, then unconfirmed (call first).
+  if (avail.length || unconf.length) {
+    $('availTitle').textContent = avail.length ? 'Available now' : 'Unconfirmed: call before going';
+    $('availNote').textContent = avail.length
+      ? 'Confirmed stock. Buy before it sells out.' + (unconf.length ? ' Unconfirmed stores (call first) are listed after.' : '')
+      : 'These stores list it, but it isn’t confirmed. Call before going.';
+    [...avail, ...unconf].forEach(g => $('availRows').append(storeRow(g)));
+    $('availCard').hidden = false;
+  }
 
   // Priority stores
   const a = DATA.alerts || {};

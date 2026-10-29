@@ -1387,14 +1387,14 @@ $results = foreach ($j in $jobs) {
             if ($row.Detail -notmatch 'pre-?order|reservation') { $row.Detail = "Pre-order only | $($row.Detail)" }
         }
         # Orderable now but delivered later counts as available only if it arrives within "availableNowWithinDays" (7) of
-        # ordering. A later date (payment now for a far-off delivery, e.g. Sharaf DG's 25 Jan on 29 Oct) is late
-        # delivery, which counts as out of stock. Since 29 Oct this replaces Apple's "deliverBefore" 22 Jan rule.
+        # ordering. A later date (payment now for a far-off delivery, e.g. Sharaf DG's 25 Jan on 29 Oct) is a pre-order
+        # in all but name, so it counts as out of stock. Since 29 Oct this replaces Apple's "deliverBefore" 22 Jan rule.
         if ($row.State -eq 'InStock') {
             $eta = Get-EtaDate $row.Detail
             $maxDays = if ($Config.availableNowWithinDays) { [int]$Config.availableNowWithinDays } else { 7 }
             if ($eta -and ($eta - (Get-Date).Date).TotalDays -gt $maxDays) {
                 $row.State = 'OutOfStock'
-                $row.Detail = "Late delivery: from $($eta.ToString('d MMM yyyy')), more than $maxDays days after ordering | $($row.Detail)"
+                $row.Detail = "Pre-order: delivery from $($eta.ToString('d MMM yyyy')), more than $maxDays days after ordering | $($row.Detail)"
             } elseif ($eta -and $eta -gt (Get-Date).Date.AddDays(1)) {
                 $row.Detail = "Order now, delivery from $($eta.ToString('d MMM yyyy')) | $($row.Detail)"
             }

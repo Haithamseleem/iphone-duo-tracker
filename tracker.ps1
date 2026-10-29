@@ -122,8 +122,8 @@ function Test-Apple($Target) {
     }
 }
 
-# Sharaf DG: finds every listing for the model via the site's public Algolia search (catches new non-pre-order pages),
-# then asks Sharaf's own store-availability API which branches hold units (atp = available-to-promise).
+# Sharaf DG: finds every listing for the model via the site's public Algolia search (catches new non-pre-order pages);
+# the same search says which branches hold units.
 function Test-SharafDGStock($Target) {
     $appId = '9KHJLG93J1'
     $key   = if ($Target.algoliaKey) { $Target.algoliaKey } else { 'e81d5b30a712bb28f0f1d2a52fc92dd0' }
@@ -151,35 +151,37 @@ function Test-SharafDGStock($Target) {
     $buyNow = @($online | Where-Object { $_.post_title -notmatch 'Pre-?order' })
     $preOrd = @($online | Where-Object { $_.post_title -match 'Pre-?order' })
 
-    $branches  = New-Object System.Collections.Generic.SortedSet[string]
-    $branchUrl = $null
-    $branchNote = ''
+    if (-not $buyNow) {
+        if ($preOrd) { return @{ State = 'PreOrder'; Detail = "Pre-order online, no branch stock"; Url = $preOrd[0].permalink } }
+        return @{ State = 'OutOfStock'; Detail = 'Out of stock online and in all branches' }
+    }
+    # Branch stock comes from the same search: each listing's "inventory" has every branch (store_pickup 1) and the
+    # online warehouse, with in_stock flags. Sharaf's branch API on its own site has answered GitHub's servers with a
+    # Cloudflare challenge since 29 Oct 10:14, so it isn't called; nothing tries to get past the challenge.
     # Only active, priced, non-pre-order listings count: an archived listing (website shows "Out of Stock", no price)
     # still reports branch units, but they are held for pre-orders and can't be bought in store.
-    foreach ($sku in @($buyNow | ForEach-Object { $_.main_sku } | Where-Object { $_ } | Select-Object -Unique)) {
-        # Since 29 Oct 10:14 Sharaf's own site answers GitHub's servers with a Cloudflare challenge (403). The buy-now
-        # listing from the search still counts then, with branch stock unknown; nothing tries to get past the challenge.
-        try { $stores = Invoke-RestMethod -Uri "https://uae.sharafdg.com/wp-json/sdg/v1/store?sku=$sku" -UserAgent $UA -TimeoutSec 30 }
-        catch { $branchNote = 'branch stock unknown (' + (((& $explain 'x' $_) -split ': ', 3)[1]) + ')'; break }
-        foreach ($s in @($stores)) {
-            $atp = 0.0
-            if ($s -and "$($s.active)" -eq '1' -and [double]::TryParse("$($s.atp)", [ref]$atp) -and $atp -gt 0) {
-                [void]$branches.Add(($s.name -replace '\s+', ' ').Trim())
-                if (-not $branchUrl) { $branchUrl = ($hits | Where-Object { $_.main_sku -eq $sku } | Select-Object -First 1).permalink }
-            }
+    $branches = New-Object System.Collections.Generic.SortedSet[string]
+    foreach ($h in $buyNow) {
+        foreach ($p in @($h.inventory.PSObject.Properties)) {
+            $i = $p.Value
+            if ("$($i.active)" -eq '1' -and "$($i.in_stock)" -eq '1' -and "$($i.store_pickup)" -eq '1' -and $i.name) { [void]$branches.Add(("$($i.name)" -replace '\s+', ' ').Trim()) }
         }
     }
-
-    $onlineText = if ($buyNow) { 'online: buy now, AED {0:N0} ({1})' -f [double]$buyNow[0].price, $buyNow[0].post_title } elseif ($preOrd) { 'online: pre-order only' } else { 'online: out of stock' }
-    if ($branchNote) { $onlineText = "$onlineText | $branchNote" }
-    # Branch names only (no unit counts) so routine sales don't trigger a change alert every few minutes.
-    if ($branches.Count -or $buyNow) {
-        $where = if ($branches.Count) { 'In store at ' + (@($branches) -join ', ') + ' (call ahead)' } else { 'Buy now online' }
-        $url   = if ($buyNow) { $buyNow[0].permalink } else { $branchUrl }
-        return @{ State = 'InStock'; Detail = "$where | $onlineText"; Url = $url }
+    $online = 'online: buy now, AED {0:N0} ({1})' -f [double]$buyNow[0].price, $buyNow[0].post_title
+    $url = $buyNow[0].permalink
+    # The delivery date for online orders is shown only on the product page, which GitHub's servers can't open. The date
+    # seen there ("deliveryFrom" in config.json) is used until it's removed, and the 7-day rule decides: on 29 Oct it was
+    # 25 Jan, so "buy now" is late delivery.
+    $late = if ($Target.deliveryFrom) { "home delivery from $(([datetime]$Target.deliveryFrom).ToString('d MMM yyyy')) (seen on Sharaf's site $($Target.deliveryFromSeen))" }
+    # Branch names only (no unit counts) so routine sales don't trigger a change alert every few minutes. Pickup units
+    # while online orders wait weeks may be held for pre-order customers, so they are unconfirmed (call the branch).
+    if ($branches.Count) {
+        $where = 'In store at ' + (@($branches) -join ', ') + ' (call ahead)'
+        if ($late) { return @{ State = 'Unverified'; Detail = "$where`: listed for pickup, unconfirmed | $online | $late"; Url = $url } }
+        return @{ State = 'InStock'; Detail = "$where | $online"; Url = $url }
     }
-    if ($preOrd) { return @{ State = 'PreOrder'; Detail = "Pre-order online, no branch stock"; Url = $preOrd[0].permalink } }
-    @{ State = 'OutOfStock'; Detail = 'Out of stock online and in all branches' }
+    if ($late) { return @{ State = 'InStock'; Detail = "Buy now online, $late | $online"; Url = $url } }
+    @{ State = 'InStock'; Detail = "Buy now online | $online"; Url = $url }
 }
 
 # Jumbo: queries Jumbo's own catalog API, which returns every listing for the colour with live stock flags,
@@ -746,7 +748,8 @@ function Get-Branches($Rows) {
                 foreach ($n in ($names -split ',\s*')) { [pscustomobject]@{ Store = 'Apple'; Branch = $n.Trim(); Variant = $r.Variant; Stock = $has; Note = $quote } }
             }
         } elseif ($r.Store -eq 'Sharaf DG' -and "$($r.Detail)" -match 'In store at (.+?) \(call ahead\)') {
-            foreach ($n in ($Matches[1] -split ',\s*')) { [pscustomobject]@{ Store = 'Sharaf DG'; Branch = $n.Trim(); Variant = $r.Variant; Stock = $true; Note = 'in stock, call ahead' } }
+            $note = if ($r.State -eq 'Unverified') { 'listed for pickup, unconfirmed: call' } else { 'in stock, call ahead' }
+            foreach ($n in ($Matches[1] -split ',\s*')) { [pscustomobject]@{ Store = 'Sharaf DG'; Branch = $n.Trim(); Variant = $r.Variant; Stock = $true; Note = $note } }
         }
     }
 }
@@ -1383,14 +1386,16 @@ $results = foreach ($j in $jobs) {
             $row.State = 'OutOfStock'
             if ($row.Detail -notmatch 'pre-?order|reservation') { $row.Detail = "Pre-order only | $($row.Detail)" }
         }
-        # Orderable now but delivered later: still available, with the delivery date up front, unless the target's
-        # "deliverBefore" date is missed (the user needs it sooner), which counts as out of stock.
+        # Orderable now but delivered later counts as available only if it arrives within "availableNowWithinDays" (7) of
+        # ordering. A later date (payment now for a far-off delivery, e.g. Sharaf DG's 25 Jan on 29 Oct) is late
+        # delivery, which counts as out of stock. Since 29 Oct this replaces Apple's "deliverBefore" 22 Jan rule.
         if ($row.State -eq 'InStock') {
             $eta = Get-EtaDate $row.Detail
-            if ($eta -and $t.deliverBefore -and $eta -ge [datetime]$t.deliverBefore) {
+            $maxDays = if ($Config.availableNowWithinDays) { [int]$Config.availableNowWithinDays } else { 7 }
+            if ($eta -and ($eta - (Get-Date).Date).TotalDays -gt $maxDays) {
                 $row.State = 'OutOfStock'
-                $row.Detail = "Too late: delivery from $($eta.ToString('d MMM yyyy')), needed before $(([datetime]$t.deliverBefore).ToString('d MMM yyyy')) | $($row.Detail)"
-            } elseif ($eta -and ($eta - (Get-Date).Date).TotalDays -gt $Config.availableNowWithinDays) {
+                $row.Detail = "Late delivery: from $($eta.ToString('d MMM yyyy')), more than $maxDays days after ordering | $($row.Detail)"
+            } elseif ($eta -and $eta -gt (Get-Date).Date.AddDays(1)) {
                 $row.Detail = "Order now, delivery from $($eta.ToString('d MMM yyyy')) | $($row.Detail)"
             }
         }

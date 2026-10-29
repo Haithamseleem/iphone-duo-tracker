@@ -55,7 +55,6 @@
                         "type":  "apple",
                         "everyMinutes":  2,
                         "cloudEveryMinutes":  1,
-                        "deliverBefore":  "2027-01-22",
                         "variant":  "512GB Star White",
                         "part":  "MK264AH/A",
                         "price":  9349,
@@ -67,7 +66,6 @@
                         "type":  "apple",
                         "everyMinutes":  2,
                         "cloudEveryMinutes":  1,
-                        "deliverBefore":  "2027-01-22",
                         "variant":  "512GB Night Sky",
                         "part":  "MK274AH/A",
                         "price":  9349,
@@ -107,6 +105,8 @@
                         "variant":  "512GB Star White",
                         "model":  "MK264AH/A",
                         "query":  "apple iphone duo 512gb",
+                        "deliveryFrom":  "2027-01-25",
+                        "deliveryFromSeen":  "29 Oct",
                         "price":  9349,
                         "url":  "https://uae.sharafdg.com/product/apple-iphone-duo-512gb-star-white-middle-east-version-pre-order/"
                     },
@@ -118,6 +118,8 @@
                         "variant":  "512GB Night Sky",
                         "model":  "MK274AH/A",
                         "query":  "apple iphone duo 512gb",
+                        "deliveryFrom":  "2027-01-25",
+                        "deliveryFromSeen":  "29 Oct",
                         "price":  9349,
                         "url":  "https://uae.sharafdg.com/product/apple-iphone-duo-512gb-night-sky-middle-east-version-pre-order/"
                     },

@@ -1,0 +1,25 @@
+# One-off look at what Sharaf DG's product search (Algolia, the same call tracker.ps1 makes) returns for the iPhone Duo
+# 512GB, to find fields such as a delivery date. Manual runs only; it prints each matching listing's fields to the log.
+name: Probe Sharaf DG search
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - shell: pwsh
+        run: |
+          $body = @{ params = 'hitsPerPage=50&query=' + [uri]::EscapeDataString('apple iphone duo 512gb') } | ConvertTo-Json -Compress
+          $res = Invoke-RestMethod -Method Post -Uri 'https://9KHJLG93J1-dsn.algolia.net/1/indexes/products_index/query' -TimeoutSec 30 `
+            -Headers @{ 'X-Algolia-Application-Id' = '9KHJLG93J1'; 'X-Algolia-API-Key' = 'e81d5b30a712bb28f0f1d2a52fc92dd0' } -ContentType 'application/json' -Body $body
+          foreach ($h in @($res.hits | Where-Object { $_.model_number -in 'MK264AH/A', 'MK274AH/A' })) {
+            "===== $($h.post_title)"
+            foreach ($p in $h.PSObject.Properties) {
+              $v = if ($p.Value -is [string] -or $p.Value -is [ValueType]) { "$($p.Value)" } else { $p.Value | ConvertTo-Json -Compress -Depth 4 }
+              $v = "$v" -replace '\s+', ' '
+              if ($v.Length -gt 300) { $v = $v.Substring(0, 300) + '...' }
+              "$($p.Name) = $v"
+            }
+          }

@@ -153,11 +153,14 @@ function Test-SharafDGStock($Target) {
 
     $branches  = New-Object System.Collections.Generic.SortedSet[string]
     $branchUrl = $null
+    $branchNote = ''
     # Only active, priced, non-pre-order listings count: an archived listing (website shows "Out of Stock", no price)
     # still reports branch units, but they are held for pre-orders and can't be bought in store.
     foreach ($sku in @($buyNow | ForEach-Object { $_.main_sku } | Where-Object { $_ } | Select-Object -Unique)) {
+        # Since 29 Oct 10:14 Sharaf's own site answers GitHub's servers with a Cloudflare challenge (403). The buy-now
+        # listing from the search still counts then, with branch stock unknown; nothing tries to get past the challenge.
         try { $stores = Invoke-RestMethod -Uri "https://uae.sharafdg.com/wp-json/sdg/v1/store?sku=$sku" -UserAgent $UA -TimeoutSec 30 }
-        catch { throw (& $explain "Sharaf DG branch stock (a buy-now listing, sku $sku)" $_) }
+        catch { $branchNote = 'branch stock unknown (' + (((& $explain 'x' $_) -split ': ', 3)[1]) + ')'; break }
         foreach ($s in @($stores)) {
             $atp = 0.0
             if ($s -and "$($s.active)" -eq '1' -and [double]::TryParse("$($s.atp)", [ref]$atp) -and $atp -gt 0) {
@@ -167,7 +170,8 @@ function Test-SharafDGStock($Target) {
         }
     }
 
-    $onlineText = if ($buyNow) { 'online: buy now' } elseif ($preOrd) { 'online: pre-order only' } else { 'online: out of stock' }
+    $onlineText = if ($buyNow) { 'online: buy now, AED {0:N0} ({1})' -f [double]$buyNow[0].price, $buyNow[0].post_title } elseif ($preOrd) { 'online: pre-order only' } else { 'online: out of stock' }
+    if ($branchNote) { $onlineText = "$onlineText | $branchNote" }
     # Branch names only (no unit counts) so routine sales don't trigger a change alert every few minutes.
     if ($branches.Count -or $buyNow) {
         $where = if ($branches.Count) { 'In store at ' + (@($branches) -join ', ') + ' (call ahead)' } else { 'Buy now online' }

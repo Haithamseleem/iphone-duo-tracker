@@ -15,11 +15,8 @@ jobs:
           $res = Invoke-RestMethod -Method Post -Uri 'https://9KHJLG93J1-dsn.algolia.net/1/indexes/products_index/query' -TimeoutSec 30 `
             -Headers @{ 'X-Algolia-Application-Id' = '9KHJLG93J1'; 'X-Algolia-API-Key' = 'e81d5b30a712bb28f0f1d2a52fc92dd0' } -ContentType 'application/json' -Body $body
           foreach ($h in @($res.hits | Where-Object { $_.model_number -in 'MK264AH/A', 'MK274AH/A' })) {
-            "===== $($h.post_title)"
-            foreach ($p in $h.PSObject.Properties) {
-              $v = if ($p.Value -is [string] -or $p.Value -is [ValueType]) { "$($p.Value)" } else { $p.Value | ConvertTo-Json -Compress -Depth 4 }
-              $v = "$v" -replace '\s+', ' '
-              if ($v.Length -gt 300) { $v = $v.Substring(0, 300) + '...' }
-              "$($p.Name) = $v"
-            }
+            "===== $($h.post_title) | in_stock $($h.in_stock) | archive $($h.archive)"
+            # Per branch / warehouse: which hold stock, and whether they deliver.
+            foreach ($p in $h.inventory.PSObject.Properties) { $i = $p.Value; "inv $($p.Name) $($i.name): active $($i.active), in_stock $($i.in_stock), home_delivery $($i.home_delivery), pickup $($i.store_pickup)" }
+            "offer = $($h.promotion_offer_json | ConvertTo-Json -Compress -Depth 6)"
           }

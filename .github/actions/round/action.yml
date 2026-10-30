@@ -51,8 +51,9 @@ runs:
         TRACKER_SECRETS: ${{ inputs.secrets }}
       run: ./tracker.ps1 -Quiet
 
-    # One orphan commit, force-pushed, so the data branch never grows.
+    # One orphan commit, force-pushed, so the data branch never grows. Its id is also this round's Pages build version.
     - name: Save state
+      id: save
       if: steps.turn.outputs.go == 'true' && !cancelled()
       shell: bash
       run: |
@@ -62,6 +63,7 @@ runs:
         for f in state.json history.json health.json bot.json tracker.log; do [ -f "$f" ] && git add -f "$f"; done
         commit=$(git commit-tree "$(git write-tree)" -m 'Tracker state')
         git push -q -f origin "$commit:refs/heads/data"
+        echo "sha=$commit" >> "$GITHUB_OUTPUT"
 
     - name: Prepare the page
       if: steps.check.outcome == 'success'
@@ -80,23 +82,30 @@ runs:
         name: github-pages-${{ inputs.n }}
 
     # Published through GitHub's Pages deployment API (what actions/deploy-pages does) with a build version unique to
-    # this round. deploy-pages always uses the commit as the version: after hours of deploys of one commit, Pages kept
-    # serving an old copy (29 Oct 16:36 to 30 Oct 23:34) while every deploy reported success.
+    # this round: the data-branch commit just saved (the API wants a commit id; any other string gets a 404).
+    # deploy-pages always uses the workflow's commit: after hours of deploys of one commit, Pages kept serving an old
+    # copy (29 Oct 16:36 to 30 Oct 23:34) while every deploy reported success.
     - name: Publish the page
       if: steps.check.outcome == 'success'
       shell: powershell
       env:
-        N: ${{ inputs.n }}
         ARTIFACT_ID: ${{ steps.upload.outputs.artifact_id }}
+        STATE_SHA: ${{ steps.save.outputs.sha }}
       run: |
         $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue'
         $oidc = (Invoke-RestMethod -Uri $env:ACTIONS_ID_TOKEN_REQUEST_URL -Headers @{ Authorization = "Bearer $env:ACTIONS_ID_TOKEN_REQUEST_TOKEN" }).value
         Write-Host "::add-mask::$oidc"
-        $version = "$env:GITHUB_SHA-$env:GITHUB_RUN_ID-$env:GITHUB_RUN_ATTEMPT-$env:N"
+        $version = if ($env:STATE_SHA -match '^[0-9a-f]{40}$') { $env:STATE_SHA } else { $env:GITHUB_SHA }
         $h = @{ Authorization = "Bearer $env:GH_TOKEN"; Accept = 'application/vnd.github+json'; 'X-GitHub-Api-Version' = '2022-11-28' }
         $api = "https://api.github.com/repos/$env:GITHUB_REPOSITORY/pages/deployments"
-        $body = @{ artifact_id = [long]$env:ARTIFACT_ID; pages_build_version = $version; oidc_token = $oidc } | ConvertTo-Json -Compress
-        $d = Invoke-RestMethod -Method Post -Uri $api -Headers $h -ContentType 'application/json' -Body $body
+        $create = { param($v) Invoke-RestMethod -Method Post -Uri $api -Headers $h -ContentType 'application/json' `
+                      -Body (@{ artifact_id = [long]$env:ARTIFACT_ID; pages_build_version = $v; oidc_token = $oidc } | ConvertTo-Json -Compress) }
+        try { $d = & $create $version }
+        catch {
+          if ($version -eq $env:GITHUB_SHA) { throw }
+          Write-Host "::warning::Pages refused build version $version ($($_.ErrorDetails.Message)); using the workflow commit instead."
+          $version = $env:GITHUB_SHA; $d = & $create $version
+        }
         for ($i = 0; $i -lt 30; $i++) {
           Start-Sleep -Seconds 2
           $s = (Invoke-RestMethod -Uri "$api/$($d.id)" -Headers $h).status

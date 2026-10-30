@@ -71,7 +71,8 @@ runs:
         cp dashboard.html _site/index.html
         if [ -d logos ]; then cp -r logos _site/; fi
 
-    # Each round needs its own artifact name within the run.
+    # Each round needs its own artifact name within the run. (deploy-pages uses the commit as the Pages build version;
+    # after many deploys of one commit, Pages kept serving an old copy from 29 Oct 16:36 to 30 Oct 23:3x.)
     - if: steps.check.outcome == 'success'
       uses: actions/upload-pages-artifact@v3
       with:

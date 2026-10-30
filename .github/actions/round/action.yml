@@ -71,15 +71,36 @@ runs:
         cp dashboard.html _site/index.html
         if [ -d logos ]; then cp -r logos _site/; fi
 
-    # Each round needs its own artifact name within the run. (deploy-pages uses the commit as the Pages build version;
-    # after many deploys of one commit, Pages kept serving an old copy from 29 Oct 16:36 to 30 Oct 23:3x.)
-    - if: steps.check.outcome == 'success'
+    # Each round needs its own artifact name within the run.
+    - id: upload
+      if: steps.check.outcome == 'success'
       uses: actions/upload-pages-artifact@v3
       with:
         path: _site
         name: github-pages-${{ inputs.n }}
 
-    - if: steps.check.outcome == 'success'
-      uses: actions/deploy-pages@v4
-      with:
-        artifact_name: github-pages-${{ inputs.n }}
+    # Published through GitHub's Pages deployment API (what actions/deploy-pages does) with a build version unique to
+    # this round. deploy-pages always uses the commit as the version: after hours of deploys of one commit, Pages kept
+    # serving an old copy (29 Oct 16:36 to 30 Oct 23:34) while every deploy reported success.
+    - name: Publish the page
+      if: steps.check.outcome == 'success'
+      shell: powershell
+      env:
+        N: ${{ inputs.n }}
+        ARTIFACT_ID: ${{ steps.upload.outputs.artifact_id }}
+      run: |
+        $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue'
+        $oidc = (Invoke-RestMethod -Uri $env:ACTIONS_ID_TOKEN_REQUEST_URL -Headers @{ Authorization = "Bearer $env:ACTIONS_ID_TOKEN_REQUEST_TOKEN" }).value
+        Write-Host "::add-mask::$oidc"
+        $version = "$env:GITHUB_SHA-$env:GITHUB_RUN_ID-$env:GITHUB_RUN_ATTEMPT-$env:N"
+        $h = @{ Authorization = "Bearer $env:GH_TOKEN"; Accept = 'application/vnd.github+json'; 'X-GitHub-Api-Version' = '2022-11-28' }
+        $api = "https://api.github.com/repos/$env:GITHUB_REPOSITORY/pages/deployments"
+        $body = @{ artifact_id = [long]$env:ARTIFACT_ID; pages_build_version = $version; oidc_token = $oidc } | ConvertTo-Json -Compress
+        $d = Invoke-RestMethod -Method Post -Uri $api -Headers $h -ContentType 'application/json' -Body $body
+        for ($i = 0; $i -lt 30; $i++) {
+          Start-Sleep -Seconds 2
+          $s = (Invoke-RestMethod -Uri "$api/$($d.id)" -Headers $h).status
+          if ($s -eq 'succeed') { Write-Host "Published (build version $version)."; exit 0 }
+          if ($s -match 'fail|error|cancel|lost') { throw "Pages deployment $version ended as '$s'." }
+        }
+        throw "Pages deployment $version was still '$s' after 60 seconds."

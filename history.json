@@ -1,0 +1,386 @@
+﻿[
+    {
+        "time":  "2026-10-28T08:00:44.9342576+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Yas Mall, Al Maryah Island | Currently unavailable: Dubai Mall, Mall of the Emirates, Al Jimi Mall"
+    },
+    {
+        "time":  "2026-10-28T08:00:44.9383123+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Yas Mall, Al Maryah Island | Currently unavailable: Dubai Mall, Mall of the Emirates, Al Jimi Mall"
+    },
+    {
+        "time":  "2026-10-28T08:05:56.2940120+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-28T08:05:56.2970583+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-28T08:40:16.8109945+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Mall of the Emirates | Currently unavailable: Dubai Mall, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-28T08:40:16.8150294+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Mall of the Emirates | Currently unavailable: Dubai Mall, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-28T08:44:57.8263096+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-28T08:46:22.5657605+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-28T09:19:12.2608075+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Mall of the Emirates, Al Maryah Island | Currently unavailable: Dubai Mall, Yas Mall, Al Jimi Mall"
+    },
+    {
+        "time":  "2026-10-28T09:22:09.4788794+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-28T10:36:46.9241207+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Al Jimi Mall | Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-28T10:39:45.6739397+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-28T20:37:55.6137345+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Dubai Mall | Currently unavailable: Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-28T20:38:42.1829084+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-29T10:59:41.0291471+04:00",
+        "store":  "Sharaf DG",
+        "variant":  "512GB Star White",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Buy now online | online: buy now, AED 9,349 (Apple iPhone Duo (512GB) – Star White Middle East Version) | branch stock unknown (HTTP 403 from cloudflare/Cloudflare)"
+    },
+    {
+        "time":  "2026-10-29T10:59:41.0331823+04:00",
+        "store":  "Sharaf DG",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Buy now online | online: buy now, AED 9,349 (Apple iPhone Duo (512GB) – Night Sky Middle East Version) | branch stock unknown (HTTP 403 from cloudflare/Cloudflare)"
+    },
+    {
+        "time":  "2026-10-29T13:37:02.3031975+04:00",
+        "store":  "Sharaf DG",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "Unverified",
+        "detail":  "In store at Dubai Mall (call ahead): listed for pickup, unconfirmed | online: buy now, AED 9,349 (Apple iPhone Duo (512GB) – Night Sky Middle East Version) | home delivery from 25 Jan 2027 (seen on Sharaf\u0027s site 29 Oct)"
+    },
+    {
+        "time":  "2026-10-29T13:37:02.3092378+04:00",
+        "store":  "Sharaf DG",
+        "variant":  "512GB Star White",
+        "from":  "InStock",
+        "to":  "Unverified",
+        "detail":  "In store at Dubai Mall, Times Square Center (call ahead): listed for pickup, unconfirmed | online: buy now, AED 9,349 (Apple iPhone Duo (512GB) – Star White Middle East Version) | home delivery from 25 Jan 2027 (seen on Sharaf\u0027s site 29 Oct)"
+    },
+    {
+        "time":  "2026-10-30T08:00:15.0502380+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Al Maryah Island | Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall"
+    },
+    {
+        "time":  "2026-10-30T08:00:15.0553075+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Al Maryah Island | Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall"
+    },
+    {
+        "time":  "2026-10-30T08:01:53.7345410+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T08:03:04.8136367+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T08:11:18.1736298+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Mall of the Emirates | Currently unavailable: Dubai Mall, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T08:11:18.1779410+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Mall of the Emirates | Currently unavailable: Dubai Mall, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T08:12:34.8838468+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T08:13:37.2840630+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T08:14:41.7219429+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Yas Mall | Currently unavailable: Dubai Mall, Mall of the Emirates, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T08:14:41.7259951+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Yas Mall | Currently unavailable: Dubai Mall, Mall of the Emirates, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T08:16:12.4442897+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T08:16:26.3935504+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T10:01:54.3751624+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Al Jimi Mall | Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T10:02:59.5933626+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T10:03:47.9470575+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Dubai Mall | Currently unavailable: Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T10:04:48.2968194+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T10:13:24.0965297+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Al Jimi Mall | Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T10:14:28.6394359+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T12:31:17.7948968+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Dubai Mall | Currently unavailable: Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T12:34:09.7310685+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T13:10:24.3860151+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Dubai Mall | Currently unavailable: Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T13:10:40.6910857+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T23:31:13.1012163+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Tomorrow: Dubai Mall | Currently unavailable: Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T23:32:12.9368849+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T23:43:58.1938348+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Tomorrow: Dubai Mall | Currently unavailable: Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-30T23:44:11.9733679+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-31T02:00:36.4842046+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Mall of the Emirates | Currently unavailable: Dubai Mall, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-31T02:01:38.9742761+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Night Sky",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-31T18:03:48.8590374+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "OutOfStock",
+        "to":  "InStock",
+        "detail":  "Today: Dubai Mall | Currently unavailable: Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    },
+    {
+        "time":  "2026-10-31T18:05:29.6014291+04:00",
+        "store":  "Apple Store pickup",
+        "variant":  "512GB Star White",
+        "from":  "InStock",
+        "to":  "OutOfStock",
+        "detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island"
+    }
+]

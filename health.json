@@ -1,0 +1,91 @@
+﻿{
+    "crashes":  0,
+    "pauses":  [
+                   {
+                       "from":  "2026-10-27T09:54:34.7261030+04:00",
+                       "to":  "2026-10-27T10:31:34.6476579+04:00"
+                   },
+                   {
+                       "from":  "2026-10-27T10:47:09.1227027+04:00",
+                       "to":  "2026-10-27T11:14:52.2375534+04:00"
+                   },
+                   {
+                       "from":  "2026-10-27T17:53:43.7881177+04:00",
+                       "to":  "2026-10-27T18:15:26.7472067+04:00"
+                   },
+                   {
+                       "from":  "2026-10-27T18:17:35.2297338+04:00",
+                       "to":  "2026-10-27T18:33:35.4015849+04:00"
+                   },
+                   {
+                       "from":  "2026-10-28T21:57:27.8426763+04:00",
+                       "to":  "2026-10-28T22:46:26.2009833+04:00"
+                   }
+               ],
+    "channels":  {
+                     "Telegram":  {
+                                      "ok":  true,
+                                      "checkedAt":  "2026-10-31T22:54:55.0292793+04:00",
+                                      "error":  null,
+                                      "alerted":  false
+                                  }
+                 },
+    "lastAlerts":  {
+                       "Apple Store pickup|Available|InStock":  "2026-10-31T18:03:48.9433507+04:00",
+                       "Sharaf DG|Available|InStock":  "2026-10-29T10:59:41.1085044+04:00",
+                       "Apple Store pickup|Change|OutOfStock":  "2026-10-31T18:05:29.6757449+04:00",
+                       "Sharaf DG|Change|Unverified":  "2026-10-29T13:37:02.3939978+04:00"
+                   },
+    "lastRunAt":  "2026-11-01T00:50:06.8759294+04:00",
+    "stores":  {
+                   "Virgin Megastore | 512GB (any colour)":  {
+                                                                 "error":  "Invalid JSON primitive: .",
+                                                                 "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                                 "alerted":  true,
+                                                                 "fails":  1249
+                                                             },
+                   "Microless | 512GB (any colour)":  {
+                                                          "error":  "The remote server returned an error: (403) Forbidden.",
+                                                          "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                          "alerted":  true,
+                                                          "fails":  1249
+                                                      },
+                   "Carrefour | 512GB (any colour)":  {
+                                                          "error":  "Search page not recognised (blocked?)",
+                                                          "since":  "2026-10-26T14:54:12.5482033+04:00",
+                                                          "alerted":  true,
+                                                          "fails":  1249
+                                                      },
+                   "Noon | 512GB (any colour)":  {
+                                                     "error":  "curl failed with exit code 28",
+                                                     "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                     "alerted":  true,
+                                                     "fails":  1248
+                                                 },
+                   "Dubai Duty Free | 512GB (any colour)":  {
+                                                                "error":  "curl failed with exit code 28",
+                                                                "since":  "2026-10-26T14:54:12.5482033+04:00",
+                                                                "alerted":  true,
+                                                                "fails":  1248
+                                                            },
+                   "Grand Stores | 512GB Night Sky":  {
+                                                          "error":  "The remote server returned an error: (403) Forbidden.",
+                                                          "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                          "alerted":  true,
+                                                          "fails":  1249
+                                                      },
+                   "Grand Stores | 512GB Star White":  {
+                                                           "error":  "The remote server returned an error: (403) Forbidden.",
+                                                           "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                           "alerted":  true,
+                                                           "fails":  1249
+                                                       }
+               },
+    "twilio":  {
+                   "ok":  true,
+                   "checkedAt":  "2026-10-31T22:54:54.6303542+04:00",
+                   "error":  null,
+                   "alerted":  false
+               },
+    "crashAlertAt":  null
+}

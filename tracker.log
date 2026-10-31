@@ -1,0 +1,36 @@
+﻿2026-11-01 00:36:00  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-01 00:37:00  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-01 00:38:03  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-01 00:39:42  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-01 00:39:42  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-01 00:39:42  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-01 00:39:42  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-01 00:39:42  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-01 00:39:42  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-01 00:39:42  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-01 00:39:42  Run complete in 41s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-01 00:40:37  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-01 00:41:31  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-01 00:42:31  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-01 00:43:31  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-01 00:44:53  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-01 00:44:53  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-01 00:44:53  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-01 00:44:53  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-01 00:44:53  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-01 00:44:53  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-01 00:44:53  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-01 00:44:53  Run complete in 41s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 5s
+2026-11-01 00:45:16  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-01 00:46:13  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-01 00:47:16  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-01 00:48:16  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-01 00:49:54  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-01 00:49:54  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-01 00:49:54  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-01 00:49:54  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-01 00:49:54  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-01 00:49:54  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-01 00:49:54  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-01 00:49:55  Run complete in 41s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 5s
+2026-11-01 00:50:07  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s

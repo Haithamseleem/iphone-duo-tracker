@@ -1,0 +1,13 @@
+# Runs the tests of the Stock check chain's run-list script (.github/scripts/runs.sh) with fake GitHub answers.
+# Manual only; it reads nothing from GitHub and changes nothing.
+name: Test chain script
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash .github/scripts/test-runs.sh

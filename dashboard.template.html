@@ -423,18 +423,21 @@ function render() {
   }).sort((a, b) => RANK[a.best.state] - RANK[b.best.state] || priceOf(a.best) - priceOf(b.best) || a.store.localeCompare(b.store));
   const count = (s) => groups.filter(g => g.best.state === s).length;
 
-  // Live indicator: time since the last check and a countdown to the next one.
+  // Live indicator: time since the last check and a countdown to the next one. In the cloud a round runs about every
+  // roundSeconds (Apple each round, other stores every intervalMinutes); "stale" still allows three store intervals.
   const intervalMs = DATA.intervalMinutes * 60000;
+  const nextMs = DATA.roundSeconds ? DATA.roundSeconds * 1000 : intervalMs;
   const tick = () => {
     const sec = Math.max(0, Math.round((Date.now() - checked) / 1000));
-    const next = Math.round((checked.getTime() + intervalMs - Date.now()) / 1000);
+    const next = Math.round((checked.getTime() + nextMs - Date.now()) / 1000);
     const stale = sec * 1000 > intervalMs * 3;
     $('live').classList.toggle('stale', stale);
     $('liveText').textContent = stale ? `Last check ${agoSec(sec)} — tracker paused`
       : `Checked ${agoSec(sec)} · ` + (next > 0 ? `next in ${Math.floor(next / 60)}:${String(next % 60).padStart(2, '0')}` : 'checking now…');
   };
   tick(); setInterval(tick, 1000);
-  const everyText = DATA.intervalMinutes == 1 ? 'every minute' : `every ${DATA.intervalMinutes} minutes`;
+  const everyText = DATA.roundSeconds ? `every minute (Apple) and about every ${DATA.intervalMinutes} minutes (other stores)`
+    : DATA.intervalMinutes == 1 ? 'every minute' : `every ${DATA.intervalMinutes} minutes`;
   $('every').textContent = everyText;
 
   if (Date.now() - checked > intervalMs * 3) {
@@ -745,8 +748,29 @@ function cloudRun(checkedMs, show, checking, idle) {
     method: body ? 'POST' : 'GET', body: body ? JSON.stringify(body) : undefined,
     headers: { Accept: 'application/vnd.github+json', Authorization: 'Bearer ' + localStorage.getItem(KEY_KEY) }
   });
-  // Pages are cached for up to 10 minutes; a new query string fetches the latest one.
-  const reload = () => location.replace(location.pathname + '?t=' + Date.now());
+  // Pages are cached for up to 10 minutes; a new query string fetches the latest one. A reload keeps the reader's place
+  // (scroll position and search text), which the new page puts back.
+  const VIEW_KEY = 'iphoneDuoView';
+  const reload = () => {
+    try { sessionStorage.setItem(VIEW_KEY, JSON.stringify({ y: scrollY, q: $('search').value })); } catch { }
+    location.replace(location.pathname + '?t=' + Date.now());
+  };
+  // The check time of the page GitHub is publishing now (null when it can't be read).
+  const publishedAt = async () => {
+    const r = await fetch(location.pathname + '?t=' + Date.now(), { cache: 'no-store' });
+    const m = r.ok && (await r.text()).match(/"checkedAt"\s*:\s*"([^"]+)"/);
+    return m ? new Date(m[1]).getTime() : null;
+  };
+  try {
+    const view = JSON.parse(sessionStorage.getItem(VIEW_KEY));
+    sessionStorage.removeItem(VIEW_KEY);
+    if (view) {
+      if (view.q) { $('search').value = view.q; $('search').dispatchEvent(new Event('input')); }
+      // Now (the page is built) and again once images have loaded; animation frames don't run in a hidden tab.
+      scrollTo(0, view.y || 0);
+      addEventListener('load', () => scrollTo(0, view.y || 0), { once: true });
+    }
+  } catch { }
   const wait = 'Checking every store in the cloud — fresh results in about 2 minutes. Keep this page open; it updates by itself.';
   let pending = null, typing = false;
   try { pending = JSON.parse(localStorage.getItem(CLOUD_RUN_KEY)); } catch { }
@@ -760,11 +784,7 @@ function cloudRun(checkedMs, show, checking, idle) {
       return;
     }
     checking(wait);
-    try {
-      const r = await fetch(location.pathname + '?t=' + Date.now(), { cache: 'no-store' });
-      const m = r.ok && (await r.text()).match(/"checkedAt"\s*:\s*"([^"]+)"/);
-      if (m && new Date(m[1]).getTime() > pending.base) { reload(); return; }
-    } catch { }
+    try { if ((await publishedAt()) > pending.base) { reload(); return; } } catch { }
     setTimeout(follow, 10000);
   }
 
@@ -836,8 +856,12 @@ function cloudRun(checkedMs, show, checking, idle) {
       setTimeout(() => { banner.hidden = true; }, 15000);
     } else follow();
   }
-  // Automatic checks publish a new page about every minute.
-  setInterval(() => { if (!pending && !typing) reload(); }, 60000);
+  // Automatic checks publish a new page about every minute: look in the background and reload only when it has newer
+  // results (keeping the reader's place), instead of reloading blindly.
+  setInterval(async () => {
+    if (pending || typing) return;
+    try { if ((await publishedAt()) > checkedMs) reload(); } catch { }
+  }, 60000);
 }
 
 render();

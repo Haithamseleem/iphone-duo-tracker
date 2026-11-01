@@ -101,6 +101,21 @@ function Get-EtaDate([string]$Text) {
     } catch { return $null }
 }
 
+# The delivery date in a store's text: a date shortly after a delivery word ("Ships Jan 22", "home delivery from 25 Jan
+# 2027", "delivery 25th Jan'27 onwards", "Delivers Nov 3"). Other dates, such as an offer's end ("Free delivery, offer
+# ends 30 Nov") or a date in a product name, don't count, so they can't turn real stock into a pre-order.
+function Get-DeliveryDate([string]$Text) {
+    if (-not $Text) { return $null }
+    $mon = ($Months -join '|')
+    $date = "\d{1,2}(?:st|nd|rd|th)?\s+(?:$mon)|(?:$mon)[a-z]*\s+\d{1,2}"
+    foreach ($m in [regex]::Matches($Text, "\b(?:deliver|ship|dispatch|arriv)\w*\b(?<gap>[^|,;]{0,25}?)(?<date>$date)", 'IgnoreCase')) {
+        if ($m.Groups['gap'].Value -match 'end|until|valid|expir|offer|sale|promo') { continue }
+        $eta = Get-EtaDate $Text.Substring($m.Groups['date'].Index)
+        if ($eta) { return $eta }
+    }
+    $null
+}
+
 function Resolve-State([bool]$Orderable, $Eta, [bool]$PreorderHint) {
     if (-not $Orderable) { return 'OutOfStock' }
     # Orderable with a delivery date counts as available however far away the date is; the row gets a delivery note.
@@ -170,17 +185,30 @@ function Test-SharafDGStock($Target) {
     $online = 'online: buy now, AED {0:N0} ({1})' -f [double]$buyNow[0].price, $buyNow[0].post_title
     $url = $buyNow[0].permalink
     # The delivery date for online orders is shown only on the product page, which GitHub's servers can't open. The date
-    # seen there ("deliveryFrom" in config.json) is used until it's removed, and the 7-day rule decides: on 29 Oct it was
-    # 25 Jan, so "buy now" is late delivery.
-    $late = if ($Target.deliveryFrom) { "home delivery from $(([datetime]$Target.deliveryFrom).ToString('d MMM yyyy')) (seen on Sharaf's site $($Target.deliveryFromSeen))" }
+    # seen there ("deliveryFrom" in config.json, seen on "deliveryFromSeen") counts for "deliveryFromDays" (7) days, and
+    # the 7-day rule decides: on 29 Oct it was 25 Jan, so "buy now" was a pre-order. After that the date is unknown, and
+    # a buy-now listing is unconfirmed (open the page) rather than a pre-order forever.
+    $late = $null; $unknown = $null
+    if ($Target.deliveryFrom) {
+        $seen = [datetime]::MinValue
+        $hasSeen = [datetime]::TryParse("$($Target.deliveryFromSeen)", [ref]$seen)
+        $days = if ($Target.deliveryFromDays) { [int]$Target.deliveryFromDays } else { 7 }
+        if ($hasSeen -and ((Get-Date).Date - $seen.Date).TotalDays -le $days) {
+            $late = "home delivery from $(([datetime]$Target.deliveryFrom).ToString('d MMM yyyy')) (seen on Sharaf's site $($seen.ToString('d MMM')))"
+        } else {
+            $unknown = "delivery date unknown: last seen $(if ($hasSeen) { $seen.ToString('d MMM') } else { 'never' }) (Sharaf's page can't be read from GitHub), open the page to see it"
+        }
+    }
     # Branch names only (no unit counts) so routine sales don't trigger a change alert every few minutes. Pickup units
     # while online orders wait weeks may be held for pre-order customers, so they are unconfirmed (call the branch).
     if ($branches.Count) {
         $where = 'In store at ' + (@($branches) -join ', ') + ' (call ahead)'
-        if ($late) { return @{ State = 'Unverified'; Detail = "$where`: listed for pickup, unconfirmed | $online | $late"; Url = $url } }
+        $note = if ($late) { $late } elseif ($unknown) { $unknown }
+        if ($note) { return @{ State = 'Unverified'; Detail = "$where`: listed for pickup, unconfirmed | $online | $note"; Url = $url } }
         return @{ State = 'InStock'; Detail = "$where | $online"; Url = $url }
     }
     if ($late) { return @{ State = 'InStock'; Detail = "Buy now online, $late | $online"; Url = $url } }
+    if ($unknown) { return @{ State = 'Unverified'; Detail = "Buy now online, $unknown | $online"; Url = $url } }
     @{ State = 'InStock'; Detail = "Buy now online | $online"; Url = $url }
 }
 
@@ -667,10 +695,16 @@ function Send-Telegram([string]$Title, [string]$Body, [string]$Url, $Row, [switc
         $label = if ($Row -and $Row.State -eq 'InStock') { 'Buy now' } else { 'Open store' }
         $msg.reply_markup = @{ inline_keyboard = @(, @(@{ text = $label; url = $Url })) }
     }
-    $json = $msg | ConvertTo-Json -Depth 6 -Compress
-    Invoke-RestMethod -Method Post -Uri "https://api.telegram.org/bot$($tg.botToken)/sendMessage" -TimeoutSec 20 `
-        -ContentType 'application/json; charset=utf-8' -Body ([Text.Encoding]::UTF8.GetBytes($json)) | Out-Null
+    Invoke-Telegram 'sendMessage' $msg | Out-Null
     $true
+}
+
+# One Telegram Bot API call with the configured bot token: POST with a JSON body, or GET when there is no body.
+function Invoke-Telegram([string]$Method, $Body) {
+    $uri = "https://api.telegram.org/bot$($Config.telegram.botToken)/$Method"
+    if ($null -eq $Body) { return Invoke-RestMethod -Uri $uri -TimeoutSec 30 }
+    Invoke-RestMethod -Method Post -Uri $uri -TimeoutSec 20 -ContentType 'application/json; charset=utf-8' `
+        -Body ([Text.Encoding]::UTF8.GetBytes(($Body | ConvertTo-Json -Depth 6 -Compress)))
 }
 
 # -Silent: Telegram delivers it without a notification sound (used for "gone out of stock").
@@ -845,7 +879,7 @@ function Get-BotReply([string]$Text) {
             if ($arg -match '^(off|stop|0)$') { $bot.muteUntil = $null; return 'Alerts are loud again.' }
             if (-not $arg) { $arg = '1h' }
             if ($arg -notmatch '^(\d+)\s*(m|min|mins|minutes?|h|hr|hrs|hours?)?$') { return 'Use /mute 1h, /mute 30m or /mute off.' }
-            $minutes = [int]$Matches[1] * $(if ($Matches[2] -and $Matches[2].StartsWith('m')) { 1 } else { 60 })
+            $minutes = [int]$Matches[1] * $(if ("$($Matches[2])".ToLowerInvariant().StartsWith('m')) { 1 } else { 60 })
             $minutes = [Math]::Max(1, [Math]::Min(1440, $minutes))
             $until = (Get-Date).AddMinutes($minutes)
             $bot.muteUntil = $until.ToString('o')
@@ -858,17 +892,16 @@ function Get-BotReply([string]$Text) {
 function Invoke-BotCommands {
     $tg = $Config.telegram
     if (-not $tg.botToken -or -not $tg.chatId) { return }
-    $api = "https://api.telegram.org/bot$($tg.botToken)"
-    $post = { param($Method, $Body)
-        Invoke-RestMethod -Method Post -Uri "$api/$Method" -TimeoutSec 20 -ContentType 'application/json; charset=utf-8' `
-            -Body ([Text.Encoding]::UTF8.GetBytes(($Body | ConvertTo-Json -Depth 5 -Compress))) }
-    # The menu Telegram shows for "/", registered again whenever the command list changes.
+    # The menu Telegram shows for "/", registered again whenever the command list changes. A failure here doesn't stop
+    # the replies below; it is tried again next run.
     if ($bot.menu -ne $BotMenu) {
-        & $post 'setMyCommands' @{ commands = @(foreach ($k in $BotCommands.Keys) { @{ command = $k; description = $BotCommands[$k] } }) } | Out-Null
-        $bot.menu = $BotMenu; Save-Bot
-        Write-Log 'Telegram: bot command menu registered.'
+        try {
+            Invoke-Telegram 'setMyCommands' @{ commands = @(foreach ($k in $BotCommands.Keys) { @{ command = $k; description = $BotCommands[$k] } }) } | Out-Null
+            $bot.menu = $BotMenu; Save-Bot
+            Write-Log 'Telegram: bot command menu registered.'
+        } catch { Write-Log "Telegram: registering the command menu failed: $(Get-ErrorText $_)" }
     }
-    try { $res = Invoke-RestMethod -Uri "$api/getUpdates?offset=$([long]$bot.offset)&timeout=0&allowed_updates=%5B%22message%22%5D" -TimeoutSec 20 }
+    try { $res = Invoke-Telegram "getUpdates?offset=$([long]$bot.offset)&timeout=0&allowed_updates=%5B%22message%22%5D" }
     catch {
         # 409: a webhook is set for this bot, and Telegram then refuses getUpdates. It is not removed automatically.
         if ($_.Exception.Response -and [int]$_.Exception.Response.StatusCode -eq 409) { Write-Log 'Telegram: a webhook is set for this bot, so commands are not read (remove it with deleteWebhook).'; return }
@@ -890,8 +923,8 @@ function Invoke-BotCommands {
         try {
             $reply = Get-BotReply "$($m.text)"
             if ($reply.Length -gt 4000) { $reply = $reply.Substring(0, 4000) + "`n..." }
-            & $post 'sendMessage' @{ chat_id = $tg.chatId; text = $reply; disable_web_page_preview = $true
-                                     reply_to_message_id = $m.message_id; allow_sending_without_reply = $true } | Out-Null
+            Invoke-Telegram 'sendMessage' @{ chat_id = $tg.chatId; text = $reply; disable_web_page_preview = $true
+                                             reply_to_message_id = $m.message_id; allow_sending_without_reply = $true } | Out-Null
             Write-Log "Telegram: answered $cmd"
         } catch { Write-Log "Telegram: answering $cmd failed: $(Get-ErrorText $_)" }
     }
@@ -976,7 +1009,7 @@ function Add-History($Row, $From) {
 
 # Self-check state survives between runs in health.json: failure streaks per store, Twilio status, pauses and crashes.
 function Read-Health {
-    $h = @{ stores = @{}; twilio = @{}; channels = @{}; lastRunAt = $null; pauses = @(); crashes = 0; crashAlertAt = $null; lastAlerts = @{} }
+    $h = @{ stores = @{}; twilio = @{}; channels = @{}; lastRunAt = $null; pauses = @(); crashes = 0; crashAlertAt = $null; lastAlerts = @{}; pagesAlerted = $false }
     if (-not (Test-Path $HealthPath)) { return $h }
     try { $j = Get-Content $HealthPath -Raw -Encoding UTF8 | ConvertFrom-Json } catch { return $h }
     if ($j.stores) {
@@ -991,6 +1024,7 @@ function Read-Health {
         }
     }
     $h.lastRunAt = $j.lastRunAt; $h.pauses = @($j.pauses | Where-Object { $_ }); $h.crashes = [int]$j.crashes; $h.crashAlertAt = $j.crashAlertAt
+    $h.pagesAlerted = [bool]$j.pagesAlerted
     if ($j.lastAlerts) { foreach ($p in $j.lastAlerts.PSObject.Properties) { $h.lastAlerts[$p.Name] = $p.Value } }
     $h
 }
@@ -1108,7 +1142,7 @@ if ($Cloud) {
 if ($SetupTelegram) {
     $tg = $Config.telegram
     if (-not $tg.botToken) { Write-Host 'First paste your bot token (from @BotFather) into telegram.botToken in config.json.'; return }
-    $updates = Invoke-RestMethod -Uri "https://api.telegram.org/bot$($tg.botToken)/getUpdates" -TimeoutSec 30
+    $updates = Invoke-Telegram 'getUpdates'
     $chat = @($updates.result | ForEach-Object { $_.message.chat } | Where-Object { $_ }) | Select-Object -Last 1
     if (-not $chat) { Write-Host 'No message found yet: open your bot in Telegram, press Start (or send "hi"), then run this again.'; return }
     $path = Join-Path $Root 'config.json'
@@ -1390,8 +1424,8 @@ $results = foreach ($j in $jobs) {
         # ordering. A later date (payment now for a far-off delivery, e.g. Sharaf DG's 25 Jan on 29 Oct) is a pre-order
         # in all but name, so it counts as out of stock. Since 29 Oct this replaces Apple's "deliverBefore" 22 Jan rule.
         if ($row.State -eq 'InStock') {
-            $eta = Get-EtaDate $row.Detail
-            $maxDays = if ($Config.availableNowWithinDays) { [int]$Config.availableNowWithinDays } else { 7 }
+            $eta = Get-DeliveryDate $row.Detail
+            $maxDays =if ($Config.availableNowWithinDays) { [int]$Config.availableNowWithinDays } else { 7 }
             if ($eta -and ($eta - (Get-Date).Date).TotalDays -gt $maxDays) {
                 $row.State = 'OutOfStock'
                 $row.Detail = "Pre-order: delivery from $($eta.ToString('d MMM yyyy')), more than $maxDays days after ordering | $($row.Detail)"
@@ -1448,7 +1482,7 @@ foreach ($r in $results) {
         [void]$events.Add(@{ Kind = 'Change'; Row = $r; From = $oldState }); Add-History $r $oldState
     } elseif ($oldState -and $r.State -eq 'InStock') {
         # Same status: only a moved delivery date is worth an alert, not wording or price-format changes.
-        $oldEta = Get-EtaDate $old.Detail; $newEta = Get-EtaDate $r.Detail
+        $oldEta = Get-DeliveryDate $old.Detail; $newEta = Get-DeliveryDate $r.Detail
         if ($oldEta -and $newEta -and $oldEta -ne $newEta) {
             [void]$events.Add(@{ Kind = 'Eta'; Row = $r; From = ('{0:d MMM}' -f $oldEta); To = ('{0:d MMM}' -f $newEta) }); Add-History $r $r.State
         }
@@ -1474,6 +1508,13 @@ foreach ($g in @($events | Group-Object { "$($_.Kind)|$($_.Row.Store)|$($_.From)
     $quiet = [bool]($lastLoud -and ((Get-Date) - [datetime]$lastLoud).TotalMinutes -lt 10)
     if (-not $quiet -and -not $muted) { $health.lastAlerts[$coolKey] = (Get-Date).ToString('o') }
     if ($muted) { $quiet = $true; Write-Log "Muted (/mute): $($row.Store) alert sent without sound." }
+    # A store flipping between "Unconfirmed" and "Out of stock" (e.g. Sharaf DG's branch pickup flags coming and going
+    # while online delivery is weeks away) sounds at most once an hour; the flips in between come without sound.
+    if ($ev[0].Kind -eq 'Change' -and $ev[0].From -in 'Unverified', 'OutOfStock' -and $row.State -in 'Unverified', 'OutOfStock') {
+        $flipKey = "$($row.Store)|flip"; $lastFlip = $health.lastAlerts[$flipKey]
+        if ($lastFlip -and ((Get-Date) - [datetime]$lastFlip).TotalMinutes -lt 60) { $quiet = $true }
+        else { $health.lastAlerts[$flipKey] = (Get-Date).ToString('o') }
+    }
     switch ($ev[0].Kind) {
         'Available' {
             if ($quiet) { Send-Alert "iPhone Duo 512GB AVAILABLE: $($row.Store)" "$($row.Variant) - $($row.Detail).$priceNote" $row.Url -Row $row -Silent }
@@ -1495,6 +1536,21 @@ $state | ConvertTo-Json | Set-Content -Path $StatePath -Encoding UTF8
 ConvertTo-Json -InputObject @($history | Select-Object -Last 50) -Depth 3 | Set-Content -Path $HistoryPath -Encoding UTF8
 
 Update-StoreHealth $results
+# Dashboard publishing: pages.json is written by each round's "Publish the page" step (.github/actions/round). A
+# self-check alert after 5 failed publishes in a row, and again once it works, so a frozen page doesn't go unnoticed.
+$pagesPath = Join-Path $Root 'pages.json'
+if ($Cloud -and (Test-Path $pagesPath)) {
+    try {
+        $pg = Get-Content $pagesPath -Raw -Encoding UTF8 | ConvertFrom-Json
+        if ([int]$pg.fails -ge 5 -and -not $health.pagesAlerted) {
+            Show-HealthAlert "The dashboard isn't updating" "The last $($pg.fails) attempts to publish it failed: $($pg.error)"
+            $health.pagesAlerted = $true
+        } elseif ([int]$pg.fails -eq 0 -and $health.pagesAlerted) {
+            Show-HealthAlert 'The dashboard is updating again' 'It is being published normally.'
+            $health.pagesAlerted = $false
+        }
+    } catch { Write-Log "pages.json unreadable: $($_.Exception.Message)" }
+}
 # Alert-channel self-checks at most once a minute in watch mode (they re-check every time while a channel is broken).
 if (-not $Watch -or -not $lastSelfCheck -or ((Get-Date) - $lastSelfCheck).TotalSeconds -ge 60) {
     $lastSelfCheck = Get-Date
@@ -1505,7 +1561,7 @@ if (-not $Watch -or -not $lastSelfCheck -or ((Get-Date) - $lastSelfCheck).TotalS
         catch { Write-Log "Meta self-check failed: $($_.Exception.Message)" }
     }
     if ($Config.telegram.botToken) {
-        try { Test-ChannelHealth 'Telegram' { Invoke-RestMethod -Uri "https://api.telegram.org/bot$($Config.telegram.botToken)/getMe" -TimeoutSec 30 } }
+        try { Test-ChannelHealth 'Telegram' { Invoke-Telegram 'getMe' } }
         catch { Write-Log "Telegram self-check failed: $($_.Exception.Message)" }
     }
 }
@@ -1536,6 +1592,8 @@ if ($writePage -and (Test-Path $template)) {
     $data = [ordered]@{
         checkedAt       = (Get-Date).ToString('o')
         intervalMinutes = $Config.intervalMinutes
+        # Cloud rounds start about every ROUND_SECONDS (check.yml); the page's countdown and wording use it.
+        roundSeconds    = $(if ($Cloud -and $env:ROUND_SECONDS) { [int]$env:ROUND_SECONDS } else { 0 })
         telegramEnabled = [bool]($Config.telegram.botToken -and $Config.telegram.chatId)
         folder          = $Root
         cloud           = $Cloud

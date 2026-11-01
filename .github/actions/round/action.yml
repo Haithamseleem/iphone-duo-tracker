@@ -19,14 +19,11 @@ runs:
       env:
         N: ${{ inputs.n }}
       run: |
-        runs="repos/$GITHUB_REPOSITORY/actions/workflows/check.yml/runs?per_page=30"
         if [ "$N" -gt 1 ]; then
-          # A newer check that already has its machine is waiting for this one: stop, and it carries on. Scheduled
-          # starts don't count: they stop by themselves while a check is running (28 Oct 21:57 both stopped).
-          ready=$(gh api "$runs" --jq "[.workflow_runs[] | select(.display_title == \"Stock check\" and .status == \"in_progress\" and .event != \"schedule\" and .id > $GITHUB_RUN_ID)] | length") || ready=0
-          # Only a plain number counts; anything else (an error text) means "don't know", so keep checking.
-          case "$ready" in ''|*[!0-9]*) ready=0 ;; esac
-          if [ "$ready" != "0" ]; then
+          # A newer check has its machine, has checked out and is waiting for this one: stop, and it carries on
+          # (.github/scripts/runs.sh; scheduled starts never count). Anything but 1 means keep checking.
+          ready=$(bash .github/scripts/runs.sh ready) || ready=0
+          if [ "$ready" = "1" ]; then
             echo "A newer check is ready; it carries on from here."; touch handed-over.flag
             echo "go=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
@@ -35,7 +32,7 @@ runs:
         fi
         # Start the next check now, so it gets its machine while this one keeps checking.
         if [ "$N" = "$START_NEXT_AT" ]; then
-          queued=$(gh api "$runs" --jq "[.workflow_runs[] | select(.display_title == \"Stock check\" and .status != \"completed\" and .event != \"schedule\" and .id > $GITHUB_RUN_ID)] | length") || queued=1
+          queued=$(bash .github/scripts/runs.sh pending) || queued=err
           case "$queued" in ''|*[!0-9]*) queued=1 ;; esac
           if [ "$queued" = "0" ]; then gh workflow run check.yml --repo "$GITHUB_REPOSITORY" --ref main -f test=false || true
           else echo "A newer check is already on its way."; fi
@@ -60,7 +57,7 @@ runs:
         git config user.name 'github-actions[bot]'
         git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
         export GIT_INDEX_FILE="$RUNNER_TEMP/state-index"
-        for f in state.json history.json health.json bot.json tracker.log; do [ -f "$f" ] && git add -f "$f"; done
+        for f in state.json history.json health.json bot.json pages.json tracker.log; do [ -f "$f" ] && git add -f "$f"; done
         commit=$(git commit-tree "$(git write-tree)" -m 'Tracker state')
         git push -q -f origin "$commit:refs/heads/data"
         echo "sha=$commit" >> "$GITHUB_OUTPUT"
@@ -84,7 +81,9 @@ runs:
     # Published through GitHub's Pages deployment API (what actions/deploy-pages does) with a build version unique to
     # this round: the data-branch commit just saved (the API wants a commit id; any other string gets a 404).
     # deploy-pages always uses the workflow's commit: after hours of deploys of one commit, Pages kept serving an old
-    # copy (29 Oct 16:36 to 30 Oct 23:34) while every deploy reported success.
+    # copy (29 Oct 16:36 to 30 Oct 23:34) while every deploy reported success. There is deliberately no fallback to
+    # that version. pages.json counts failed publishes in a row (saved with the state next round), and tracker.ps1
+    # sends a self-check alert after 5.
     - name: Publish the page
       if: steps.check.outcome == 'success'
       shell: powershell
@@ -93,23 +92,30 @@ runs:
         STATE_SHA: ${{ steps.save.outputs.sha }}
       run: |
         $ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue'
-        $oidc = (Invoke-RestMethod -Uri $env:ACTIONS_ID_TOKEN_REQUEST_URL -Headers @{ Authorization = "Bearer $env:ACTIONS_ID_TOKEN_REQUEST_TOKEN" }).value
-        Write-Host "::add-mask::$oidc"
-        $version = if ($env:STATE_SHA -match '^[0-9a-f]{40}$') { $env:STATE_SHA } else { $env:GITHUB_SHA }
-        $h = @{ Authorization = "Bearer $env:GH_TOKEN"; Accept = 'application/vnd.github+json'; 'X-GitHub-Api-Version' = '2022-11-28' }
-        $api = "https://api.github.com/repos/$env:GITHUB_REPOSITORY/pages/deployments"
-        $create = { param($v) Invoke-RestMethod -Method Post -Uri $api -Headers $h -ContentType 'application/json' `
-                      -Body (@{ artifact_id = [long]$env:ARTIFACT_ID; pages_build_version = $v; oidc_token = $oidc } | ConvertTo-Json -Compress) }
-        try { $d = & $create $version }
-        catch {
-          if ($version -eq $env:GITHUB_SHA) { throw }
-          Write-Host "::warning::Pages refused build version $version ($($_.ErrorDetails.Message)); using the workflow commit instead."
-          $version = $env:GITHUB_SHA; $d = & $create $version
+        $pages = @{ fails = 0; error = ''; ok = $null }
+        try { $old = Get-Content pages.json -Raw | ConvertFrom-Json; $pages.fails = [int]$old.fails; $pages.ok = $old.ok } catch { }
+        try {
+          if ($env:STATE_SHA -notmatch '^[0-9a-f]{40}$') { throw 'No saved-state commit this round to use as the build version.' }
+          $version = $env:STATE_SHA
+          $oidc = (Invoke-RestMethod -Uri $env:ACTIONS_ID_TOKEN_REQUEST_URL -Headers @{ Authorization = "Bearer $env:ACTIONS_ID_TOKEN_REQUEST_TOKEN" }).value
+          Write-Host "::add-mask::$oidc"
+          $h = @{ Authorization = "Bearer $env:GH_TOKEN"; Accept = 'application/vnd.github+json'; 'X-GitHub-Api-Version' = '2022-11-28' }
+          $api = "https://api.github.com/repos/$env:GITHUB_REPOSITORY/pages/deployments"
+          $body = @{ artifact_id = [long]$env:ARTIFACT_ID; pages_build_version = $version; oidc_token = $oidc } | ConvertTo-Json -Compress
+          $d = Invoke-RestMethod -Method Post -Uri $api -Headers $h -ContentType 'application/json' -Body $body
+          $s = ''
+          for ($i = 0; $i -lt 30 -and $s -ne 'succeed'; $i++) {
+            Start-Sleep -Seconds 2
+            $s = (Invoke-RestMethod -Uri "$api/$($d.id)" -Headers $h).status
+            if ($s -match 'fail|error|cancel|lost') { throw "Pages deployment ended as '$s'." }
+          }
+          if ($s -ne 'succeed') { throw "Pages deployment was still '$s' after 60 seconds." }
+          $pages = @{ fails = 0; error = ''; ok = (Get-Date).ToString('o') }
+          Write-Host "Published (build version $version)."
+        } catch {
+          $msg = if ($_.ErrorDetails -and $_.ErrorDetails.Message) { $_.ErrorDetails.Message } else { $_.Exception.Message }
+          $pages.fails++; $pages.error = "$msg".Substring(0, [Math]::Min(200, "$msg".Length))
+          Write-Host "::warning::Publishing the page failed ($($pages.fails) in a row): $($pages.error)"
         }
-        for ($i = 0; $i -lt 30; $i++) {
-          Start-Sleep -Seconds 2
-          $s = (Invoke-RestMethod -Uri "$api/$($d.id)" -Headers $h).status
-          if ($s -eq 'succeed') { Write-Host "Published (build version $version)."; exit 0 }
-          if ($s -match 'fail|error|cancel|lost') { throw "Pages deployment $version ended as '$s'." }
-        }
-        throw "Pages deployment $version was still '$s' after 60 seconds."
+        $pages | ConvertTo-Json | Set-Content pages.json -Encoding UTF8
+        if ($pages.fails) { exit 1 }

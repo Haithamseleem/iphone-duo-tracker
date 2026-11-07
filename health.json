@@ -1,0 +1,96 @@
+﻿{
+    "lastAlerts":  {
+                       "Apple Store pickup|Available|InStock":  "2026-11-07T16:17:48.4974875+04:00",
+                       "Noon Minutes|Change|OutOfStock":  "2026-11-06T07:53:14.7767445+04:00",
+                       "Sharaf DG|Change|OutOfStock":  "2026-11-04T22:45:06.1947740+04:00",
+                       "Sharaf DG|Available|InStock":  "2026-10-29T10:59:41.1085044+04:00",
+                       "Noon Minutes|Available|InStock":  "2026-11-06T00:48:58.7717481+04:00",
+                       "Sharaf DG|Change|Unverified":  "2026-11-05T07:38:42.9039582+04:00",
+                       "Apple Store pickup|Change|OutOfStock":  "2026-11-07T16:18:47.7873284+04:00",
+                       "Sharaf DG|flip":  "2026-11-05T07:38:42.9059840+04:00"
+                   },
+    "twilio":  {
+                   "ok":  true,
+                   "checkedAt":  "2026-11-07T17:17:15.8809172+04:00",
+                   "error":  null,
+                   "alerted":  false
+               },
+    "pauses":  [
+                   {
+                       "from":  "2026-10-27T09:54:34.7261030+04:00",
+                       "to":  "2026-10-27T10:31:34.6476579+04:00"
+                   },
+                   {
+                       "from":  "2026-10-27T10:47:09.1227027+04:00",
+                       "to":  "2026-10-27T11:14:52.2375534+04:00"
+                   },
+                   {
+                       "from":  "2026-10-27T17:53:43.7881177+04:00",
+                       "to":  "2026-10-27T18:15:26.7472067+04:00"
+                   },
+                   {
+                       "from":  "2026-10-27T18:17:35.2297338+04:00",
+                       "to":  "2026-10-27T18:33:35.4015849+04:00"
+                   },
+                   {
+                       "from":  "2026-10-28T21:57:27.8426763+04:00",
+                       "to":  "2026-10-28T22:46:26.2009833+04:00"
+                   }
+               ],
+    "lastRunAt":  "2026-11-07T18:51:12.2289170+04:00",
+    "crashAlertAt":  null,
+    "stores":  {
+                   "Virgin Megastore | 512GB (any colour)":  {
+                                                                 "error":  "Invalid JSON primitive: .",
+                                                                 "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                                 "alerted":  true,
+                                                                 "fails":  3138
+                                                             },
+                   "Microless | 512GB (any colour)":  {
+                                                          "error":  "The remote server returned an error: (403) Forbidden.",
+                                                          "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                          "alerted":  true,
+                                                          "fails":  3138
+                                                      },
+                   "Carrefour | 512GB (any colour)":  {
+                                                          "error":  "Search page not recognised (blocked?)",
+                                                          "since":  "2026-10-26T14:54:12.5482033+04:00",
+                                                          "alerted":  true,
+                                                          "fails":  3138
+                                                      },
+                   "Noon | 512GB (any colour)":  {
+                                                     "error":  "curl failed with exit code 28",
+                                                     "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                     "alerted":  true,
+                                                     "fails":  3135
+                                                 },
+                   "Dubai Duty Free | 512GB (any colour)":  {
+                                                                "error":  "curl failed with exit code 28",
+                                                                "since":  "2026-10-26T14:54:12.5482033+04:00",
+                                                                "alerted":  true,
+                                                                "fails":  3135
+                                                            },
+                   "Grand Stores | 512GB Night Sky":  {
+                                                          "error":  "The remote server returned an error: (403) Forbidden.",
+                                                          "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                          "alerted":  true,
+                                                          "fails":  3138
+                                                      },
+                   "Grand Stores | 512GB Star White":  {
+                                                           "error":  "The remote server returned an error: (403) Forbidden.",
+                                                           "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                           "alerted":  true,
+                                                           "fails":  3138
+                                                       }
+               },
+    "pagesAlerted":  false,
+    "crashes":  0,
+    "channels":  {
+                     "Telegram":  {
+                                      "ok":  true,
+                                      "checkedAt":  "2026-11-07T17:17:16.4249633+04:00",
+                                      "error":  null,
+                                      "alerted":  false
+                                  }
+                 }
+}

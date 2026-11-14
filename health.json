@@ -1,0 +1,114 @@
+﻿{
+    "lastAlerts":  {
+                       "Apple Store pickup|Available|InStock":  "2026-11-14T10:08:49.2829858+04:00",
+                       "Noon Minutes|Change|OutOfStock":  "2026-11-13T21:14:44.8202422+04:00",
+                       "Sharaf DG|Change|OutOfStock":  "2026-11-04T22:45:06.1947740+04:00",
+                       "Sharaf DG|Available|InStock":  "2026-10-29T10:59:41.1085044+04:00",
+                       "Noon Minutes|Available|InStock":  "2026-11-13T15:38:21.4524265+04:00",
+                       "Sharaf DG|Change|Unverified":  "2026-11-05T07:38:42.9039582+04:00",
+                       "Apple Store pickup|Change|OutOfStock":  "2026-11-14T10:09:43.8456697+04:00",
+                       "Sharaf DG|flip":  "2026-11-05T07:38:42.9059840+04:00"
+                   },
+    "twilio":  {
+                   "ok":  true,
+                   "checkedAt":  "2026-11-14T17:32:41.7595332+04:00",
+                   "error":  null,
+                   "alerted":  false
+               },
+    "pauses":  [
+                   {
+                       "from":  "2026-11-12T14:36:44.0921683+04:00",
+                       "to":  "2026-11-12T15:02:24.9088244+04:00"
+                   },
+                   {
+                       "from":  "2026-11-12T15:18:04.1986790+04:00",
+                       "to":  "2026-11-12T16:11:34.6273947+04:00"
+                   },
+                   {
+                       "from":  "2026-11-12T18:49:43.4827974+04:00",
+                       "to":  "2026-11-12T19:29:10.5971397+04:00"
+                   },
+                   {
+                       "from":  "2026-11-12T20:38:46.8686016+04:00",
+                       "to":  "2026-11-12T21:34:36.2729135+04:00"
+                   },
+                   {
+                       "from":  "2026-11-13T00:54:29.0051207+04:00",
+                       "to":  "2026-11-13T01:10:00.9136121+04:00"
+                   }
+               ],
+    "lastRunAt":  "2026-11-14T21:44:49.0060211+04:00",
+    "crashAlertAt":  null,
+    "stores":  {
+                   "Virgin Megastore | 512GB (any colour)":  {
+                                                                 "error":  "Invalid JSON primitive: .",
+                                                                 "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                                 "alerted":  true,
+                                                                 "fails":  5081
+                                                             },
+                   "iStyle | 512GB Night Sky":  {
+                                                    "error":  "The remote server returned an error: (429) Too Many Requests.",
+                                                    "since":  "2026-11-14T18:10:13.7385825+04:00",
+                                                    "alerted":  true,
+                                                    "fails":  43
+                                                },
+                   "Microless | 512GB (any colour)":  {
+                                                          "error":  "The remote server returned an error: (403) Forbidden.",
+                                                          "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                          "alerted":  true,
+                                                          "fails":  5081
+                                                      },
+                   "Carrefour | 512GB (any colour)":  {
+                                                          "error":  "Search page not recognised (blocked?)",
+                                                          "since":  "2026-10-26T14:54:12.5482033+04:00",
+                                                          "alerted":  true,
+                                                          "fails":  5081
+                                                      },
+                   "iPoint | 512GB (colour not listed)":  {
+                                                              "error":  "The remote server returned an error: (429) Too Many Requests.",
+                                                              "since":  "2026-11-14T18:52:39.3137476+04:00",
+                                                              "alerted":  true,
+                                                              "fails":  35
+                                                          },
+                   "Noon | 512GB (any colour)":  {
+                                                     "error":  "curl failed with exit code 28",
+                                                     "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                     "alerted":  true,
+                                                     "fails":  5077
+                                                 },
+                   "Dubai Duty Free | 512GB (any colour)":  {
+                                                                "error":  "curl failed with exit code 28",
+                                                                "since":  "2026-10-26T14:54:12.5482033+04:00",
+                                                                "alerted":  true,
+                                                                "fails":  5077
+                                                            },
+                   "Grand Stores | 512GB Night Sky":  {
+                                                          "error":  "The remote server returned an error: (403) Forbidden.",
+                                                          "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                          "alerted":  true,
+                                                          "fails":  5081
+                                                      },
+                   "Grand Stores | 512GB Star White":  {
+                                                           "error":  "The remote server returned an error: (403) Forbidden.",
+                                                           "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                           "alerted":  true,
+                                                           "fails":  5081
+                                                       },
+                   "iStyle | 512GB Star White":  {
+                                                     "error":  "The remote server returned an error: (429) Too Many Requests.",
+                                                     "since":  "2026-11-14T15:57:24.5291967+04:00",
+                                                     "alerted":  true,
+                                                     "fails":  69
+                                                 }
+               },
+    "pagesAlerted":  false,
+    "crashes":  0,
+    "channels":  {
+                     "Telegram":  {
+                                      "ok":  true,
+                                      "checkedAt":  "2026-11-14T17:32:42.3001988+04:00",
+                                      "error":  null,
+                                      "alerted":  false
+                                  }
+                 }
+}

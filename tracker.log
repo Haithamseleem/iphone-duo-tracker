@@ -1,0 +1,1363 @@
+﻿2026-11-14 14:32:13  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 14:32:13  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:32:13  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 14:32:13  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 14:32:13  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:32:13  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 14:32:13  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:32:13  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 14:32:13  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 14:32:14  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 14:32:24  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:33:24  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:34:24  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:35:27  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:37:06  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 14:37:06  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 14:37:06  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:37:06  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 14:37:06  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 14:37:06  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:37:06  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 14:37:06  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:37:06  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 14:37:06  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 14:37:07  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 14:38:07  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:39:05  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:40:04  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:41:05  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:42:44  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 14:42:44  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 14:42:44  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:42:44  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 14:42:44  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 14:42:44  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:42:44  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 14:42:44  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:42:44  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 14:42:44  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 14:42:45  Telegram: answered /stope
+2026-11-14 14:42:45  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 14:42:58  Telegram: answered /stop
+2026-11-14 14:42:59  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 14:43:59  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 14:45:03  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 14:45:49  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 14:47:29  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 14:47:29  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 14:47:29  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:47:29  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 14:47:29  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 14:47:29  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:47:29  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 14:47:29  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:47:29  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 14:47:29  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 14:47:30  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, Noon Minutes | 512GB (any colour) 6s
+2026-11-14 14:47:40  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s, Apple Store pickup | 512GB Star White 0s
+2026-11-14 14:48:40  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 14:49:43  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple UAE | 512GB Night Sky 1s, Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s
+2026-11-14 14:50:43  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:52:14  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 14:52:14  ERROR Noon | 512GB (any colour): curl failed with exit code 56
+2026-11-14 14:52:14  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:52:14  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 14:52:14  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 14:52:14  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:52:14  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 14:52:14  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:52:14  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 14:52:14  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 14:52:15  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 22s, e& | 512GB Night Sky 4s
+2026-11-14 14:52:26  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:53:26  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:54:26  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:55:27  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:57:08  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 14:57:08  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 14:57:08  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:57:08  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 14:57:08  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 14:57:08  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:57:08  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 14:57:08  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 14:57:08  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 14:57:08  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 14:57:09  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 14:58:07  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 14:59:00  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:00:00  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:01:01  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:02:42  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:02:42  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:02:42  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:02:42  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:02:42  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 15:02:42  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:02:42  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:02:42  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:02:42  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 15:02:42  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:02:42  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 15:02:57  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:03:57  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:04:56  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:05:46  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:07:26  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:07:26  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:07:26  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:07:26  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:07:26  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 15:07:26  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:07:26  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:07:26  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:07:26  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 15:07:26  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:07:27  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 15:07:38  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:08:38  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:09:40  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:10:40  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:12:10  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:12:10  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:12:10  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:12:10  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:12:10  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 15:12:10  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:12:10  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:12:10  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:12:10  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 15:12:10  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:12:10  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 15:12:21  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:13:22  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:14:21  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:15:21  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:17:03  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:17:03  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:17:03  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:17:03  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:17:03  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 15:17:03  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:17:03  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:17:03  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:17:03  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 15:17:03  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:17:04  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 15:18:01  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:18:58  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:19:57  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:20:57  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:22:36  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:22:36  ERROR Noon | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:22:36  ERROR Lulu | 512GB (any colour): Lulu page not recognised (blocked?)
+2026-11-14 15:22:36  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:22:36  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:22:36  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 15:22:36  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:22:36  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:22:36  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:22:36  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 15:22:36  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:22:37  Run complete in 41s: Error=11 OutOfStock=13 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s, e& | 512GB Night Sky 4s
+2026-11-14 15:22:52  Run complete in 3s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:23:52  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:24:46  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:25:47  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:27:26  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:27:26  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:27:26  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:27:26  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:27:26  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 15:27:26  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:27:26  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:27:26  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:27:26  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 15:27:26  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:27:26  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 5s
+2026-11-14 15:27:36  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:28:38  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:29:38  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:30:17  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:31:09  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:32:49  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:32:49  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:32:49  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:32:49  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:32:49  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 15:32:49  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:32:49  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:32:49  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:32:49  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 15:32:49  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:32:49  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 15:33:00  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:34:00  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:35:03  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:36:03  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:37:38  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:37:38  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:37:38  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:37:38  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:37:38  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 15:37:38  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:37:38  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:37:38  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:37:38  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 15:37:38  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:37:39  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 5s
+2026-11-14 15:37:48  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:38:48  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:39:48  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:40:48  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:42:29  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:42:29  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:42:29  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:42:29  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:42:29  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 15:42:29  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:42:29  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:42:29  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:42:29  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 15:42:29  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:42:30  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 15:43:17  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:44:07  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:45:09  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:46:07  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:47:45  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:47:46  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:47:46  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:47:46  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:47:46  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 15:47:46  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:47:46  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:47:46  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:47:46  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 15:47:46  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:47:46  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 15:47:57  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:48:58  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 15:50:07  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:51:01  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:52:40  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:52:40  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:52:40  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:52:40  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:52:40  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 15:52:40  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:52:40  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 15:52:40  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:52:40  Self-check alert: Tracker can check iStyle again - 512GB Night Sky is being checked normally.
+512GB Star White is being checked normally.
+2026-11-14 15:52:41  Run complete in 41s: Error=8 OutOfStock=16 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 15:52:50  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:53:50  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple UAE | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s
+2026-11-14 15:54:52  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:55:52  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple UAE | 512GB Star White 0s, Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s
+2026-11-14 15:57:24  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:57:24  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 15:57:24  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:57:24  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 15:57:24  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 15:57:24  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:57:24  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:57:24  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 15:57:24  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 15:57:24  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 15:57:25  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 15:57:35  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:58:35  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 15:59:35  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:00:35  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:02:16  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:02:16  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:02:16  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:02:16  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:02:16  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 16:02:16  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:02:16  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:02:16  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 16:02:16  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:02:16  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:02:17  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 16:03:26  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:04:14  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:05:15  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:06:14  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:07:53  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:07:53  ERROR Noon | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:07:53  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:07:53  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:07:53  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 16:07:53  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:07:53  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:07:53  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 16:07:53  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:07:53  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:07:54  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s, e& | 512GB Night Sky 4s
+2026-11-14 16:08:07  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:09:08  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:09:53  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:10:46  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:11:47  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:13:25  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:13:26  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:13:26  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:13:26  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:13:26  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 16:13:26  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:13:26  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:13:26  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 16:13:26  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:13:26  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:13:26  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 16:13:36  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:14:38  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:15:38  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:16:31  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:18:07  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:18:07  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:18:07  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:18:07  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:18:07  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 16:18:07  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:18:07  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:18:07  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 16:18:07  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:18:07  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:18:07  Self-check alert: Tracker can't check iStyle - 512GB Night Sky has failed 5 checks in a row since 15:57: The remote server returned an error: (429) Too Many Requests.
+512GB Star White has failed 5 checks in a row since 15:57: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:18:08  Run complete in 42s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 8s
+2026-11-14 16:18:20  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:19:27  Run complete in 9s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:20:19  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:21:22  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:23:00  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:23:00  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:23:00  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:23:00  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:23:00  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 16:23:00  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:23:00  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:23:00  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 16:23:00  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:23:00  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:23:01  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 16:23:59  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:24:51  Run complete in 3s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple UAE | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s
+2026-11-14 16:25:49  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:26:50  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:28:28  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:28:28  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:28:28  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:28:28  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:28:28  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 16:28:28  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:28:28  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 16:28:29  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:28:29  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:28:29  Self-check alert: Tracker can check iStyle again - 512GB Night Sky is being checked normally.
+2026-11-14 16:28:30  Run complete in 42s: Error=9 OutOfStock=15 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 16:28:43  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:29:32  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:30:25  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:31:25  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:32:25  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:34:04  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:34:04  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:34:04  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:34:04  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:34:04  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 16:34:04  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:34:04  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:34:04  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 16:34:04  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:34:04  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:34:05  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 16:34:17  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:35:17  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:36:02  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:36:56  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:37:56  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:39:35  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:39:35  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:39:35  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:39:35  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:39:35  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 16:39:35  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:39:35  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:39:35  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 16:39:35  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:39:35  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:39:35  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 16:39:45  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:40:48  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple UAE | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s
+2026-11-14 16:41:48  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:42:44  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:44:17  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:44:17  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:44:17  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:44:17  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:44:17  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 16:44:17  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:44:17  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:44:17  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 16:44:17  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:44:17  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:44:17  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 16:44:28  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:45:29  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:46:28  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:47:31  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:49:09  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:49:09  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:49:09  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:49:09  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:49:09  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 16:49:09  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:49:09  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:49:09  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 16:49:09  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:49:09  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:49:09  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 7s
+2026-11-14 16:50:06  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:51:02  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:52:04  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:53:03  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:54:41  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:54:41  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:54:41  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:54:41  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:54:41  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 16:54:41  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:54:41  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:54:41  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 16:54:41  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:54:41  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:54:42  Self-check alert: Tracker can't check iStyle - 512GB Night Sky has failed 5 checks in a row since 16:34: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:54:43  Run complete in 42s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 6s
+2026-11-14 16:54:58  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:55:58  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 16:56:58  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:57:45  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 16:59:23  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:59:23  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 16:59:23  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:59:23  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 16:59:23  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 16:59:23  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:59:23  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:59:23  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 16:59:23  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 16:59:23  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 16:59:24  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 16:59:36  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:00:36  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:01:38  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:02:39  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:04:14  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:04:14  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:04:14  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:04:14  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 17:04:14  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 17:04:14  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:04:14  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:04:14  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 17:04:14  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:04:14  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:04:15  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 5s
+2026-11-14 17:04:25  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:05:24  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:06:25  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:07:25  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:09:06  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:09:06  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:09:06  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:09:06  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 17:09:06  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 17:09:06  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:09:06  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:09:06  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 17:09:06  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:09:06  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:09:07  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 17:09:58  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Night Sky 1s
+2026-11-14 17:10:51  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:11:51  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple UAE | 512GB Star White 1s, Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 0s
+2026-11-14 17:12:51  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:14:32  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:14:32  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:14:32  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:14:32  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 17:14:32  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 17:14:32  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:14:32  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 17:14:32  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:14:32  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:14:32  Self-check alert: Tracker can check iStyle again - 512GB Night Sky is being checked normally.
+2026-11-14 17:14:33  Run complete in 41s: Error=9 OutOfStock=15 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 17:14:46  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:15:45  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple UAE | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s
+2026-11-14 17:16:33  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:17:27  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:18:26  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:20:04  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:20:04  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:20:04  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:20:04  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 17:20:04  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 17:20:04  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:20:04  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:20:04  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 17:20:04  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:20:04  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:20:05  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 17:20:35  Telegram commands failed: Unable to connect to the remote server
+2026-11-14 17:20:35  Run complete in 22s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:21:17  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:22:17  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:23:23  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:24:48  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:24:48  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:24:48  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:24:48  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 17:24:48  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 17:24:48  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:24:48  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:24:48  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 17:24:48  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:24:48  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:24:49  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 17:24:59  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:25:59  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:26:59  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:28:01  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:29:40  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:29:40  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:29:40  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:29:40  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 17:29:40  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 17:29:40  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:29:40  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:29:40  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 17:29:40  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:29:40  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:29:41  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 17:30:43  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:31:41  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s
+2026-11-14 17:32:42  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:34:21  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:34:21  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:34:21  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:34:21  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 17:34:21  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 17:34:21  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:34:21  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:34:21  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 17:34:21  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:34:21  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:34:22  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 17:34:34  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:35:37  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:36:36  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:37:36  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:39:05  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:39:05  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:39:05  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:39:05  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 17:39:05  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 17:39:05  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:39:05  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:39:05  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 17:39:05  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:39:05  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:39:05  Self-check alert: Tracker can't check iStyle - 512GB Night Sky has failed 5 checks in a row since 17:20: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:39:06  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 17:39:16  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:40:16  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:41:16  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:42:19  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:43:58  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:43:58  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:43:58  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:43:58  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 17:43:58  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 17:43:58  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:43:58  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:43:58  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 17:43:58  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:43:58  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:43:59  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 17:44:53  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:45:42  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:46:43  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:47:42  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:49:22  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:49:22  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:49:22  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:49:22  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 17:49:22  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 17:49:22  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:49:22  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:49:22  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 17:49:22  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:49:22  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:49:23  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 17:49:39  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:50:39  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:51:20  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:52:14  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:53:14  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:54:53  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:54:53  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 17:54:53  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:54:53  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 17:54:53  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 17:54:53  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:54:53  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:54:53  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 17:54:53  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 17:54:53  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 17:54:54  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 17:55:03  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:56:08  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:57:08  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 17:57:55  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Star White 0s
+2026-11-14 17:58:47  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:00:26  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:00:26  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:00:27  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:00:27  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 18:00:27  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 18:00:27  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:00:27  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:00:27  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 18:00:27  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:00:27  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:00:27  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 18:00:38  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple UAE | 512GB Star White 0s, Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s
+2026-11-14 18:01:38  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:02:41  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:03:41  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:05:19  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:05:19  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:05:19  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:05:19  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 18:05:19  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 18:05:19  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:05:19  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 18:05:19  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:05:19  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:05:19  Self-check alert: Tracker can check iStyle again - 512GB Night Sky is being checked normally.
+2026-11-14 18:05:20  Run complete in 42s: Error=9 OutOfStock=15 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 18:05:31  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:06:31  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s, Apple Store pickup | 512GB Star White 0s
+2026-11-14 18:07:31  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:08:31  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:10:13  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:10:13  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:10:13  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:10:13  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 18:10:13  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:10:13  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 18:10:13  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:10:13  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 18:10:13  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:10:13  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:10:14  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 18:11:08  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:12:02  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:13:02  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple UAE | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s
+2026-11-14 18:14:02  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:15:41  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:15:41  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:15:41  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:15:41  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 18:15:41  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:15:41  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 18:15:41  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:15:41  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 18:15:41  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:15:41  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:15:42  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 5s
+2026-11-14 18:15:57  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:16:57  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:17:46  Run complete in 3s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:18:34  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:19:34  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:21:13  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:21:13  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:21:13  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:21:13  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 18:21:13  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:21:13  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 18:21:13  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:21:13  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 18:21:13  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:21:13  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:21:14  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 18:21:25  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:22:28  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:23:28  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:24:17  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:25:06  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:26:44  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:26:44  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:26:44  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:26:44  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 18:26:44  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:26:44  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 18:26:44  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:26:44  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 18:26:44  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:26:44  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:26:45  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 18:26:54  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:27:54  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s, Apple Store pickup | 512GB Star White 0s
+2026-11-14 18:28:57  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:29:57  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:31:26  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:31:26  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:31:26  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:31:26  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 18:31:26  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:31:26  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 18:31:26  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:31:26  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 18:31:26  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:31:26  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:31:26  Self-check alert: Tracker can't check iStyle - 512GB Night Sky has failed 5 checks in a row since 18:10: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:31:27  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 7s
+2026-11-14 18:31:36  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:32:36  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:33:36  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:34:36  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:36:18  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:36:18  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:36:18  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:36:18  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 18:36:18  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:36:18  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 18:36:18  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:36:18  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 18:36:18  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:36:18  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:36:19  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 18:37:16  Run complete in 3s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:38:10  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:39:10  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:40:20  Run complete in 8s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:41:53  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:41:53  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:41:53  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:41:53  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 18:41:53  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:41:53  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 18:41:53  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:41:53  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 18:41:53  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:41:53  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:41:54  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 18:42:10  Run complete in 4s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:43:25  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:44:21  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 18:45:21  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:47:00  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:47:00  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:47:00  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 18:47:00  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:47:00  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 18:47:00  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:47:00  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 18:47:00  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:47:00  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:47:00  Self-check alert: Tracker can check iPoint again - 512GB (colour not listed) is being checked normally.
+2026-11-14 18:47:01  Run complete in 41s: Error=9 OutOfStock=14 Cloud=4 Unverified=3 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 5s
+2026-11-14 18:47:13  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:48:15  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:49:15  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s
+2026-11-14 18:50:04  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:50:59  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s
+2026-11-14 18:52:39  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:52:39  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:52:39  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:52:39  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 18:52:39  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:52:39  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 18:52:39  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:52:39  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 18:52:39  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:52:39  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:52:39  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 7s
+2026-11-14 18:52:50  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:53:49  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:54:51  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:55:51  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:56:40  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:58:16  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:58:16  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 18:58:16  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:58:16  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 18:58:16  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:58:16  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 18:58:16  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:58:16  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 18:58:16  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 18:58:16  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 18:58:17  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 5s
+2026-11-14 18:58:28  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 18:59:29  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:00:28  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:01:31  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:03:10  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:03:10  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:03:11  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:03:11  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 19:03:11  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:03:11  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 19:03:11  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:03:11  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 19:03:11  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:03:11  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:03:11  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 19:04:14  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:05:11  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:06:12  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:07:11  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:08:50  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:08:50  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:08:50  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:08:50  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 19:08:50  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:08:50  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 19:08:50  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:08:50  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 19:08:50  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:08:50  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:08:51  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 19:09:05  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Star White 1s
+2026-11-14 19:10:04  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:11:28  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:12:22  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:14:01  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:14:01  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:14:01  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:14:01  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 19:14:01  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:14:01  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 19:14:01  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:14:01  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 19:14:01  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:14:01  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:14:01  Self-check alert: Tracker can't check iPoint - 512GB (colour not listed) has failed 5 checks in a row since 18:52: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:14:02  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 6s
+2026-11-14 19:14:11  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:15:12  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:16:14  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:17:14  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:18:46  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:18:46  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:18:46  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:18:46  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 19:18:46  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:18:46  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 19:18:46  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:18:46  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 19:18:46  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:18:46  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:18:47  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 19:18:56  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:19:56  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:20:56  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:21:57  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s
+2026-11-14 19:23:37  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:23:37  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:23:37  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:23:37  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 19:23:37  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:23:37  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 19:23:37  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:23:37  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 19:23:37  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:23:37  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:23:37  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 19:24:35  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:25:29  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:26:30  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:27:29  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:29:09  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:29:09  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:29:09  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:29:09  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 19:29:09  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:29:09  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 19:29:09  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:29:09  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 19:29:09  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:29:09  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:29:10  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 19:29:23  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple UAE | 512GB Star White 0s, Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s
+2026-11-14 19:30:23  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple UAE | 512GB Star White 0s, Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s
+2026-11-14 19:31:22  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:32:14  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:33:53  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:33:53  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:33:53  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:33:53  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 19:33:53  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:33:53  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 19:33:53  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:33:53  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 19:33:53  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:33:53  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:33:53  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 19:34:05  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:35:04  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:36:07  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:37:07  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:38:45  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:38:45  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:38:45  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:38:45  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 19:38:45  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:38:45  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 19:38:45  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:38:45  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 19:38:45  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:38:45  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:38:46  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 19:38:57  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:39:57  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:40:58  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:41:57  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:43:39  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:43:39  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:43:39  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:43:39  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 19:43:39  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:43:39  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 19:43:39  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:43:39  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 19:43:39  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:43:39  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:43:40  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 19:44:39  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:45:33  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:46:32  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:47:33  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:49:12  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:49:12  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:49:12  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:49:12  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 19:49:12  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:49:12  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 19:49:12  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:49:12  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 19:49:12  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:49:12  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:49:13  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 19:49:25  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:50:25  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:51:21  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:52:13  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:53:53  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:53:53  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:53:53  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:53:53  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 19:53:53  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:53:53  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 19:53:53  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:53:53  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 19:53:53  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:53:53  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:53:54  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 19:54:04  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 19:55:04  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:56:07  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:57:07  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:58:37  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:58:37  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 19:58:37  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:58:37  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 19:58:37  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:58:37  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 19:58:37  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:58:37  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 19:58:37  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 19:58:37  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 19:58:38  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 19:58:49  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 19:59:49  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:00:49  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:01:49  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 20:03:31  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:03:31  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:03:32  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:03:32  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 20:03:32  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:03:32  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 20:03:32  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:03:32  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 20:03:32  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:03:32  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:03:33  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, Cartlow | 512GB (any colour) 6s
+2026-11-14 20:04:31  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Star White 0s
+2026-11-14 20:05:22  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 20:06:22  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:07:23  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:09:02  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:09:02  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:09:02  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:09:02  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 20:09:02  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:09:02  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 20:09:02  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:09:02  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 20:09:02  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:09:02  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:09:03  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 6s
+2026-11-14 20:09:16  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:10:16  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:11:10  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:12:05  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple UAE | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s, Apple Store pickup | 512GB Star White 0s
+2026-11-14 20:13:44  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:13:44  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:13:44  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:13:44  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 20:13:44  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:13:44  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 20:13:44  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:13:44  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 20:13:44  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:13:44  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:13:45  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 5s
+2026-11-14 20:13:57  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:14:56  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:16:00  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:17:00  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:18:26  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:18:26  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:18:26  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:18:26  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 20:18:26  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:18:26  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 20:18:27  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:18:27  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 20:18:27  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:18:27  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:18:27  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 20:18:38  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple UAE | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s
+2026-11-14 20:19:38  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:20:38  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:21:37  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:23:20  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:23:20  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:23:20  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:23:20  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 20:23:20  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:23:20  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 20:23:20  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:23:20  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 20:23:20  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:23:20  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:23:20  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 5s
+2026-11-14 20:24:17  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:25:12  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:26:11  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:27:11  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:28:50  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:28:50  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:28:50  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:28:50  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 20:28:50  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:28:50  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 20:28:50  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:28:50  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 20:28:50  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:28:50  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:28:51  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 20:29:04  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:30:04  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:31:08  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:32:04  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:33:43  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:33:43  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:33:43  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:33:43  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 20:33:43  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:33:43  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 20:33:43  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:33:43  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 20:33:43  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:33:43  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:33:59  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:33:59  Run complete in 56s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 20:34:27  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:34:27  Run complete in 17s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:35:26  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:35:27  Run complete in 17s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:36:29  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:36:29  Run complete in 17s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:37:28  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:37:28  Run complete in 17s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 20:38:33  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:38:33  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:38:33  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:38:33  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 20:38:33  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:38:33  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 20:38:33  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:38:33  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 20:38:33  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:38:33  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:38:49  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:38:49  Run complete in 56s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 6s
+2026-11-14 20:39:14  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:39:14  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 20:40:14  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:40:14  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 20:41:14  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:41:14  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 20:42:17  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:42:17  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 20:44:12  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:44:12  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:44:12  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:44:12  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 20:44:12  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:44:12  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 20:44:12  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:44:12  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 20:44:12  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:44:12  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:44:28  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:44:28  Run complete in 57s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 6s
+2026-11-14 20:44:54  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:44:54  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:45:54  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:45:54  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:46:54  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:46:54  Run complete in 16s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:47:54  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:47:54  Run complete in 16s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:49:21  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:49:21  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:49:21  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:49:21  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 20:49:21  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:49:21  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 20:49:21  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:49:21  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 20:49:21  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:49:21  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:49:37  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:49:37  Run complete in 56s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 20:50:43  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:50:43  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:51:15  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:51:15  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:52:15  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:52:15  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:53:16  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:53:16  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:54:39  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:54:39  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:54:39  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:54:39  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 20:54:39  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:54:39  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 20:54:39  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:54:39  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 20:54:39  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:54:39  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:54:55  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:54:55  Run complete in 56s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 20:55:25  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:55:25  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 20:56:33  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:56:33  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 1s, Apple Store pickup | 512GB Star White 1s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:57:09  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:57:09  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:58:08  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:58:09  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 20:59:32  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:59:32  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 20:59:32  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:59:32  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 20:59:32  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:59:32  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 20:59:32  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:59:32  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 20:59:32  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 20:59:32  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 20:59:48  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 20:59:48  Run complete in 56s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 21:00:14  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:00:14  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:01:16  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:01:16  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:02:27  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:02:27  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:02:59  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:02:59  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:04:23  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:04:23  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:04:23  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:04:23  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 21:04:23  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:04:23  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 21:04:23  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:04:23  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 21:04:23  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:04:23  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:04:39  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:04:39  Run complete in 56s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 5s
+2026-11-14 21:05:05  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:05:05  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:06:05  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:06:05  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:06:53  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:07:54  Run complete in 2s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:09:23  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:09:23  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:09:23  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:09:23  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 21:09:23  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:09:23  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 21:09:23  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:09:23  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 21:09:23  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:09:23  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:09:24  Run complete in 41s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Star White 5s
+2026-11-14 21:09:35  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:10:35  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:11:36  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:12:36  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:12:36  Run complete in 2s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:14:17  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:14:17  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:14:17  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:14:17  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 21:14:17  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:14:17  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 21:14:17  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:14:17  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 21:14:17  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:14:17  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:14:18  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Dubai Duty Free | 512GB (any colour) 40s, Noon | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 21:15:31  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:15:48  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:16:48  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:17:48  Run complete in 1s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:19:27  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:19:27  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:19:27  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:19:27  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 21:19:27  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:19:27  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 21:19:27  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:19:27  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 21:19:27  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:19:27  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:19:28  Run complete in 41s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 21:19:50  Run complete in 1s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:21:05  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:21:05  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:22:11  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:22:11  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 1s, Apple Store pickup | 512GB Night Sky 1s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:22:44  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:22:44  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:24:08  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:24:08  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:24:08  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:24:08  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 21:24:08  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:24:08  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 21:24:08  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:24:08  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 21:24:08  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:24:08  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:24:24  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:24:24  Run complete in 56s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 21:24:50  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:24:50  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:25:50  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:25:51  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:26:53  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:26:53  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:28:01  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:28:01  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:28:59  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:28:59  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:29:00  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:29:00  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 21:29:00  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:29:00  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 21:29:00  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:29:00  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 21:29:00  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:29:00  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:29:15  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:29:15  Run complete in 56s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s
+2026-11-14 21:29:41  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:29:41  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:30:41  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:30:42  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Star White 0s
+2026-11-14 21:31:41  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:31:41  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:32:44  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:32:45  Run complete in 17s: Error=7 OutOfStock=16 Cloud=4 Unverified=3 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:34:23  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:34:23  ERROR Noon | 512GB (any colour): curl failed with exit code 56
+2026-11-14 21:34:23  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:34:23  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 21:34:23  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:34:23  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 21:34:23  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:34:23  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 21:34:23  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:34:23  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:34:39  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:34:39  Run complete in 57s: Error=10 OutOfStock=14 Cloud=4 Unverified=2 | slowest: Dubai Duty Free | 512GB (any colour) 41s, Noon | 512GB (any colour) 20s, e& | 512GB Night Sky 4s
+2026-11-14 21:35:04  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:35:04  Run complete in 17s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:36:04  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:36:04  Run complete in 17s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:37:04  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:37:04  Run complete in 17s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:38:04  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:38:04  Run complete in 17s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Night Sky 0s, Apple Store pickup | 512GB Star White 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:39:31  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:39:31  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:39:31  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:39:31  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 21:39:31  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:39:31  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 21:39:31  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:39:31  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 21:39:31  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:39:31  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:39:47  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:39:47  Run complete in 56s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Star White 4s
+2026-11-14 21:40:55  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:40:55  Run complete in 17s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:41:24  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:41:25  Run complete in 17s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:42:25  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:42:25  Run complete in 17s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:43:25  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:43:25  Run complete in 17s: Error=7 OutOfStock=16 Unverified=3 Cloud=4 | slowest: Apple Store pickup | 512GB Star White 0s, Apple Store pickup | 512GB Night Sky 0s, Apple UAE | 512GB Night Sky 0s
+2026-11-14 21:44:48  ERROR Dubai Duty Free | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:44:48  ERROR Noon | 512GB (any colour): curl failed with exit code 28
+2026-11-14 21:44:48  ERROR iPoint | 512GB (colour not listed): The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:44:48  ERROR Virgin Megastore | 512GB (any colour): Invalid JSON primitive: .
+2026-11-14 21:44:48  ERROR iStyle | 512GB Night Sky: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:44:48  ERROR Carrefour | 512GB (any colour): Search page not recognised (blocked?)
+2026-11-14 21:44:48  ERROR Grand Stores | 512GB Night Sky: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:44:48  ERROR Microless | 512GB (any colour): The remote server returned an error: (403) Forbidden.
+2026-11-14 21:44:48  ERROR Grand Stores | 512GB Star White: The remote server returned an error: (403) Forbidden.
+2026-11-14 21:44:48  ERROR iStyle | 512GB Star White: The remote server returned an error: (429) Too Many Requests.
+2026-11-14 21:45:04  Telegram commands failed: {"ok":false,"error_code":502,"description":"Bad Gateway"}
+2026-11-14 21:45:04  Run complete in 56s: Error=10 OutOfStock=14 Unverified=2 Cloud=4 | slowest: Noon | 512GB (any colour) 40s, Dubai Duty Free | 512GB (any colour) 40s, e& | 512GB Night Sky 4s

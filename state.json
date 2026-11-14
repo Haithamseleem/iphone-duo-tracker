@@ -1,0 +1,196 @@
+﻿{
+    "Microless | 512GB (any colour)":  {
+                                           "Detail":  "The remote server returned an error: (403) Forbidden.",
+                                           "Ms":  174,
+                                           "Fails":  5068,
+                                           "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                           "State":  "Error"
+                                       },
+    "Jumbo | 512GB Night Sky":  {
+                                    "Detail":  "Reservation open: AED 1000 advance payment",
+                                    "Ms":  405,
+                                    "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                    "State":  "OutOfStock"
+                                },
+    "Sharaf DG | 512GB Night Sky":  {
+                                        "Detail":  "In store at Mankhool, Reem Mall (call ahead): listed for pickup, unconfirmed | online: buy now, AED 9,349 (Apple iPhone Duo (512GB) – Night Sky Middle East Version) | delivery date unknown: last seen 29 Oct (Sharaf\u0027s page can\u0027t be read from GitHub), open the page to see it",
+                                        "Ms":  951,
+                                        "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                        "State":  "Unverified"
+                                    },
+    "Amazon.ae | 512GB same-day delivery":  {
+                                                "Detail":  "No iPhone Duo 512GB listing",
+                                                "Ms":  1122,
+                                                "Fails":  1,
+                                                "Checked":  "2026-10-27T13:03:36.3166083+04:00",
+                                                "State":  "OutOfStock"
+                                            },
+    "iStyle | 512GB Star White":  {
+                                      "Detail":  "512GB Star White: sold out",
+                                      "Ms":  110,
+                                      "Fails":  69,
+                                      "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                      "State":  "OutOfStock"
+                                  },
+    "Grand Stores | 512GB Night Sky":  {
+                                           "Detail":  "The remote server returned an error: (403) Forbidden.",
+                                           "Ms":  199,
+                                           "Fails":  5068,
+                                           "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                           "State":  "Error"
+                                       },
+    "Cartlow | 512GB (any colour)":  {
+                                         "Detail":  "No new iPhone Duo 512GB listing",
+                                         "Ms":  717,
+                                         "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                         "State":  "OutOfStock"
+                                     },
+    "Carrefour | 512GB (any colour)":  {
+                                           "Detail":  "Search page not recognised (blocked?)",
+                                           "Ms":  260,
+                                           "Fails":  5068,
+                                           "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                           "State":  "Error"
+                                       },
+    "Jumbo | 512GB Star White":  {
+                                     "Detail":  "Reservation open: AED 1000 advance payment | delivery 25th Jan\u002727 onwards",
+                                     "Ms":  415,
+                                     "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                     "State":  "OutOfStock"
+                                 },
+    "Apple Store pickup | 512GB Night Sky":  {
+                                                 "Detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island",
+                                                 "Ms":  467,
+                                                 "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                                 "State":  "OutOfStock"
+                                             },
+    "iStyle | 512GB Night Sky":  {
+                                     "Detail":  "512GB Night Sky: sold out",
+                                     "Ms":  279,
+                                     "Fails":  43,
+                                     "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                     "State":  "OutOfStock"
+                                 },
+    "Apple Store pickup | 512GB Star White":  {
+                                                  "Detail":  "Currently unavailable: Dubai Mall, Mall of the Emirates, Yas Mall, Al Jimi Mall, Al Maryah Island",
+                                                  "Ms":  475,
+                                                  "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                                  "State":  "OutOfStock"
+                                              },
+    "Emax | 512GB Night Sky":  {
+                                   "Detail":  "The remote server returned an error: (403) Forbidden.",
+                                   "Ms":  217,
+                                   "Fails":  48,
+                                   "Checked":  "2026-10-27T13:03:36.3166083+04:00",
+                                   "State":  "Error"
+                               },
+    "Amazon.ae | 512GB (any colour)":  {
+                                           "Detail":  "No iPhone Duo 512GB listing",
+                                           "Ms":  1193,
+                                           "Fails":  1,
+                                           "Checked":  "2026-10-27T13:03:36.3166083+04:00",
+                                           "State":  "OutOfStock"
+                                       },
+    "Emax | 512GB Star White":  {
+                                    "Detail":  "The remote server returned an error: (403) Forbidden.",
+                                    "Ms":  205,
+                                    "Fails":  48,
+                                    "Checked":  "2026-10-27T13:03:36.3166083+04:00",
+                                    "State":  "Error"
+                                },
+    "du | 512GB Night Sky":  {
+                                 "Detail":  "Out of Stock | outright or with a du plan",
+                                 "Ms":  1510,
+                                 "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                 "State":  "OutOfStock"
+                             },
+    "Sharaf DG | 512GB Star White":  {
+                                         "Detail":  "In store at Dubai Mall, Ibn Battuta Mall Persia Court, Times Square Center (call ahead): listed for pickup, unconfirmed | online: buy now, AED 9,349 (Apple iPhone Duo (512GB) – Star White Middle East Version) | delivery date unknown: last seen 29 Oct (Sharaf\u0027s page can\u0027t be read from GitHub), open the page to see it",
+                                         "Ms":  937,
+                                         "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                         "State":  "Unverified"
+                                     },
+    "Apple UAE | 512GB Star White":  {
+                                         "Detail":  "Pre-order: delivery from 22 Jan 2027, more than 7 days after ordering | Ships Jan 22",
+                                         "Ms":  173,
+                                         "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                         "State":  "OutOfStock"
+                                     },
+    "Dubai Duty Free | 512GB (any colour)":  {
+                                                 "Detail":  "curl failed with exit code 28",
+                                                 "Ms":  40045,
+                                                 "Fails":  5064,
+                                                 "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                                 "State":  "Error"
+                                             },
+    "Noon | 512GB (any colour)":  {
+                                      "Detail":  "curl failed with exit code 28",
+                                      "Ms":  40035,
+                                      "Fails":  5064,
+                                      "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                      "State":  "Error"
+                                  },
+    "du | 512GB Star White":  {
+                                  "Detail":  "Out of Stock | outright or with a du plan",
+                                  "Ms":  1527,
+                                  "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                  "State":  "OutOfStock"
+                              },
+    "Revibe | 512GB (any colour)":  {
+                                        "Detail":  "No new iPhone Duo 512GB listing",
+                                        "Ms":  445,
+                                        "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                        "State":  "OutOfStock"
+                                    },
+    "Apple UAE | 512GB Night Sky":  {
+                                        "Detail":  "Pre-order: delivery from 22 Jan 2027, more than 7 days after ordering | Ships Jan 22",
+                                        "Ms":  193,
+                                        "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                        "State":  "OutOfStock"
+                                    },
+    "Virgin Megastore | 512GB (any colour)":  {
+                                                  "Detail":  "Invalid JSON primitive: .",
+                                                  "Ms":  305,
+                                                  "Fails":  5068,
+                                                  "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                                  "State":  "Error"
+                                              },
+    "Grand Stores | 512GB Star White":  {
+                                            "Detail":  "The remote server returned an error: (403) Forbidden.",
+                                            "Ms":  153,
+                                            "Fails":  5068,
+                                            "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                            "State":  "Error"
+                                        },
+    "e\u0026 | 512GB Star White":  {
+                                       "Detail":  "Out of stock | SmartPay AED 430/mo x 24",
+                                       "Ms":  3746,
+                                       "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                       "State":  "OutOfStock"
+                                   },
+    "e\u0026 | 512GB Night Sky":  {
+                                      "Detail":  "Out of stock | SmartPay AED 430/mo x 24",
+                                      "Ms":  3790,
+                                      "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                      "State":  "OutOfStock"
+                                  },
+    "Lulu | 512GB (any colour)":  {
+                                      "Detail":  "No iPhone Duo 512GB listing",
+                                      "Ms":  1263,
+                                      "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                      "State":  "OutOfStock"
+                                  },
+    "iPoint | 512GB (colour not listed)":  {
+                                               "Detail":  "512GB in stock at AED 10,599 (reseller price; colour not listed) | store says in stock but this isn\u0027t confirmed; call before going",
+                                               "Ms":  346,
+                                               "Fails":  35,
+                                               "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                               "State":  "Unverified"
+                                           },
+    "Noon Minutes | 512GB (any colour)":  {
+                                              "Detail":  "No iPhone Duo 512GB listing",
+                                              "Ms":  621,
+                                              "Checked":  "2026-11-14T21:44:48.9077746+04:00",
+                                              "State":  "OutOfStock"
+                                          }
+}

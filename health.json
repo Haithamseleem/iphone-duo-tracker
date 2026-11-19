@@ -1,0 +1,126 @@
+﻿{
+    "lastAlerts":  {
+                       "Apple Store pickup|Available|InStock":  "2026-11-18T10:22:25.6360870+04:00",
+                       "Noon Minutes|Change|OutOfStock":  "2026-11-19T03:46:15.9564174+04:00",
+                       "Sharaf DG|Change|OutOfStock":  "2026-11-04T22:45:06.1947740+04:00",
+                       "Sharaf DG|Available|InStock":  "2026-10-29T10:59:41.1085044+04:00",
+                       "Noon Minutes|Available|InStock":  "2026-11-19T02:04:04.3351431+04:00",
+                       "Sharaf DG|Change|Unverified":  "2026-11-05T07:38:42.9039582+04:00",
+                       "Apple Store pickup|Change|OutOfStock":  "2026-11-18T10:23:26.5224954+04:00",
+                       "Sharaf DG|flip":  "2026-11-05T07:38:42.9059840+04:00"
+                   },
+    "twilio":  {
+                   "ok":  true,
+                   "checkedAt":  "2026-11-19T05:41:44.8771848+04:00",
+                   "error":  null,
+                   "alerted":  false
+               },
+    "pauses":  [
+                   {
+                       "from":  "2026-11-12T14:36:44.0921683+04:00",
+                       "to":  "2026-11-12T15:02:24.9088244+04:00"
+                   },
+                   {
+                       "from":  "2026-11-12T15:18:04.1986790+04:00",
+                       "to":  "2026-11-12T16:11:34.6273947+04:00"
+                   },
+                   {
+                       "from":  "2026-11-12T18:49:43.4827974+04:00",
+                       "to":  "2026-11-12T19:29:10.5971397+04:00"
+                   },
+                   {
+                       "from":  "2026-11-12T20:38:46.8686016+04:00",
+                       "to":  "2026-11-12T21:34:36.2729135+04:00"
+                   },
+                   {
+                       "from":  "2026-11-13T00:54:29.0051207+04:00",
+                       "to":  "2026-11-13T01:10:00.9136121+04:00"
+                   }
+               ],
+    "lastRunAt":  "2026-11-19T10:38:25.1178090+04:00",
+    "crashAlertAt":  null,
+    "stores":  {
+                   "Virgin Megastore | 512GB (any colour)":  {
+                                                                 "error":  "Invalid JSON primitive: .",
+                                                                 "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                                 "alerted":  true,
+                                                                 "fails":  6362
+                                                             },
+                   "e\u0026 | 512GB Night Sky":  {
+                                                     "error":  "e\u0026 stock data for bgskuTrans3820241235 not found (page changed?)",
+                                                     "since":  "2026-11-19T10:34:30.6668567+04:00",
+                                                     "alerted":  false,
+                                                     "fails":  1
+                                                 },
+                   "Microless | 512GB (any colour)":  {
+                                                          "error":  "The remote server returned an error: (403) Forbidden.",
+                                                          "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                          "alerted":  true,
+                                                          "fails":  6362
+                                                      },
+                   "Carrefour | 512GB (any colour)":  {
+                                                          "error":  "Search page not recognised (blocked?)",
+                                                          "since":  "2026-10-26T14:54:12.5482033+04:00",
+                                                          "alerted":  true,
+                                                          "fails":  6362
+                                                      },
+                   "Grand Stores | 512GB Night Sky":  {
+                                                          "error":  "The remote server returned an error: (403) Forbidden.",
+                                                          "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                          "alerted":  true,
+                                                          "fails":  6362
+                                                      },
+                   "iPoint | 512GB (colour not listed)":  {
+                                                              "error":  "The remote server returned an error: (429) Too Many Requests.",
+                                                              "since":  "2026-11-19T08:47:36.0980522+04:00",
+                                                              "alerted":  true,
+                                                              "fails":  22
+                                                          },
+                   "e\u0026 | 512GB Star White":  {
+                                                      "error":  "e\u0026 stock data for bgskuTrans3820241230 not found (page changed?)",
+                                                      "since":  "2026-11-19T10:34:30.6683230+04:00",
+                                                      "alerted":  false,
+                                                      "fails":  1
+                                                  },
+                   "Noon | 512GB (any colour)":  {
+                                                     "error":  "curl failed with exit code 28",
+                                                     "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                     "alerted":  true,
+                                                     "fails":  6358
+                                                 },
+                   "iStyle | 512GB Star White":  {
+                                                     "error":  "The remote server returned an error: (429) Too Many Requests.",
+                                                     "since":  "2026-11-19T08:47:36.0980522+04:00",
+                                                     "alerted":  true,
+                                                     "fails":  22
+                                                 },
+                   "Dubai Duty Free | 512GB (any colour)":  {
+                                                                "error":  "curl failed with exit code 28",
+                                                                "since":  "2026-10-26T14:54:12.5482033+04:00",
+                                                                "alerted":  true,
+                                                                "fails":  6358
+                                                            },
+                   "iStyle | 512GB Night Sky":  {
+                                                    "error":  "The remote server returned an error: (429) Too Many Requests.",
+                                                    "since":  "2026-11-19T09:08:20.8849004+04:00",
+                                                    "alerted":  true,
+                                                    "fails":  18
+                                                },
+                   "Grand Stores | 512GB Star White":  {
+                                                           "error":  "The remote server returned an error: (403) Forbidden.",
+                                                           "since":  "2026-10-26T14:54:12.5487225+04:00",
+                                                           "alerted":  true,
+                                                           "fails":  6362
+                                                       }
+               },
+    "pagesAlerted":  false,
+    "crashes":  0,
+    "channels":  {
+                     "Telegram":  {
+                                      "ok":  true,
+                                      "checkedAt":  "2026-11-19T05:41:45.4188301+04:00",
+                                      "error":  null,
+                                      "alerted":  false
+                                  }
+                 }
+}
